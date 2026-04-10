@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Free AEO Checklist — Confidence Fly Search</title>
+<meta name="description" content="Is Your Content Ready for AI Search? Get the free AEO Quick-Start Checklist from Niki Mosier. Audit your content, optimize schema, and track AI referral traffic."/>
+<meta property="og:title" content="Free AEO Quick-Start Checklist"/>
+<meta property="og:description" content="Get the free AEO Quick-Start Checklist for SEO practitioners. Learn to audit content for AI Overview eligibility and optimize for answer-first formatting."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://confidenceflysearch.com/checklist.html"/>
+<link rel="canonical" href="https://confidenceflysearch.com/checklist.html"/>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CN6EXCWFEB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CN6EXCWFEB');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Lora:ital@1&family=Lexend:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ========================================
+   CONFIDENCE FLY SEARCH — CHECKLIST PAGE
+   Colors: #0C2E47, #07699A, #BDBEBF
+   Fonts: Montserrat, Lora, Lexend
+   ======================================== */
+
+:root {
+  --navy: #0C2E47;
+  --blue: #07699A;
+  --silver: #BDBEBF;
+  --white: #FFFFFF;
+  --offwhite: #F5F6F7;
+  --dark-text: #1A1A2E;
+  --muted: #5A6677;
+  --light-border: #E2E8F0;
+  --gradient: linear-gradient(135deg, #0C2E47 0%, #07699A 100%);
+  --max-width: 1200px;
+  --radius-card: 12px;
+  --radius-btn: 8px;
+}
+
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: 'Lexend', system-ui, sans-serif;
+  font-weight: 400;
+  color: var(--dark-text);
+  background: var(--white);
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--navy);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.nav.scrolled {
+  box-shadow: 0 2px 20px rgba(12, 46, 71, 0.3);
+}
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.nav-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--white);
+  letter-spacing: 0.5px;
+}
+.nav-brand span {
+  color: var(--blue);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: 'Lexend', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: rgba(255,255,255,0.8);
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--white);
+}
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--blue);
+  border-radius: 1px;
+}
+.nav-cta {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: var(--blue) !important;
+  color: var(--white) !important;
+  padding: 10px 20px;
+  border-radius: var(--radius-btn);
+  transition: background 0.2s, transform 0.2s;
+}
+.nav-cta:hover {
+  background: #058bb5 !important;
+  transform: translateY(-1px);
+}
+
+/* Mobile hamburger */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  margin: 6px 0;
+  transition: all 0.3s;
+  border-radius: 1px;
+}
+.nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+/* Mobile menu */
+.nav-mobile {
+  display: none;
+  position: fixed;
+  top: 72px;
+  right: 0;
+  bottom: 0;
+  width: 280px;
+  background: var(--navy);
+  padding: 32px 24px;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 999;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+}
+.nav-mobile.open { display: flex; }
+.nav-mobile a {
+  font-family: 'Lexend', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.8);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: color 0.2s;
+}
+.nav-mobile a:hover { color: white; }
+.nav-mobile .nav-cta {
+  margin-top: 16px;
+  text-align: center;
+  display: block;
+  border-bottom: none;
+}
+.nav-overlay {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 998;
+}
+.nav-overlay.open { display: block; }
+
+/* ========================================
+   HERO
+   ======================================== */
+.hero {
+  background: var(--gradient);
+  padding: 160px 0 96px;
+  overflow: hidden;
+}
+.hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.hero-content {
+  max-width: 700px;
+}
+.hero-eyebrow {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 16px;
+}
+.hero h1 {
+  font-size: clamp(36px, 5vw, 56px);
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+.hero-bullets {
+  font-size: 16px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 48px;
+  line-height: 1.8;
+  list-style: none;
+  text-align: left;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-bullets li {
+  padding-left: 28px;
+  position: relative;
+  margin-bottom: 12px;
+}
+.hero-bullets li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: rgba(255,255,255,0.9);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Email capture form */
+.email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 400px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.08);
+  padding: 32px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.email-form input {
+  font-family: 'Lexend', sans-serif;
+  font-size: 15px;
+  padding: 14px 20px;
+  border: 2px solid rgba(255,255,255,0.25);
+  border-radius: var(--radius-btn);
+  background: rgba(255,255,255,0.1);
+  color: white;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.email-form input::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+.email-form input:focus {
+  border-color: rgba(255,255,255,0.6);
+}
+.email-form button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 14px 24px;
+  background: var(--white);
+  color: var(--navy);
+  border: none;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.email-form button:hover {
+  background: var(--offwhite);
+  transform: translateY(-1px);
+}
+.email-disclaimer {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+}
+
+/* ========================================
+   SECTION STYLES
+   ======================================== */
+.section {
+  padding: 80px 0;
+}
+.section-alt {
+  background: var(--offwhite);
+}
+.section-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+.section h2 {
+  font-size: clamp(28px, 3.5vw, 40px);
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+.section-sub {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--silver);
+  margin-bottom: 48px;
+}
+
+/* ========================================
+   WHAT'S INSIDE GRID
+   ======================================== */
+.inside-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.inside-card {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  padding: 32px;
+  border: 1px solid var(--light-border);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.inside-card:hover {
+  box-shadow: 0 8px 30px rgba(12, 46, 71, 0.08);
+  transform: translateY(-4px);
+}
+.inside-card h3 {
+  font-size: 18px;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+.inside-card p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ========================================
+   AUTHOR BIO
+   ======================================== */
+.bio-section {
+  background: var(--navy);
+  border-radius: var(--radius-card);
+  padding: 48px;
+  color: var(--white);
+}
+.bio-section h3 {
+  font-size: 22px;
+  color: var(--white);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.bio-section p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+.bio-section a {
+  color: #90CDED;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.bio-section a:hover {
+  border-bottom-color: #90CDED;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+  background: var(--navy);
+  padding: 64px 0 32px;
+}
+.footer-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+.footer-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.footer-brand span { color: var(--blue); }
+.footer-tagline {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  max-width: 320px;
+  line-height: 1.7;
+}
+.footer h4 {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--silver);
+  margin-bottom: 16px;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-links a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px 24px 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 900px) {
+  .inside-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+
+  .email-form {
+    padding: 24px;
+  }
+
+  .hero {
+    padding: 140px 0 72px;
+  }
+
+  .bio-section {
+    padding: 32px;
+  }
+
+  body { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========================================
+     NAVIGATION
+     ======================================== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Confidence Fly <span>Search</span></a>
+
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/shop.html">Shop</a></li>
+      <li><a href="/consulting.html">Consulting</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/checklist.html" class="nav-cta active">Free Checklist</a></li>
+    </ul>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-overlay" id="navOverlay"></div>
+<div class="nav-mobile" id="navMobile">
+  <a href="/">Home</a>
+  <a href="/shop.html">Shop</a>
+  <a href="/consulting.html">Consulting</a>
+  <a href="/about.html">About</a>
+  <a href="/checklist.html" class="nav-cta">Free Checklist</a>
+</div>
+
+<!-- ========================================
+     HERO
+     ======================================== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <p class="hero-eyebrow">The AEO Quick-Start Checklist — free for SEO practitioners</p>
+      <h1>Is Your Content Ready for AI Search?</h1>
+
+      <ul class="hero-bullets">
+        <li>How to audit your content for AI Overview eligibility</li>
+        <li>The schema markup that matters most for AEO</li>
+        <li>A quick-win checklist you can run this week</li>
+        <li>How to track AI referral traffic in GA4</li>
+      </ul>
+
+      <form class="email-form" action="#" method="post">
+        <input type="email" placeholder="Your email address" required aria-label="Email address"/>
+        <button type="submit">Get the Free Checklist</button>
+        <p class="email-disclaimer">No spam. Unsubscribe anytime.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     WHAT'S INSIDE
+     ======================================== -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-eyebrow">Free Checklist Includes</div>
+    <h2>What's Inside</h2>
+    <p class="section-sub">Five frameworks you can use immediately</p>
+
+    <div class="inside-grid">
+      <div class="inside-card">
+        <h3>AI Overview Readiness Audit</h3>
+        <p>A page-by-page checklist for evaluating your content's AEO potential. Know exactly which pages are positioned to appear in AI Overviews.</p>
+      </div>
+
+      <div class="inside-card">
+        <h3>Schema Quick-Start Guide</h3>
+        <p>The 5 schema types that matter most for AI citation. Simple, no-fluff explanation of which markup to prioritize first.</p>
+      </div>
+
+      <div class="inside-card">
+        <h3>Content Structure Template</h3>
+        <p>How to restructure existing content for answer-first formatting. A practical before-and-after guide with real examples.</p>
+      </div>
+
+      <div class="inside-card">
+        <h3>GA4 Tracking Setup</h3>
+        <p>Step-by-step instructions for tracking AI referral traffic. Don't guess whether your AEO work is working.</p>
+      </div>
+
+      <div class="inside-card">
+        <h3>7-Day Action Plan</h3>
+        <p>A prioritized sequence so you know exactly what to do first. From audit to implementation in one focused week.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     AUTHOR BIO
+     ======================================== -->
+<section class="section">
+  <div class="container">
+    <div class="bio-section">
+      <h3>Created by Niki Mosier</h3>
+      <p>Head of SEO at NASM with 15+ years of experience in technical SEO, AEO, and GEO. These aren't theoretical frameworks — they're the same tools used in real client engagements.</p>
+      <p>When you use this checklist, you're getting the audit approach that's been pressure-tested in actual strategy sessions and implementation projects. The schema recommendations? Used by NASM's team right now. The GA4 tracking setup? That's from a live audit we ran last month.</p>
+      <p><a href="/about.html">Learn more about Niki →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     FOOTER
+     ======================================== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Confidence Fly <span>Search</span></div>
+      <p class="footer-tagline">SEO templates and consulting from a 15+ year practitioner. Built for people who do the work.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="/shop.html">Shop</a></li>
+        <li><a href="/consulting.html">Consulting</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/checklist.html">Free Checklist</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <ul class="footer-links">
+        <li><a href="https://www.linkedin.com/in/nikimosier/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="mailto:seo@nikimosier.com">Email</a></li>
+        <li><a href="https://nikimosier.com" target="_blank" rel="noopener">nikimosier.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Confidence Fly Search. All rights reserved.
+  </div>
+</footer>
+
+<!-- ========================================
+     SCRIPTS
+     ======================================== -->
+<script>
+// Sticky nav shadow on scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Mobile menu toggle
+const toggle = document.getElementById('navToggle');
+const mobile = document.getElementById('navMobile');
+const overlay = document.getElementById('navOverlay');
+
+function toggleMenu() {
+  toggle.classList.toggle('open');
+  mobile.classList.toggle('open');
+  overlay.classList.toggle('open');
+}
+
+toggle.addEventListener('click', toggleMenu);
+overlay.addEventListener('click', toggleMenu);
+
+// Close mobile menu on link click
+mobile.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (mobile.classList.contains('open')) toggleMenu();
+  });
+});
+</script>
+
+</body>
+</html>

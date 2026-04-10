@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>About Niki Mosier — Confidence Fly Search</title>
+<meta name="description" content="Niki Mosier, Head of SEO at NASM. 15+ years in technical SEO, AEO, and GEO. Building battle-tested frameworks for SEO practitioners."/>
+<meta property="og:title" content="About Niki Mosier"/>
+<meta property="og:description" content="Learn about Niki Mosier, Head of SEO at NASM and creator of Confidence Fly Search templates."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://confidenceflysearch.com/about.html"/>
+<link rel="canonical" href="https://confidenceflysearch.com/about.html"/>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CN6EXCWFEB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CN6EXCWFEB');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Lora:ital@1&family=Lexend:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ========================================
+   CONFIDENCE FLY SEARCH — ABOUT PAGE
+   Colors: #0C2E47, #07699A, #BDBEBF
+   Fonts: Montserrat, Lora, Lexend
+   ======================================== */
+
+:root {
+  --navy: #0C2E47;
+  --blue: #07699A;
+  --silver: #BDBEBF;
+  --white: #FFFFFF;
+  --offwhite: #F5F6F7;
+  --dark-text: #1A1A2E;
+  --muted: #5A6677;
+  --light-border: #E2E8F0;
+  --gradient: linear-gradient(135deg, #0C2E47 0%, #07699A 100%);
+  --max-width: 1200px;
+  --radius-card: 12px;
+  --radius-btn: 8px;
+}
+
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: 'Lexend', system-ui, sans-serif;
+  font-weight: 400;
+  color: var(--dark-text);
+  background: var(--white);
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--navy);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.nav.scrolled {
+  box-shadow: 0 2px 20px rgba(12, 46, 71, 0.3);
+}
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.nav-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--white);
+  letter-spacing: 0.5px;
+}
+.nav-brand span {
+  color: var(--blue);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: 'Lexend', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: rgba(255,255,255,0.8);
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--white);
+}
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--blue);
+  border-radius: 1px;
+}
+.nav-cta {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: var(--blue) !important;
+  color: var(--white) !important;
+  padding: 10px 20px;
+  border-radius: var(--radius-btn);
+  transition: background 0.2s, transform 0.2s;
+}
+.nav-cta:hover {
+  background: #058bb5 !important;
+  transform: translateY(-1px);
+}
+
+/* Mobile hamburger */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  margin: 6px 0;
+  transition: all 0.3s;
+  border-radius: 1px;
+}
+.nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+/* Mobile menu */
+.nav-mobile {
+  display: none;
+  position: fixed;
+  top: 72px;
+  right: 0;
+  bottom: 0;
+  width: 280px;
+  background: var(--navy);
+  padding: 32px 24px;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 999;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+}
+.nav-mobile.open { display: flex; }
+.nav-mobile a {
+  font-family: 'Lexend', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.8);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: color 0.2s;
+}
+.nav-mobile a:hover { color: white; }
+.nav-mobile .nav-cta {
+  margin-top: 16px;
+  text-align: center;
+  display: block;
+  border-bottom: none;
+}
+.nav-overlay {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 998;
+}
+.nav-overlay.open { display: block; }
+
+/* ========================================
+   HERO
+   ======================================== */
+.hero {
+  background: var(--navy);
+  padding: 140px 0 80px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: clamp(36px, 5vw, 56px);
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+.hero-eyebrow {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 16px;
+}
+
+/* ========================================
+   SECTION STYLES
+   ======================================== */
+.section {
+  padding: 80px 0;
+}
+.section-alt {
+  background: var(--offwhite);
+}
+
+/* ========================================
+   THE STORY
+   ======================================== */
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.story-image {
+  width: 100%;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: #E2E8F0;
+}
+.story-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.story-text h2 {
+  font-size: clamp(28px, 3.5vw, 40px);
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 32px;
+  letter-spacing: 0.5px;
+}
+.story-text p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.story-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ========================================
+   CREDENTIALS
+   ======================================== */
+.cred-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.cred-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: var(--white);
+  border: 1px solid var(--light-border);
+  border-radius: 100px;
+}
+.cred-badge-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(7, 105, 154, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.cred-badge-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--blue);
+  fill: none;
+  stroke-width: 1.5;
+}
+.cred-badge span {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--navy);
+}
+
+/* ========================================
+   CTA BUTTONS
+   ======================================== */
+.btn {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+  display: inline-block;
+  text-align: center;
+}
+.btn-primary {
+  background: var(--white);
+  color: var(--navy);
+  border-color: var(--light-border);
+}
+.btn-primary:hover {
+  background: var(--offwhite);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+.btn-blue {
+  background: var(--blue);
+  color: var(--white);
+}
+.btn-blue:hover {
+  background: #058bb5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(7,105,154,0.3);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 48px;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+  background: var(--navy);
+  padding: 64px 0 32px;
+}
+.footer-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+.footer-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.footer-brand span { color: var(--blue); }
+.footer-tagline {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  max-width: 320px;
+  line-height: 1.7;
+}
+.footer h4 {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--silver);
+  margin-bottom: 16px;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-links a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px 24px 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 900px) {
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+
+  .cred-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  body { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========================================
+     NAVIGATION
+     ======================================== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Confidence Fly <span>Search</span></a>
+
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/shop.html">Shop</a></li>
+      <li><a href="/consulting.html">Consulting</a></li>
+      <li><a href="/about.html" class="active">About</a></li>
+      <li><a href="/checklist.html" class="nav-cta">Free Checklist</a></li>
+    </ul>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-overlay" id="navOverlay"></div>
+<div class="nav-mobile" id="navMobile">
+  <a href="/">Home</a>
+  <a href="/shop.html">Shop</a>
+  <a href="/consulting.html">Consulting</a>
+  <a href="/about.html">About</a>
+  <a href="/checklist.html" class="nav-cta">Free Checklist</a>
+</div>
+
+<!-- ========================================
+     HERO
+     ======================================== -->
+<section class="hero">
+  <div class="container">
+    <p class="hero-eyebrow">15+ years of SEO. Still in the trenches.</p>
+    <h1>About Niki</h1>
+  </div>
+</section>
+
+<!-- ========================================
+     THE STORY
+     ======================================== -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-image">
+        <img src="niki-headshot.jpg" alt="Niki Mosier — SEO Consultant and Creator of Confidence Fly Search"/>
+      </div>
+      <div class="story-text">
+        <h2>The Story</h2>
+        <p>I'm Niki Mosier, Head of SEO at NASM and an independent SEO consultant based in Denver. I've spent 15+ years in the weeds of technical SEO &mdash; and more recently, at the forefront of Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO).</p>
+
+        <p>I built Confidence Fly Search because I kept solving the same problems for different clients: building audit frameworks from scratch, explaining the modern search stack to leadership teams, writing proposals that had to justify SEO investment in the age of AI.</p>
+
+        <p>These templates are the ones I actually use. They're not theoretical &mdash; they've been pressure-tested in the kinds of meetings where budgets get approved or cut.</p>
+
+        <p>When I'm not doing SEO, you can find me exploring Denver's food scene, fly fishing in the Rockies, or talking shop at industry events.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     CREDENTIALS
+     ======================================== -->
+<section class="section">
+  <div class="container" style="text-align:center;">
+    <div class="cred-row">
+      <div class="cred-badge">
+        <div class="cred-badge-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <span>Head of SEO at NASM</span>
+      </div>
+      <div class="cred-badge">
+        <div class="cred-badge-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <span>15+ Years Experience</span>
+      </div>
+      <div class="cred-badge">
+        <div class="cred-badge-icon">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <span>Technical SEO + AEO/GEO</span>
+      </div>
+      <div class="cred-badge">
+        <div class="cred-badge-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <span>Denver, CO</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     CTA SECTION
+     ======================================== -->
+<section class="section section-alt">
+  <div class="container" style="text-align:center;">
+    <h2 style="font-size: clamp(28px, 3.5vw, 40px); text-transform: uppercase; color: var(--navy); margin-bottom: 48px; letter-spacing: 0.5px;">Ready to Get Started?</h2>
+    <div class="cta-buttons">
+      <a href="/shop.html" class="btn btn-blue">Browse the Templates</a>
+      <a href="/consulting.html" class="btn btn-primary">Book a Strategy Session</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     FOOTER
+     ======================================== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Confidence Fly <span>Search</span></div>
+      <p class="footer-tagline">SEO templates and consulting from a 15+ year practitioner. Built for people who do the work.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="/shop.html">Shop</a></li>
+        <li><a href="/consulting.html">Consulting</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/checklist.html">Free Checklist</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <ul class="footer-links">
+        <li><a href="https://www.linkedin.com/in/nikimosier/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="mailto:seo@nikimosier.com">Email</a></li>
+        <li><a href="https://nikimosier.com" target="_blank" rel="noopener">nikimosier.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Confidence Fly Search. All rights reserved.
+  </div>
+</footer>
+
+<!-- ========================================
+     SCRIPTS
+     ======================================== -->
+<script>
+// Sticky nav shadow on scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Mobile menu toggle
+const toggle = document.getElementById('navToggle');
+const mobile = document.getElementById('navMobile');
+const overlay = document.getElementById('navOverlay');
+
+function toggleMenu() {
+  toggle.classList.toggle('open');
+  mobile.classList.toggle('open');
+  overlay.classList.toggle('open');
+}
+
+toggle.addEventListener('click', toggleMenu);
+overlay.addEventListener('click', toggleMenu);
+
+// Close mobile menu on link click
+mobile.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (mobile.classList.contains('open')) toggleMenu();
+  });
+});
+</script>
+
+</body>
+</html>

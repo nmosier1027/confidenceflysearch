@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Consulting — Confidence Fly Search</title>
+<meta name="description" content="Strategic SEO consulting for teams that want to move faster. Technical audits, AEO/GEO strategy, recovery planning, and team enablement."/>
+<meta property="og:title" content="Consulting — Confidence Fly Search"/>
+<meta property="og:description" content="Strategic SEO consulting for teams that want to move faster."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://confidenceflysearch.com/consulting.html"/>
+<link rel="canonical" href="https://confidenceflysearch.com/consulting.html"/>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CN6EXCWFEB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CN6EXCWFEB');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Lora:ital@1&family=Lexend:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ========================================
+   CONFIDENCE FLY SEARCH — CONSULTING PAGE
+   Colors: #0C2E47, #07699A, #BDBEBF
+   Fonts: Montserrat, Lora, Lexend
+   ======================================== */
+
+:root {
+  --navy: #0C2E47;
+  --blue: #07699A;
+  --silver: #BDBEBF;
+  --white: #FFFFFF;
+  --offwhite: #F5F6F7;
+  --dark-text: #1A1A2E;
+  --muted: #5A6677;
+  --light-border: #E2E8F0;
+  --gradient: linear-gradient(135deg, #0C2E47 0%, #07699A 100%);
+  --max-width: 1200px;
+  --radius-card: 12px;
+  --radius-btn: 8px;
+}
+
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: 'Lexend', system-ui, sans-serif;
+  font-weight: 400;
+  color: var(--dark-text);
+  background: var(--white);
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--navy);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.nav.scrolled {
+  box-shadow: 0 2px 20px rgba(12, 46, 71, 0.3);
+}
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.nav-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--white);
+  letter-spacing: 0.5px;
+}
+.nav-brand span {
+  color: var(--blue);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: 'Lexend', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: rgba(255,255,255,0.8);
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--white);
+}
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--blue);
+  border-radius: 1px;
+}
+.nav-cta {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: var(--blue) !important;
+  color: var(--white) !important;
+  padding: 10px 20px;
+  border-radius: var(--radius-btn);
+  transition: background 0.2s, transform 0.2s;
+}
+.nav-cta:hover {
+  background: #058bb5 !important;
+  transform: translateY(-1px);
+}
+
+/* Mobile hamburger */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  margin: 6px 0;
+  transition: all 0.3s;
+  border-radius: 1px;
+}
+.nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+/* Mobile menu */
+.nav-mobile {
+  display: none;
+  position: fixed;
+  top: 72px;
+  right: 0;
+  bottom: 0;
+  width: 280px;
+  background: var(--navy);
+  padding: 32px 24px;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 999;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+}
+.nav-mobile.open { display: flex; }
+.nav-mobile a {
+  font-family: 'Lexend', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.8);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: color 0.2s;
+}
+.nav-mobile a:hover { color: white; }
+.nav-mobile .nav-cta {
+  margin-top: 16px;
+  text-align: center;
+  display: block;
+  border-bottom: none;
+}
+.nav-overlay {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 998;
+}
+.nav-overlay.open { display: block; }
+
+/* ========================================
+   HERO
+   ======================================== */
+.hero {
+  background: var(--gradient);
+  padding: 160px 0 96px;
+  overflow: hidden;
+  text-align: center;
+}
+.hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-content {
+  max-width: 700px;
+}
+.hero-eyebrow {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 16px;
+}
+.hero h1 {
+  font-size: clamp(36px, 5vw, 56px);
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+.hero-body {
+  font-size: 18px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 32px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.btn {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+  display: inline-block;
+  text-align: center;
+}
+.btn-primary {
+  background: var(--white);
+  color: var(--navy);
+}
+.btn-primary:hover {
+  background: var(--offwhite);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255,255,255,0.4);
+}
+.btn-secondary:hover {
+  border-color: white;
+  background: rgba(255,255,255,0.1);
+}
+.btn-blue {
+  background: var(--blue);
+  color: var(--white);
+}
+.btn-blue:hover {
+  background: #058bb5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(7,105,154,0.3);
+}
+
+/* ========================================
+   SECTION STYLES
+   ======================================== */
+.section {
+  padding: 80px 0;
+}
+.section-alt {
+  background: var(--offwhite);
+}
+.section-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+.section h2 {
+  font-size: clamp(28px, 3.5vw, 40px);
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+.section-sub {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--silver);
+  margin-bottom: 48px;
+}
+
+/* ========================================
+   WHAT YOU GET - CARDS GRID
+   ======================================== */
+.what-you-get-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.what-card {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  padding: 32px 28px;
+  border: 1px solid var(--light-border);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.what-card:hover {
+  box-shadow: 0 8px 30px rgba(12, 46, 71, 0.08);
+  transform: translateY(-4px);
+}
+.what-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(7, 105, 154, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.what-card-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--blue);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.what-card h3 {
+  font-size: 20px;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.what-card p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ========================================
+   PRICING PACKAGES
+   ======================================== */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.pricing-card {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--light-border);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
+}
+.pricing-card:hover {
+  box-shadow: 0 8px 30px rgba(12, 46, 71, 0.08);
+  transform: translateY(-4px);
+}
+.pricing-card.flagship {
+  border: 2px solid var(--blue);
+  box-shadow: 0 8px 30px rgba(7, 105, 154, 0.15);
+}
+.pricing-card.flagship:hover {
+  box-shadow: 0 12px 40px rgba(7, 105, 154, 0.25);
+}
+.pricing-badge {
+  display: inline-block;
+  background: var(--blue);
+  color: var(--white);
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  width: fit-content;
+}
+.pricing-title {
+  font-size: 18px;
+  color: var(--navy);
+  margin-bottom: 12px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.pricing-price {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+.pricing-period {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.pricing-description {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  flex-grow: 1;
+}
+.pricing-cta {
+  align-self: flex-start;
+}
+
+/* ========================================
+   CALENDLY SECTION
+   ======================================== */
+.calendly-section {
+  background: var(--offwhite);
+  border-radius: var(--radius-card);
+  padding: 48px;
+  text-align: center;
+  margin-top: 48px;
+}
+.calendly-placeholder {
+  background: var(--white);
+  border: 2px dashed var(--light-border);
+  border-radius: var(--radius-card);
+  padding: 60px 40px;
+  margin-bottom: 24px;
+}
+.calendly-placeholder-text {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.calendly-placeholder-note {
+  font-size: 13px;
+  color: var(--silver);
+  font-style: italic;
+}
+.calendly-fallback {
+  margin-top: 24px;
+}
+
+/* ========================================
+   FAQ / ACCORDION
+   ======================================== */
+.faq-section {
+  margin-top: 48px;
+}
+.faq-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--light-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+.faq-question {
+  width: 100%;
+  padding: 20px 24px;
+  text-align: left;
+  background: var(--white);
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--navy);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s;
+}
+.faq-question:hover {
+  background: var(--offwhite);
+}
+.faq-toggle {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+.faq-toggle::after {
+  content: '+';
+  font-size: 24px;
+  color: var(--blue);
+  font-weight: 400;
+}
+.faq-item.open .faq-toggle::after {
+  content: '−';
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.faq-item.open .faq-answer {
+  max-height: 500px;
+  padding: 0 24px 20px 24px;
+}
+.faq-answer-text {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ========================================
+   CTA SECTION
+   ======================================== */
+.cta-section {
+  background: var(--gradient);
+  padding: 80px 0;
+}
+.cta-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 24px;
+}
+.cta-inner h2 {
+  color: var(--white);
+  font-size: clamp(26px, 3.5vw, 38px);
+  margin-bottom: 12px;
+}
+.cta-sub {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 19px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 32px;
+}
+.cta-form {
+  display: flex;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto 16px;
+}
+.cta-form input {
+  flex: 1;
+  font-family: 'Lexend', sans-serif;
+  font-size: 15px;
+  padding: 14px 20px;
+  border: 2px solid rgba(255,255,255,0.25);
+  border-radius: var(--radius-btn);
+  background: rgba(255,255,255,0.1);
+  color: white;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.cta-form input::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+.cta-form input:focus {
+  border-color: rgba(255,255,255,0.6);
+}
+.cta-form button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 14px 24px;
+  background: var(--white);
+  color: var(--navy);
+  border: none;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.cta-form button:hover {
+  background: var(--offwhite);
+  transform: translateY(-1px);
+}
+.cta-fine {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+  background: var(--navy);
+  padding: 64px 0 32px;
+}
+.footer-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+.footer-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.footer-brand span { color: var(--blue); }
+.footer-tagline {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  max-width: 320px;
+  line-height: 1.7;
+}
+.footer h4 {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--silver);
+  margin-bottom: 16px;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-links a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px 24px 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 900px) {
+  .what-you-get-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calendly-section {
+    padding: 32px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+
+  .hero {
+    padding: 140px 0 72px;
+  }
+
+  .cta-form {
+    flex-direction: column;
+  }
+
+  body { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========================================
+     NAVIGATION
+     ======================================== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Confidence Fly <span>Search</span></a>
+
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/shop.html">Shop</a></li>
+      <li><a href="/consulting.html" class="active">Consulting</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/checklist.html" class="nav-cta">Free Checklist</a></li>
+    </ul>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-overlay" id="navOverlay"></div>
+<div class="nav-mobile" id="navMobile">
+  <a href="/">Home</a>
+  <a href="/shop.html">Shop</a>
+  <a href="/consulting.html" class="active">Consulting</a>
+  <a href="/about.html">About</a>
+  <a href="/checklist.html" class="nav-cta">Free Checklist</a>
+</div>
+
+<!-- ========================================
+     HERO
+     ======================================== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1>Work With Me</h1>
+      <p class="hero-eyebrow">Strategic SEO consulting for teams that want to move faster</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     WHAT YOU GET
+     ======================================== -->
+<section class="section">
+  <div class="container">
+    <div style="text-align:center; margin-bottom: 48px;">
+      <h2>What You Get</h2>
+    </div>
+
+    <div class="what-you-get-grid">
+      <div class="what-card">
+        <div class="what-card-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+        </div>
+        <h3>Technical SEO Audits</h3>
+        <p>Comprehensive crawl analysis, indexation review, Core Web Vitals optimization, and structured data implementation. The foundation everything else depends on.</p>
+      </div>
+
+      <div class="what-card">
+        <div class="what-card-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+          </svg>
+        </div>
+        <h3>AEO/GEO Strategy</h3>
+        <p>Answer Engine and Generative Engine Optimization planning. Get your content cited in AI Overviews, ChatGPT, Perplexity, and Gemini.</p>
+      </div>
+
+      <div class="what-card">
+        <div class="what-card-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+          </svg>
+        </div>
+        <h3>Recovery Planning</h3>
+        <p>Algorithm update recovery, traffic decline diagnosis, and prioritized action plans. When things break, you need a clear path forward — fast.</p>
+      </div>
+
+      <div class="what-card">
+        <div class="what-card-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+          </svg>
+        </div>
+        <h3>Team Enablement</h3>
+        <p>Training, frameworks, and processes that make your internal team more effective. Templates, workshops, and ongoing advisory.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     PACKAGES
+     ======================================== -->
+<section class="section section-alt">
+  <div class="container">
+    <div style="text-align:center; margin-bottom: 48px;">
+      <h2>Packages</h2>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3 class="pricing-title">30-Min Strategy Session</h3>
+        <div class="pricing-price">$149</div>
+        <p class="pricing-description">One focused session on your toughest SEO challenge. Come with questions, leave with a plan.</p>
+        <a href="#calendly" class="btn btn-blue pricing-cta">Book a Session</a>
+      </div>
+
+      <div class="pricing-card flagship">
+        <div class="pricing-badge">Flagship</div>
+        <h3 class="pricing-title">Complete Toolkit + Strategy Session</h3>
+        <div class="pricing-price">$347</div>
+        <p class="pricing-description">Every template in the Confidence Fly library plus 30 minutes of personalized strategy. The fastest way to level up.</p>
+        <a href="#calendly" class="btn btn-blue pricing-cta">Get the Toolkit + Session</a>
+      </div>
+
+      <div class="pricing-card">
+        <h3 class="pricing-title">Custom Engagement</h3>
+        <div class="pricing-price">Let's Talk</div>
+        <p class="pricing-description">Ongoing consulting, team training, or project-based work. Scoped to your needs.</p>
+        <a href="mailto:seo@nikimosier.com" class="btn btn-blue pricing-cta">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     CALENDLY BOOKING
+     ======================================== -->
+<section class="section" id="calendly">
+  <div class="container">
+    <div class="calendly-section">
+      <h2 style="margin-bottom: 32px;">Book a Call</h2>
+      <div class="calendly-placeholder">
+        <div class="calendly-placeholder-text">Calendly booking widget will appear here</div>
+        <div class="calendly-placeholder-note">Embedded Calendly integration coming soon</div>
+      </div>
+      <a href="#" class="btn btn-primary">Book a Strategy Session</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     FAQ
+     ======================================== -->
+<section class="section section-alt">
+  <div class="container">
+    <div style="text-align:center; margin-bottom: 48px;">
+      <h2>FAQ</h2>
+    </div>
+
+    <div class="faq-section">
+      <div class="faq-items">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What happens during a strategy session?</span>
+            <span class="faq-toggle"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-text">We spend 30 focused minutes on your specific SEO challenges. You bring the questions — I bring 15+ years of experience. You'll leave with a clear action plan, not generic advice.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do you offer ongoing retainers?</span>
+            <span class="faq-toggle"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-text">Yes. Custom engagements can be scoped as monthly retainers, project-based work, or team training. Reach out and we'll figure out the right structure.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I apply the session cost toward a larger engagement?</span>
+            <span class="faq-toggle"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-text">Absolutely. If we decide to work together on a larger project, the session fee gets credited toward the engagement.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     FOOTER
+     ======================================== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Confidence Fly <span>Search</span></div>
+      <p class="footer-tagline">SEO templates and consulting from a 15+ year practitioner. Built for people who do the work.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="/shop.html">Shop</a></li>
+        <li><a href="/consulting.html">Consulting</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/checklist.html">Free Checklist</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <ul class="footer-links">
+        <li><a href="https://www.linkedin.com/in/nikimosier/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="mailto:seo@nikimosier.com">Email</a></li>
+        <li><a href="https://nikimosier.com" target="_blank" rel="noopener">nikimosier.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Confidence Fly Search. All rights reserved.
+  </div>
+</footer>
+
+<!-- ========================================
+     SCRIPTS
+     ======================================== -->
+<script>
+// Sticky nav shadow on scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Mobile menu toggle
+const toggle = document.getElementById('navToggle');
+const mobile = document.getElementById('navMobile');
+const overlay = document.getElementById('navOverlay');
+
+function toggleMenu() {
+  toggle.classList.toggle('open');
+  mobile.classList.toggle('open');
+  overlay.classList.toggle('open');
+}
+
+toggle.addEventListener('click', toggleMenu);
+overlay.addEventListener('click', toggleMenu);
+
+// Close mobile menu on link click
+mobile.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (mobile.classList.contains('open')) toggleMenu();
+  });
+});
+
+// FAQ Accordion functionality
+const faqQuestions = document.querySelectorAll('.faq-question');
+
+faqQuestions.forEach(question => {
+  question.addEventListener('click', () => {
+    const faqItem = question.closest('.faq-item');
+    const isOpen = faqItem.classList.contains('open');
+
+    // Close all other items
+    document.querySelectorAll('.faq-item.open').forEach(item => {
+      if (item !== faqItem) {
+        item.classList.remove('open');
+      }
+    });
+
+    // Toggle current item
+    faqItem.classList.toggle('open');
+  });
+});
+</script>
+
+</body>
+</html>

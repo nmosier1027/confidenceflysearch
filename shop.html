@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Shop — Confidence Fly Search</title>
+<meta name="description" content="Browse SEO templates, frameworks, and bundles from Confidence Fly Search. Frameworks for audits, proposals, AEO, GEO, and more."/>
+<meta property="og:title" content="Shop — Confidence Fly Search"/>
+<meta property="og:description" content="SEO templates and frameworks for consultants and in-house teams."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://confidenceflysearch.com/shop.html"/>
+<link rel="canonical" href="https://confidenceflysearch.com/shop.html"/>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CN6EXCWFEB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CN6EXCWFEB');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Lora:ital@1&family=Lexend:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ========================================
+   CONFIDENCE FLY SEARCH — SHOP PAGE
+   Colors: #0C2E47, #07699A, #BDBEBF
+   Fonts: Montserrat, Lora, Lexend
+   ======================================== */
+
+:root {
+  --navy: #0C2E47;
+  --blue: #07699A;
+  --silver: #BDBEBF;
+  --white: #FFFFFF;
+  --offwhite: #F5F6F7;
+  --dark-text: #1A1A2E;
+  --muted: #5A6677;
+  --light-border: #E2E8F0;
+  --gradient: linear-gradient(135deg, #0C2E47 0%, #07699A 100%);
+  --max-width: 1200px;
+  --radius-card: 12px;
+  --radius-btn: 8px;
+}
+
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: 'Lexend', system-ui, sans-serif;
+  font-weight: 400;
+  color: var(--dark-text);
+  background: var(--white);
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--navy);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.nav.scrolled {
+  box-shadow: 0 2px 20px rgba(12, 46, 71, 0.3);
+}
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.nav-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--white);
+  letter-spacing: 0.5px;
+}
+.nav-brand span {
+  color: var(--blue);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: 'Lexend', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: rgba(255,255,255,0.8);
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--white);
+}
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--blue);
+  border-radius: 1px;
+}
+.nav-cta {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: var(--blue) !important;
+  color: var(--white) !important;
+  padding: 10px 20px;
+  border-radius: var(--radius-btn);
+  transition: background 0.2s, transform 0.2s;
+}
+.nav-cta:hover {
+  background: #058bb5 !important;
+  transform: translateY(-1px);
+}
+
+/* Mobile hamburger */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  margin: 6px 0;
+  transition: all 0.3s;
+  border-radius: 1px;
+}
+.nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+/* Mobile menu */
+.nav-mobile {
+  display: none;
+  position: fixed;
+  top: 72px;
+  right: 0;
+  bottom: 0;
+  width: 280px;
+  background: var(--navy);
+  padding: 32px 24px;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 999;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+}
+.nav-mobile.open { display: flex; }
+.nav-mobile a {
+  font-family: 'Lexend', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.8);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: color 0.2s;
+}
+.nav-mobile a:hover { color: white; }
+.nav-mobile .nav-cta {
+  margin-top: 16px;
+  text-align: center;
+  display: block;
+  border-bottom: none;
+}
+.nav-overlay {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 998;
+}
+.nav-overlay.open { display: block; }
+
+/* ========================================
+   SHOP HERO
+   ======================================== */
+.hero {
+  background: var(--navy);
+  padding: 160px 0 96px;
+  text-align: center;
+}
+.hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.hero h1 {
+  font-size: clamp(36px, 5vw, 56px);
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+.hero-eyebrow {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 16px;
+}
+
+/* ========================================
+   FILTER BAR (OPTIONAL)
+   ======================================== */
+.filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 64px;
+  flex-wrap: wrap;
+}
+.filter-pill {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.8);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filter-pill:hover,
+.filter-pill.active {
+  background: rgba(255,255,255,0.1);
+  border-color: white;
+  color: white;
+}
+
+/* ========================================
+   SECTION STYLES
+   ======================================== */
+.section {
+  padding: 80px 0;
+}
+.section-alt {
+  background: var(--offwhite);
+}
+.section-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+.section h2 {
+  font-size: clamp(28px, 3.5vw, 40px);
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+.section-sub {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--silver);
+  margin-bottom: 48px;
+}
+
+/* ========================================
+   PRODUCT GRID
+   ======================================== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 80px;
+}
+.product-card {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--light-border);
+  overflow: hidden;
+  transition: box-shadow 0.3s, transform 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+.product-card:hover {
+  box-shadow: 0 12px 40px rgba(12, 46, 71, 0.1);
+  transform: translateY(-6px);
+}
+.product-bar {
+  height: 6px;
+  background: var(--blue);
+}
+.product-body {
+  padding: 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.product-card h3 {
+  font-size: 18px;
+  color: var(--navy);
+  margin-bottom: 12px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.product-card p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 20px;
+  line-height: 1.6;
+  flex: 1;
+}
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+.product-price {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--navy);
+}
+
+/* Button styles */
+.btn {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+  display: inline-block;
+  text-align: center;
+}
+.btn-primary {
+  background: var(--white);
+  color: var(--navy);
+}
+.btn-primary:hover {
+  background: var(--offwhite);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255,255,255,0.4);
+}
+.btn-secondary:hover {
+  border-color: white;
+  background: rgba(255,255,255,0.1);
+}
+.btn-blue {
+  background: var(--blue);
+  color: var(--white);
+  font-size: 11px;
+  padding: 10px 16px;
+}
+.btn-blue:hover {
+  background: #058bb5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(7,105,154,0.3);
+}
+
+/* ========================================
+   BUNDLES SECTION
+   ======================================== */
+.bundles-section {
+  margin-top: 80px;
+  padding-top: 80px;
+  border-top: 2px solid var(--light-border);
+}
+.bundles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-bottom: 40px;
+}
+.bundle-card {
+  background: var(--white);
+  border: 2px solid var(--light-border);
+  border-radius: var(--radius-card);
+  padding: 40px;
+  transition: all 0.3s;
+  position: relative;
+}
+.bundle-card:hover {
+  box-shadow: 0 12px 40px rgba(12, 46, 71, 0.12);
+  transform: translateY(-4px);
+}
+.bundle-badge {
+  position: absolute;
+  top: -14px;
+  left: 24px;
+  background: var(--blue);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.bundle-card h3 {
+  font-size: 22px;
+  color: var(--navy);
+  margin-bottom: 8px;
+  text-transform: none;
+}
+.bundle-price {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--blue);
+  margin-bottom: 20px;
+}
+.bundle-includes {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 24px;
+  line-height: 1.7;
+}
+.bundle-includes strong {
+  display: block;
+  color: var(--navy);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.bundle-button {
+  display: inline-block;
+}
+
+/* Single strategy session */
+.strategy-card {
+  background: var(--offwhite);
+  border-radius: var(--radius-card);
+  padding: 32px;
+  text-align: center;
+  margin-top: 40px;
+}
+.strategy-card h3 {
+  font-size: 20px;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.strategy-price {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--blue);
+  margin-bottom: 16px;
+}
+.strategy-card p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+  background: var(--navy);
+  padding: 64px 0 32px;
+}
+.footer-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+.footer-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.footer-brand span { color: var(--blue); }
+.footer-tagline {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  max-width: 320px;
+  line-height: 1.7;
+}
+.footer h4 {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--silver);
+  margin-bottom: 16px;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-links a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px 24px 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .bundles-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero { padding: 140px 0 72px; }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bundles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+
+  .filter-bar {
+    margin-bottom: 48px;
+  }
+
+  body { font-size: 16px; }
+
+  .product-price {
+    font-size: 20px;
+  }
+
+  .bundle-card {
+    padding: 28px;
+  }
+
+  .bundles-grid {
+    gap: 20px;
+  }
+}
+</style>
+
+<body>
+
+<!-- ========================================
+     NAVIGATION
+     ======================================== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Confidence Fly <span>Search</span></a>
+
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/shop.html" class="active">Shop</a></li>
+      <li><a href="/consulting.html">Consulting</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/checklist.html" class="nav-cta">Free Checklist</a></li>
+    </ul>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-overlay" id="navOverlay"></div>
+<div class="nav-mobile" id="navMobile">
+  <a href="/">Home</a>
+  <a href="/shop.html" class="active">Shop</a>
+  <a href="/consulting.html">Consulting</a>
+  <a href="/about.html">About</a>
+  <a href="/checklist.html" class="nav-cta">Free Checklist</a>
+</div>
+
+<!-- ========================================
+     HERO
+     ======================================== -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Frameworks and templates for modern SEO practitioners</p>
+    <h1>The Shop</h1>
+  </div>
+</section>
+
+<!-- ========================================
+     PRODUCTS
+     ======================================== -->
+<section class="section">
+  <div class="container">
+    <div class="filter-bar">
+      <button class="filter-pill active">All</button>
+      <button class="filter-pill">Templates</button>
+      <button class="filter-pill">Bundles</button>
+    </div>
+
+    <div class="product-grid">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <div class="product-bar"></div>
+        <div class="product-body">
+          <h3>SEO Metadata Framework &amp; Tracker</h3>
+          <p>Systematic approach to metadata optimization with tracking built in. Map title tags, meta descriptions, and H1s across your priority pages with change tracking and status fields.</p>
+          <div class="product-footer">
+            <span class="product-price">$39</span>
+            <a href="#" class="btn btn-blue">Buy on Gumroad</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <div class="product-bar"></div>
+        <div class="product-body">
+          <h3>SEO Audit Report Card</h3>
+          <p>A structured audit framework that turns findings into clear, prioritized action items. Covers technical, on-page, content, and off-page factors with severity scoring.</p>
+          <div class="product-footer">
+            <span class="product-price">$49</span>
+            <a href="#" class="btn btn-blue">Buy on Gumroad</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <div class="product-bar"></div>
+        <div class="product-body">
+          <h3>CRO Opportunity Tracker for High-Traffic SEO Pages</h3>
+          <p>Identify and prioritize conversion rate optimization opportunities on your highest-traffic organic pages. Map CRO tests to SEO impact.</p>
+          <div class="product-footer">
+            <span class="product-price">$49</span>
+            <a href="#" class="btn btn-blue">Buy on Gumroad</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card">
+        <div class="product-bar"></div>
+        <div class="product-body">
+          <h3>SEO Recovery Proposal Template</h3>
+          <p>When traffic drops, stakeholders need a plan fast. Diagnosis framework, root cause analysis, recovery timeline, and resource requirements &mdash; ready to present.</p>
+          <div class="product-footer">
+            <span class="product-price">$69</span>
+            <a href="#" class="btn btn-blue">Buy on Gumroad</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card">
+        <div class="product-bar"></div>
+        <div class="product-body">
+          <h3>AEO + GEO Strategy Framework</h3>
+          <p>The practitioner's guide to Answer Engine and Generative Engine Optimization. 20-page framework with implementation checklists, schema mapping, tracking setup, and a 90-day action plan.</p>
+          <div class="product-footer">
+            <span class="product-price">$97</span>
+            <a href="#" class="btn btn-blue">Buy on Gumroad</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="product-card">
+        <div class="product-bar"></div>
+        <div class="product-body">
+          <h3>SEO Consulting SOW Template</h3>
+          <p>Professional statement of work template for SEO consulting engagements. Scope definition, timeline, deliverables, payment terms, and change management &mdash; done right.</p>
+          <div class="product-footer">
+            <span class="product-price">$39</span>
+            <a href="#" class="btn btn-blue">Buy on Gumroad</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bundles Section -->
+    <div class="bundles-section">
+      <div class="section-eyebrow">Limited Time</div>
+      <h2>Bundles &amp; Deals</h2>
+      <p class="section-sub">Save more by bundling frameworks together</p>
+
+      <div class="bundles-grid">
+        <!-- Bundle 1 -->
+        <div class="bundle-card">
+          <h3>Starter Kit</h3>
+          <div class="bundle-price">$99</div>
+          <div class="bundle-includes">
+            <strong>Includes:</strong>
+            SEO Consulting SOW Template + SEO Recovery Proposal Template + SEO Audit Report Card
+          </div>
+          <p style="font-size: 14px; color: var(--muted); margin-bottom: 24px;">Everything you need to kick off a new SEO consulting engagement.</p>
+          <a href="#" class="btn btn-blue bundle-button">Buy on Gumroad</a>
+        </div>
+
+        <!-- Bundle 2 -->
+        <div class="bundle-card">
+          <h3>Modern Search Stack Pack</h3>
+          <div class="bundle-price">$89</div>
+          <div class="bundle-includes">
+            <strong>Includes:</strong>
+            4 formats: PPTX, PDF, Word, and Interactive
+          </div>
+          <p style="font-size: 14px; color: var(--muted); margin-bottom: 24px;">The complete communication toolkit for explaining modern search to leadership.</p>
+          <a href="#" class="btn btn-blue bundle-button">Buy on Gumroad</a>
+        </div>
+
+        <!-- Bundle 3 -->
+        <div class="bundle-card">
+          <h3>Complete Toolkit</h3>
+          <div class="bundle-price">$197</div>
+          <div class="bundle-includes">
+            <strong>Includes:</strong>
+            All 6 templates + Modern Search Stack Pack
+          </div>
+          <p style="font-size: 14px; color: var(--muted); margin-bottom: 24px;">Every framework in the Confidence Fly library. Digital only.</p>
+          <a href="#" class="btn btn-blue bundle-button">Buy on Gumroad</a>
+        </div>
+
+        <!-- Bundle 4 - Flagship -->
+        <div class="bundle-card" style="border-color: var(--blue); background: linear-gradient(135deg, rgba(7,105,154,0.02) 0%, rgba(12,46,71,0.02) 100%);">
+          <div class="bundle-badge">Flagship</div>
+          <h3>Complete Toolkit + 30-Min Strategy Session</h3>
+          <div class="bundle-price">$347</div>
+          <div class="bundle-includes">
+            <strong>Includes:</strong>
+            All 6 templates + Modern Search Stack Pack + 30-minute one-on-one call with Niki Mosier
+          </div>
+          <p style="font-size: 14px; color: var(--muted); margin-bottom: 24px;"><strong>The full toolkit plus personalized guidance on your specific SEO challenges.</strong></p>
+          <a href="#" class="btn btn-blue bundle-button">Buy on Gumroad</a>
+        </div>
+      </div>
+
+      <!-- Standalone Strategy Session -->
+      <div class="strategy-card">
+        <h3>30-Minute Strategy Session</h3>
+        <div class="strategy-price">$149</div>
+        <p>One-on-one with Niki Mosier. Bring your toughest SEO question.</p>
+        <a href="#" class="btn btn-blue">Buy on Gumroad</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     FOOTER
+     ======================================== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Confidence Fly <span>Search</span></div>
+      <p class="footer-tagline">SEO templates and consulting from a 15+ year practitioner. Built for people who do the work.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="/shop.html">Shop</a></li>
+        <li><a href="/consulting.html">Consulting</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/checklist.html">Free Checklist</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <ul class="footer-links">
+        <li><a href="https://www.linkedin.com/in/nikimosier/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="mailto:seo@nikimosier.com">Email</a></li>
+        <li><a href="https://nikimosier.com" target="_blank" rel="noopener">nikimosier.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Confidence Fly Search. All rights reserved.
+  </div>
+</footer>
+
+<!-- ========================================
+     SCRIPTS
+     ======================================== -->
+<script>
+// Sticky nav shadow on scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Mobile menu toggle
+const toggle = document.getElementById('navToggle');
+const mobile = document.getElementById('navMobile');
+const overlay = document.getElementById('navOverlay');
+
+function toggleMenu() {
+  toggle.classList.toggle('open');
+  mobile.classList.toggle('open');
+  overlay.classList.toggle('open');
+}
+
+toggle.addEventListener('click', toggleMenu);
+overlay.addEventListener('click', toggleMenu);
+
+mobile.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (link.href === window.location.href) {
+      toggleMenu();
+    }
+  });
+});
+</script>
+
+</body>
+</html>
