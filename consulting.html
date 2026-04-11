@@ -34,6 +34,7 @@
   --navy: #0C2E47;
   --blue: #07699A;
   --silver: #BDBEBF;
+  --gold: #f4ca50;
   --white: #FFFFFF;
   --offwhite: #F5F6F7;
   --dark-text: #1A1A2E;
@@ -97,7 +98,7 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 130px;
 }
 .nav-brand {
   display: flex;
@@ -105,9 +106,9 @@ a { color: inherit; text-decoration: none; }
   text-decoration: none;
 }
 .nav-brand img {
-  height: 90px;
+  height: 120px;
   width: auto;
-  max-width: 420px;
+  max-width: 500px;
   object-fit: contain;
 }
 .nav-links {
@@ -135,7 +136,7 @@ a { color: inherit; text-decoration: none; }
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--blue);
+  background: var(--gold);
   border-radius: 1px;
 }
 .nav-cta {
@@ -144,14 +145,14 @@ a { color: inherit; text-decoration: none; }
   font-size: 13px !important;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  background: var(--blue) !important;
-  color: var(--white) !important;
+  background: var(--gold) !important;
+  color: var(--navy) !important;
   padding: 10px 20px;
   border-radius: var(--radius-btn);
   transition: background 0.2s, transform 0.2s;
 }
 .nav-cta:hover {
-  background: #058bb5 !important;
+  background: #e6b93e !important;
   transform: translateY(-1px);
 }
 
@@ -180,7 +181,7 @@ a { color: inherit; text-decoration: none; }
 .nav-mobile {
   display: none;
   position: fixed;
-  top: 100px;
+  top: 130px;
   right: 0;
   bottom: 0;
   width: 280px;
@@ -225,7 +226,7 @@ a { color: inherit; text-decoration: none; }
    ======================================== */
 .hero {
   background: var(--gradient);
-  padding: 160px 0 96px;
+  padding: 190px 0 96px;
   overflow: hidden;
   text-align: center;
 }
@@ -248,11 +249,12 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 16px;
 }
 .hero h1 {
-  font-size: clamp(36px, 5vw, 56px);
+  font-size: clamp(32px, 4vw, 48px);
   color: var(--white);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 20px;
+  line-height: 1.15;
 }
 .hero-body {
   font-size: 18px;
@@ -300,13 +302,13 @@ a { color: inherit; text-decoration: none; }
   background: rgba(255,255,255,0.1);
 }
 .btn-blue {
-  background: var(--blue);
-  color: var(--white);
+  background: var(--gold);
+  color: var(--navy);
 }
 .btn-blue:hover {
-  background: #058bb5;
+  background: #e6b93e;
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(7,105,154,0.3);
+  box-shadow: 0 4px 16px rgba(244,202,80,0.3);
 }
 
 /* ========================================
@@ -338,7 +340,8 @@ a { color: inherit; text-decoration: none; }
   font-family: 'Lora', serif;
   font-style: italic;
   font-size: 18px;
-  color: var(--silver);
+  color: var(--navy);
+  opacity: 0.7;
   margin-bottom: 48px;
 }
 
@@ -415,16 +418,16 @@ a { color: inherit; text-decoration: none; }
   transform: translateY(-4px);
 }
 .pricing-card.flagship {
-  border: 2px solid var(--blue);
-  box-shadow: 0 8px 30px rgba(7, 105, 154, 0.15);
+  border: 2px solid var(--gold);
+  box-shadow: 0 8px 30px rgba(244, 202, 80, 0.15);
 }
 .pricing-card.flagship:hover {
-  box-shadow: 0 12px 40px rgba(7, 105, 154, 0.25);
+  box-shadow: 0 12px 40px rgba(244, 202, 80, 0.25);
 }
 .pricing-badge {
   display: inline-block;
-  background: var(--blue);
-  color: var(--white);
+  background: var(--gold);
+  color: var(--navy);
   padding: 4px 12px;
   border-radius: 100px;
   font-family: 'Montserrat', sans-serif;
@@ -662,8 +665,9 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 12px;
 }
 .footer-brand img {
-  height: 48px;
+  height: 80px;
   width: auto;
+  max-width: 360px;
   object-fit: contain;
 }
 .footer-tagline {
@@ -779,7 +783,7 @@ a { color: inherit; text-decoration: none; }
   <div class="hero-inner">
     <div class="hero-content">
       <h1>Work With Me</h1>
-      <p class="hero-eyebrow">Strategic SEO consulting for teams that want to move faster</p>
+      <p class="hero-eyebrow">SEO consulting shaped by 15+ years of hands-on experience</p>
     </div>
   </div>
 </section>
@@ -801,7 +805,7 @@ a { color: inherit; text-decoration: none; }
           </svg>
         </div>
         <h3>Technical SEO Audits</h3>
-        <p>Comprehensive crawl analysis, indexation review, Core Web Vitals optimization, and structured data implementation. The foundation everything else depends on.</p>
+        <p>Comprehensive crawl analysis, indexation review, Core Web Vitals optimization, and structured data implementation. The solid foundation your SEO program needs.</p>
       </div>
 
       <div class="what-card">
@@ -811,7 +815,7 @@ a { color: inherit; text-decoration: none; }
           </svg>
         </div>
         <h3>AEO/GEO Strategy</h3>
-        <p>Answer Engine and Generative Engine Optimization planning. Get your content cited in AI Overviews, ChatGPT, Perplexity, and Gemini.</p>
+        <p>Answer Engine and Generative Engine Optimization strategy. Position your content to be cited in AI Overviews, ChatGPT, Perplexity, and Gemini.</p>
       </div>
 
       <div class="what-card">
@@ -821,7 +825,7 @@ a { color: inherit; text-decoration: none; }
           </svg>
         </div>
         <h3>Recovery Planning</h3>
-        <p>Algorithm update recovery, traffic decline diagnosis, and prioritized action plans. When things break, you need a clear path forward — fast.</p>
+        <p>Algorithm update recovery, traffic decline diagnosis, and prioritized action plans. A clear path forward when the numbers shift.</p>
       </div>
 
       <div class="what-card">
@@ -831,7 +835,7 @@ a { color: inherit; text-decoration: none; }
           </svg>
         </div>
         <h3>Team Enablement</h3>
-        <p>Training, frameworks, and processes that make your internal team more effective. Templates, workshops, and ongoing advisory.</p>
+        <p>Training, frameworks, and processes that help your internal team grow their SEO capabilities. Includes workshops, templates, and ongoing advisory.</p>
       </div>
     </div>
   </div>
@@ -850,22 +854,22 @@ a { color: inherit; text-decoration: none; }
       <div class="pricing-card">
         <h3 class="pricing-title">30-Min Strategy Session</h3>
         <div class="pricing-price">$149</div>
-        <p class="pricing-description">One focused session on your toughest SEO challenge. Come with questions, leave with a plan.</p>
-        <a href="#calendly" class="btn btn-blue pricing-cta">Book a Session</a>
+        <p class="pricing-description">A focused conversation about your biggest SEO challenge. Come with questions, leave with clarity.</p>
+        <a href="https://calendar.app.google/8v2bEi1Cnkehym9s8" target="_blank" class="btn btn-blue pricing-cta">Book a Session</a>
       </div>
 
       <div class="pricing-card flagship">
         <div class="pricing-badge">Flagship</div>
         <h3 class="pricing-title">Complete Toolkit + Strategy Session</h3>
         <div class="pricing-price">$347</div>
-        <p class="pricing-description">Every template in the Confidence Fly library plus 30 minutes of personalized strategy. The fastest way to level up.</p>
-        <a href="#calendly" class="btn btn-blue pricing-cta">Get the Toolkit + Session</a>
+        <p class="pricing-description">Every framework in the Confidence Fly Search library plus 30 minutes of personalized strategy. The best way to get started with confidence.</p>
+        <a href="https://calendar.app.google/8v2bEi1Cnkehym9s8" target="_blank" class="btn btn-blue pricing-cta">Get the Toolkit + Session</a>
       </div>
 
       <div class="pricing-card">
         <h3 class="pricing-title">Custom Engagement</h3>
         <div class="pricing-price">Let's Talk</div>
-        <p class="pricing-description">Ongoing consulting, team training, or project-based work. Scoped to your needs.</p>
+        <p class="pricing-description">Ongoing consulting, team training, or project-based work. Tailored to fit your team's needs and goals.</p>
         <a href="mailto:seo@nikimosier.com" class="btn btn-blue pricing-cta">Get in Touch</a>
       </div>
     </div>
@@ -879,11 +883,8 @@ a { color: inherit; text-decoration: none; }
   <div class="container">
     <div class="calendly-section">
       <h2 style="margin-bottom: 32px;">Book a Call</h2>
-      <div class="calendly-placeholder">
-        <div class="calendly-placeholder-text">Calendly booking widget will appear here</div>
-        <div class="calendly-placeholder-note">Embedded Calendly integration coming soon</div>
-      </div>
-      <a href="#" class="btn btn-primary">Book a Strategy Session</a>
+      <p style="font-size: 18px; color: var(--muted); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto;">Pick a time that works for you and let's talk through your SEO challenges.</p>
+      <a href="https://calendar.app.google/8v2bEi1Cnkehym9s8" target="_blank" class="btn btn-gold" style="font-size: 16px; padding: 18px 40px;">Book a Strategy Session</a>
     </div>
   </div>
 </section>
@@ -940,7 +941,7 @@ a { color: inherit; text-decoration: none; }
   <div class="footer-grid">
     <div>
       <div class="footer-brand"><img src="logo.png" alt="Confidence Fly Search"></div>
-      <p class="footer-tagline">SEO templates and consulting from a 15+ year practitioner. Built for people who do the work.</p>
+      <p class="footer-tagline">SEO frameworks and consulting from Niki Mosier. Helping practitioners do their best work.</p>
     </div>
     <div>
       <h4>Quick Links</h4>

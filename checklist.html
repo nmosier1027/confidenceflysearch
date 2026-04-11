@@ -34,6 +34,7 @@
   --navy: #0C2E47;
   --blue: #07699A;
   --silver: #BDBEBF;
+  --gold: #f4ca50;
   --white: #FFFFFF;
   --offwhite: #F5F6F7;
   --dark-text: #1A1A2E;
@@ -97,7 +98,7 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 130px;
 }
 .nav-brand {
   display: flex;
@@ -105,9 +106,9 @@ a { color: inherit; text-decoration: none; }
   text-decoration: none;
 }
 .nav-brand img {
-  height: 90px;
+  height: 120px;
   width: auto;
-  max-width: 420px;
+  max-width: 500px;
   object-fit: contain;
 }
 .nav-links {
@@ -135,7 +136,7 @@ a { color: inherit; text-decoration: none; }
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--blue);
+  background: var(--gold);
   border-radius: 1px;
 }
 .nav-cta {
@@ -144,14 +145,14 @@ a { color: inherit; text-decoration: none; }
   font-size: 13px !important;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  background: var(--blue) !important;
-  color: var(--white) !important;
+  background: var(--gold) !important;
+  color: var(--navy) !important;
   padding: 10px 20px;
   border-radius: var(--radius-btn);
   transition: background 0.2s, transform 0.2s;
 }
 .nav-cta:hover {
-  background: #058bb5 !important;
+  background: #e6b93e !important;
   transform: translateY(-1px);
 }
 
@@ -180,7 +181,7 @@ a { color: inherit; text-decoration: none; }
 .nav-mobile {
   display: none;
   position: fixed;
-  top: 100px;
+  top: 130px;
   right: 0;
   bottom: 0;
   width: 280px;
@@ -225,7 +226,7 @@ a { color: inherit; text-decoration: none; }
    ======================================== */
 .hero {
   background: var(--gradient);
-  padding: 160px 0 96px;
+  padding: 190px 0 96px;
   overflow: hidden;
 }
 .hero-inner {
@@ -248,11 +249,12 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 16px;
 }
 .hero h1 {
-  font-size: clamp(36px, 5vw, 56px);
+  font-size: clamp(32px, 4vw, 48px);
   color: var(--white);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 20px;
+  line-height: 1.15;
 }
 .hero-bullets {
   font-size: 16px;
@@ -362,7 +364,8 @@ a { color: inherit; text-decoration: none; }
   font-family: 'Lora', serif;
   font-style: italic;
   font-size: 18px;
-  color: var(--silver);
+  color: var(--navy);
+  opacity: 0.7;
   margin-bottom: 48px;
 }
 
@@ -450,8 +453,9 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 12px;
 }
 .footer-brand img {
-  height: 48px;
+  height: 80px;
   width: auto;
+  max-width: 360px;
   object-fit: contain;
 }
 .footer-tagline {
@@ -562,7 +566,7 @@ a { color: inherit; text-decoration: none; }
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-content">
-      <p class="hero-eyebrow">The AEO Quick-Start Checklist — free for SEO practitioners</p>
+      <p class="hero-eyebrow">Free resource — the AEO Quick-Start Checklist</p>
       <h1>Is Your Content Ready for AI Search?</h1>
 
       <ul class="hero-bullets">
@@ -626,8 +630,8 @@ a { color: inherit; text-decoration: none; }
   <div class="container">
     <div class="bio-section">
       <h3>Created by Niki Mosier</h3>
-      <p>Head of SEO at NASM with 15+ years of experience in technical SEO, AEO, and GEO. These aren't theoretical frameworks — they're the same tools used in real client engagements.</p>
-      <p>When you use this checklist, you're getting the audit approach that's been pressure-tested in actual strategy sessions and implementation projects. The schema recommendations? Used by NASM's team right now. The GA4 tracking setup? That's from a live audit we ran last month.</p>
+      <p>Head of SEO at NASM with 15+ years of experience in technical SEO, AEO, and GEO. These are the same frameworks I use in my own work every day.</p>
+      <p>This checklist reflects what's actually working right now — from the schema recommendations our team at NASM relies on to the GA4 tracking setup from a recent audit. It's designed to give you a clear, confident starting point.</p>
       <p><a href="/about.html">Learn more about Niki →</a></p>
     </div>
   </div>
@@ -640,7 +644,7 @@ a { color: inherit; text-decoration: none; }
   <div class="footer-grid">
     <div>
       <div class="footer-brand"><img src="logo.png" alt="Confidence Fly Search"></div>
-      <p class="footer-tagline">SEO templates and consulting from a 15+ year practitioner. Built for people who do the work.</p>
+      <p class="footer-tagline">SEO frameworks and consulting from Niki Mosier. Helping practitioners do their best work.</p>
     </div>
     <div>
       <h4>Quick Links</h4>
