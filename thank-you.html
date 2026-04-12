@@ -463,15 +463,8 @@ a { color: inherit; text-decoration: none; }
 /* ========================================
    RESPONSIVE
    ======================================== */
-.steps-grid-2 {
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 800px;
-  margin: 0 auto;
-}
-
 @media (max-width: 900px) {
-  .steps-grid,
-  .steps-grid-2 {
+  .steps-grid {
     grid-template-columns: 1fr;
   }
   .footer-grid {
@@ -554,7 +547,7 @@ a { color: inherit; text-decoration: none; }
     <h2>Here's What to Expect</h2>
     <p class="section-sub">Your checklist is on the way, plus two follow-up emails to help you get started</p>
 
-    <div class="steps-grid steps-grid-2">
+    <div class="steps-grid">
       <div class="step-card">
         <div class="step-number">Right Now</div>
         <h3>Check Your Inbox</h3>
@@ -565,6 +558,12 @@ a { color: inherit; text-decoration: none; }
         <div class="step-number">Day 2</div>
         <h3>Your First Quick Win</h3>
         <p>I'll send you a focused email on the single highest-impact change you can make to your content this week for better AI visibility.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">Day 4</div>
+        <h3>Go Deeper</h3>
+        <p>A look at the full frameworks available in the shop — from the AEO + GEO Strategy Framework to the Complete Practitioner Package — plus a subscriber-only discount.</p>
       </div>
     </div>
   </div>
