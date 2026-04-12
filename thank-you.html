@@ -463,8 +463,15 @@ a { color: inherit; text-decoration: none; }
 /* ========================================
    RESPONSIVE
    ======================================== */
+.steps-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 @media (max-width: 900px) {
-  .steps-grid {
+  .steps-grid,
+  .steps-grid-2 {
     grid-template-columns: 1fr;
   }
   .footer-grid {
@@ -545,25 +552,19 @@ a { color: inherit; text-decoration: none; }
   <div class="container">
     <div class="section-eyebrow">What Happens Next</div>
     <h2>Here's What to Expect</h2>
-    <p class="section-sub">Three emails over the next few days to help you get started</p>
+    <p class="section-sub">Your checklist is on the way, plus two follow-up emails to help you get started</p>
 
-    <div class="steps-grid">
+    <div class="steps-grid steps-grid-2">
       <div class="step-card">
         <div class="step-number">Right Now</div>
         <h3>Check Your Inbox</h3>
-        <p>Your AEO Quick-Start Checklist PDF is on its way. Open it up and start with Framework 1 — the AI Overview Readiness Audit.</p>
+        <p>Your AEO Quick-Start Checklist PDF is on its way. Open it up and start with Framework 1 — the AI Overview Readiness Audit on your top 5 pages by organic traffic.</p>
       </div>
 
       <div class="step-card">
-        <div class="step-number">Tomorrow</div>
+        <div class="step-number">Day 2</div>
         <h3>Your First Quick Win</h3>
         <p>I'll send you a focused email on the single highest-impact change you can make to your content this week for better AI visibility.</p>
-      </div>
-
-      <div class="step-card">
-        <div class="step-number">Day 3</div>
-        <h3>Go Deeper</h3>
-        <p>A look at the full frameworks available in the shop — from the AEO + GEO Strategy Framework to the Complete Practitioner Package.</p>
       </div>
     </div>
   </div>
