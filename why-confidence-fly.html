@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>About Niki Mosier — Confidence Fly Search</title>
-<meta name="description" content="Niki Mosier, Head of SEO at NASM. 15+ years in technical SEO, AEO, and GEO. Building battle-tested frameworks for SEO practitioners."/>
-<meta property="og:title" content="About Niki Mosier"/>
-<meta property="og:description" content="Learn about Niki Mosier, Head of SEO at NASM and creator of Confidence Fly Search templates."/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://confidenceflysearch.com/about.html"/>
-<link rel="canonical" href="https://confidenceflysearch.com/about.html"/>
+<title>Why Confidence Fly Search — The Story Behind the Name</title>
+<meta name="description" content="Every fly fisher has a confidence fly — the one pattern they trust when nothing else works. That same philosophy drives Confidence Fly Search and every SEO framework we build."/>
+<meta property="og:title" content="Why Confidence Fly Search"/>
+<meta property="og:description" content="The fly fishing metaphor behind the brand — and why confidence matters more than perfection in SEO."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://confidenceflysearch.com/why-confidence-fly.html"/>
+<link rel="canonical" href="https://confidenceflysearch.com/why-confidence-fly.html"/>
 <link rel="icon" type="image/png" href="logo.png"/>
 <meta property="og:image" content="https://confidenceflysearch.com/logo.png"/>
 <!-- Google Analytics -->
@@ -25,7 +25,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Lora:ital@1&family=Lexend:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 /* ========================================
-   CONFIDENCE FLY SEARCH — ABOUT PAGE
+   CONFIDENCE FLY SEARCH — WHY THE NAME
    Colors: #0C2E47, #07699A, #BDBEBF
    Fonts: Montserrat, Lora, Lexend
    ======================================== */
@@ -226,7 +226,7 @@ a { color: inherit; text-decoration: none; }
    ======================================== */
 .hero {
   background: var(--navy);
-  padding: 140px 0 80px;
+  padding: 160px 0 80px;
   text-align: center;
 }
 .hero h1 {
@@ -245,7 +245,113 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ========================================
-   SECTION STYLES
+   ARTICLE CONTENT
+   ======================================== */
+.article {
+  padding: 80px 0;
+}
+.article-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.article-inner h2 {
+  font-size: clamp(24px, 3vw, 32px);
+  text-transform: uppercase;
+  color: var(--navy);
+  margin: 56px 0 24px;
+  letter-spacing: 0.5px;
+}
+.article-inner h2:first-child {
+  margin-top: 0;
+}
+.article-inner p {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.9;
+  margin-bottom: 24px;
+}
+.article-inner p:last-child {
+  margin-bottom: 0;
+}
+.article-inner .lead {
+  font-size: 19px;
+  color: var(--dark-text);
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+/* Pullquote */
+.pullquote {
+  margin: 48px 0;
+  padding: 32px 40px;
+  border-left: 4px solid var(--gold);
+  background: var(--offwhite);
+  border-radius: 0 var(--radius-card) var(--radius-card) 0;
+}
+.pullquote p {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--navy);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Divider */
+.article-divider {
+  width: 60px;
+  height: 3px;
+  background: var(--gold);
+  border: none;
+  margin: 56px auto;
+  border-radius: 2px;
+}
+
+/* Metaphor cards */
+.metaphor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 40px 0;
+}
+.metaphor-card {
+  padding: 28px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--light-border);
+}
+.metaphor-card.fly {
+  background: linear-gradient(135deg, rgba(12,46,71,0.03) 0%, rgba(7,105,154,0.06) 100%);
+}
+.metaphor-card.seo {
+  background: linear-gradient(135deg, rgba(244,202,80,0.08) 0%, rgba(244,202,80,0.15) 100%);
+}
+.metaphor-card-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+.metaphor-card.seo .metaphor-card-label {
+  color: #b8941a;
+}
+.metaphor-card h3 {
+  font-size: 18px;
+  color: var(--navy);
+  margin-bottom: 10px;
+  text-transform: none;
+}
+.metaphor-card p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* ========================================
+   CTA SECTION
    ======================================== */
 .section {
   padding: 80px 0;
@@ -254,90 +360,6 @@ a { color: inherit; text-decoration: none; }
   background: var(--offwhite);
 }
 
-/* ========================================
-   THE STORY
-   ======================================== */
-.story-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
-}
-.story-image {
-  width: 100%;
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  background: #E2E8F0;
-}
-.story-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.story-text h2 {
-  font-size: clamp(28px, 3.5vw, 40px);
-  text-transform: uppercase;
-  color: var(--navy);
-  margin-bottom: 32px;
-  letter-spacing: 0.5px;
-}
-.story-text p {
-  font-size: 16px;
-  color: var(--muted);
-  line-height: 1.8;
-  margin-bottom: 20px;
-}
-.story-text p:last-child {
-  margin-bottom: 0;
-}
-
-/* ========================================
-   CREDENTIALS
-   ======================================== */
-.cred-row {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin-bottom: 32px;
-}
-.cred-badge {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px 24px;
-  background: var(--white);
-  border: 1px solid var(--light-border);
-  border-radius: 100px;
-}
-.cred-badge-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: rgba(7, 105, 154, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.cred-badge-icon svg {
-  width: 18px;
-  height: 18px;
-  stroke: var(--blue);
-  fill: none;
-  stroke-width: 1.5;
-}
-.cred-badge span {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--navy);
-}
-
-/* ========================================
-   CTA BUTTONS
-   ======================================== */
 .btn {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
@@ -446,36 +468,38 @@ a { color: inherit; text-decoration: none; }
 /* ========================================
    RESPONSIVE
    ======================================== */
-@media (max-width: 900px) {
-  .story-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-}
-
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .nav-toggle { display: block; }
 
-  .cred-row {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
+  .article-inner {
+    padding: 0 8px;
+  }
+
+  .pullquote {
+    padding: 24px 20px;
+    margin: 36px 0;
+  }
+  .pullquote p {
+    font-size: 19px;
+  }
+
+  .metaphor-grid {
+    grid-template-columns: 1fr;
   }
 
   .cta-buttons {
     flex-direction: column;
     align-items: center;
   }
-
   .btn {
     width: 100%;
     max-width: 300px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 
   body { font-size: 16px; }
@@ -486,35 +510,22 @@ a { color: inherit; text-decoration: none; }
   "@context": "https://schema.org",
   "@graph": [
   {
-    "@type": "Person",
-    "@id": "https://confidenceflysearch.com/#niki-mosier",
-    "name": "Niki Mosier",
-    "jobTitle": "Head of SEO at NASM",
-    "description": "SEO consultant with 15+ years of experience in technical SEO, AEO, and GEO. Creator of Confidence Fly Search.",
-    "url": "https://confidenceflysearch.com/about.html",
-    "image": "https://confidenceflysearch.com/headshot.jpg",
-    "sameAs": [
-      "https://www.linkedin.com/in/nikimosier/",
-      "https://nikimosier.com"
-    ],
-    "worksFor": {
-      "@type": "Organization",
-      "name": "NASM"
+    "@type": "Article",
+    "headline": "Why Confidence Fly Search",
+    "description": "The fly fishing metaphor behind the brand — and why confidence matters more than perfection in SEO.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://confidenceflysearch.com/#niki-mosier",
+      "name": "Niki Mosier"
     },
-    "knowsAbout": [
-      "Search Engine Optimization",
-      "Technical SEO",
-      "Answer Engine Optimization",
-      "Generative Engine Optimization",
-      "Content Strategy",
-      "SEO Consulting"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Denver",
-      "addressRegion": "CO",
-      "addressCountry": "US"
-    }
+    "publisher": {
+      "@type": "Organization",
+      "name": "Confidence Fly Search",
+      "url": "https://confidenceflysearch.com"
+    },
+    "datePublished": "2026-04-15",
+    "url": "https://confidenceflysearch.com/why-confidence-fly.html",
+    "image": "https://confidenceflysearch.com/logo.png"
   },
   {
     "@type": "BreadcrumbList",
@@ -528,8 +539,8 @@ a { color: inherit; text-decoration: none; }
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "About",
-        "item": "https://confidenceflysearch.com/about.html"
+        "name": "Why Confidence Fly Search",
+        "item": "https://confidenceflysearch.com/why-confidence-fly.html"
       }
     ]
   }
@@ -550,8 +561,8 @@ a { color: inherit; text-decoration: none; }
       <li><a href="/">Home</a></li>
       <li><a href="/shop.html">Shop</a></li>
       <li><a href="/consulting.html">Consulting</a></li>
-      <li><a href="/about.html" class="active">About</a></li>
-      <li><a href="/why-confidence-fly.html">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/why-confidence-fly.html" class="active">Blog</a></li>
       <li><a href="/checklist.html" class="nav-cta">Free Checklist</a></li>
     </ul>
 
@@ -576,64 +587,97 @@ a { color: inherit; text-decoration: none; }
      ======================================== -->
 <section class="hero">
   <div class="container">
-    <p class="hero-eyebrow">15+ years of SEO. Still learning, still building.</p>
-    <h1>About Niki</h1>
+    <p class="hero-eyebrow">The story behind the name</p>
+    <h1>Why Confidence Fly Search</h1>
   </div>
 </section>
 
 <!-- ========================================
-     THE STORY
+     ARTICLE
      ======================================== -->
-<section class="section section-alt">
+<section class="article">
   <div class="container">
-    <div class="story-grid">
-      <div class="story-image">
-        <img src="headshot.jpg" alt="Niki Mosier — SEO Consultant and Creator of Confidence Fly Search"/>
-      </div>
-      <div class="story-text">
-        <h2>The Story</h2>
-        <p>I'm Niki Mosier, Head of SEO at NASM and an independent SEO consultant based in Denver. For over 15 years, I've been deep in technical SEO &mdash; and more recently, helping teams navigate Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO).</p>
+    <div class="article-inner">
 
-        <p>I built Confidence Fly Search because I kept building the same frameworks from scratch for every new client and team &mdash; audit reports, strategy decks, proposals to help leadership understand SEO's value. I figured if I needed them, other practitioners probably did too.</p>
+      <p class="lead">If you don't fly fish, the name Confidence Fly Search probably sounds a little unexpected for an SEO brand. But if you've ever stood in a river, watched the water, and had to decide what to tie on &mdash; you already know exactly what it means.</p>
 
-        <p>These are the same frameworks I use in my own work. They've been refined through years of real projects and real conversations with stakeholders. My hope is they give you a head start and the confidence to present your best work.</p>
+      <h2>What's a Confidence Fly?</h2>
 
-        <p>When I'm not doing SEO, you can find me exploring Denver's food scene, fly fishing in the Rockies, or talking shop at industry events.</p>
-      </div>
-    </div>
-  </div>
-</section>
+      <p>In fly fishing, a confidence fly is the one pattern you trust above all others. It's the fly you reach for when the hatch is confusing, the fish aren't cooperating, and the conditions don't match anything in the guidebook. It's not necessarily the flashiest pattern in your box or the one that works in every situation. It's the one that works for <em>you</em> &mdash; because you've fished it enough times, in enough conditions, to trust it completely.</p>
 
-<!-- ========================================
-     CREDENTIALS
-     ======================================== -->
-<section class="section">
-  <div class="container" style="text-align:center;">
-    <div class="cred-row">
-      <div class="cred-badge">
-        <div class="cred-badge-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        </div>
-        <span>Head of SEO at NASM</span>
+      <p>Every experienced angler has one. Maybe it's a Parachute Adams, an Elk Hair Caddis, or a Woolly Bugger. The specific pattern almost doesn't matter. What matters is this: when you tie on your confidence fly, something shifts. Your casts get more intentional. Your presentation improves. You read the water differently. You fish <em>better</em> &mdash; not because the fly is magic, but because the confidence behind it changes everything.</p>
+
+      <div class="pullquote">
+        <p>Confidence doesn't come from having the perfect tool. It comes from trusting the ones you've built your experience around.</p>
       </div>
-      <div class="cred-badge">
-        <div class="cred-badge-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+
+      <h2>The Connection to SEO</h2>
+
+      <p>I've spent 15+ years in SEO, and the parallels run deep. In search, we're constantly facing changing conditions &mdash; algorithm updates, shifting SERP features, the rise of AI-generated answers, stakeholders who need convincing. It's easy to feel like you're standing in the middle of a river with no idea what's working.</p>
+
+      <p>What separates experienced SEO practitioners from the rest isn't having all the answers. It's having frameworks you trust. An audit process you've refined. A reporting structure that tells a clear story. A proposal format that gets buy-in. When you have those things dialed in, you stop second-guessing and start executing &mdash; with confidence.</p>
+
+      <p>That's what I wanted to build with Confidence Fly Search. Not another set of generic templates, but the same battle-tested frameworks I actually use in my own work &mdash; as Head of SEO at NASM and in my consulting practice. The ones I've refined through hundreds of real audits, real strategy presentations, and real conversations with leadership teams.</p>
+
+      <hr class="article-divider"/>
+
+      <h2>The Metaphor in Action</h2>
+
+      <div class="metaphor-grid">
+        <div class="metaphor-card fly">
+          <div class="metaphor-card-label">On the Water</div>
+          <h3>You trust your fly</h3>
+          <p>A confidence fly isn't about having the newest, trendiest pattern. It's about deep familiarity. You know how it drifts, how fish react to it, when to twitch it and when to let it ride.</p>
         </div>
-        <span>15+ Years Experience</span>
-      </div>
-      <div class="cred-badge">
-        <div class="cred-badge-icon">
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <div class="metaphor-card seo">
+          <div class="metaphor-card-label">In Search</div>
+          <h3>You trust your framework</h3>
+          <p>A confidence framework isn't about having the fanciest deliverable. It's about knowing your process works. You know what to measure, how to present it, and how to turn data into action.</p>
         </div>
-        <span>Technical SEO + AEO/GEO</span>
       </div>
-      <div class="cred-badge">
-        <div class="cred-badge-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+
+      <div class="metaphor-grid">
+        <div class="metaphor-card fly">
+          <div class="metaphor-card-label">On the Water</div>
+          <h3>Conditions change constantly</h3>
+          <p>Water temperature, light, hatches, pressure &mdash; the river is never the same twice. You adapt your approach, but your confidence fly is the constant you can always return to.</p>
         </div>
-        <span>Denver, CO</span>
+        <div class="metaphor-card seo">
+          <div class="metaphor-card-label">In Search</div>
+          <h3>The landscape shifts constantly</h3>
+          <p>Algorithm updates, AI overviews, GEO, AEO, shifting user behavior &mdash; search is never the same twice. You adapt your strategy, but your proven frameworks keep you grounded.</p>
+        </div>
       </div>
+
+      <div class="metaphor-grid">
+        <div class="metaphor-card fly">
+          <div class="metaphor-card-label">On the Water</div>
+          <h3>Confidence changes the cast</h3>
+          <p>When you believe in your fly, your presentation improves. You fish with intention instead of desperation. The results follow.</p>
+        </div>
+        <div class="metaphor-card seo">
+          <div class="metaphor-card-label">In Search</div>
+          <h3>Confidence changes the pitch</h3>
+          <p>When you believe in your work, your presentations improve. You walk into stakeholder meetings with clarity instead of uncertainty. The buy-in follows.</p>
+        </div>
+      </div>
+
+      <hr class="article-divider"/>
+
+      <h2>Why I Built This</h2>
+
+      <p>I'm Niki Mosier, and I spend my days doing SEO &mdash; and my weekends fly fishing in the Colorado Rockies. The name Confidence Fly Search came from a moment of connection between those two worlds. I realized that the thing that makes me effective in both isn't talent or luck. It's preparation. It's having tools I trust. It's showing up with a plan I believe in.</p>
+
+      <p>I kept building the same frameworks from scratch for every new client and every new team &mdash; audit reports, recovery proposals, strategy decks to help leadership understand where search is heading. After years of refining them through real projects, I figured if I needed them, other SEO practitioners probably did too.</p>
+
+      <p>So that's what Confidence Fly Search is: the frameworks that give you confidence. The SEO equivalent of tying on your favorite fly and knowing &mdash; really knowing &mdash; that you're going to catch fish today.</p>
+
+      <div class="pullquote">
+        <p>Show up prepared. Trust your process. Fish with confidence.</p>
+      </div>
+
+      <p style="font-size: 14px; color: var(--silver); margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light-border);">The concept of a confidence fly is a cornerstone of fly fishing wisdom. If you want to go deeper on the idea from an angler's perspective, Brian Flechsig wrote a great piece on confidence flies over at <a href="https://www.brianonthefly.com/post/confidence-flies" target="_blank" rel="noopener" style="color: var(--blue); text-decoration: underline;">Brian on the Fly</a>. It's one of the articles that helped crystallize the name for this brand.</p>
+
     </div>
   </div>
 </section>
@@ -643,10 +687,11 @@ a { color: inherit; text-decoration: none; }
      ======================================== -->
 <section class="section section-alt">
   <div class="container" style="text-align:center;">
-    <h2 style="font-size: clamp(28px, 3.5vw, 40px); text-transform: uppercase; color: var(--navy); margin-bottom: 48px; letter-spacing: 0.5px;">Ready to Get Started?</h2>
+    <h2 style="font-size: clamp(28px, 3.5vw, 40px); text-transform: uppercase; color: var(--navy); margin-bottom: 16px; letter-spacing: 0.5px;">Find Your Confidence Fly</h2>
+    <p style="font-size: 17px; color: var(--muted); max-width: 520px; margin: 0 auto;">Battle-tested SEO frameworks built from 15+ years of real work. Ready when you are.</p>
     <div class="cta-buttons">
       <a href="/shop.html" class="btn btn-blue">Browse the Templates</a>
-      <a href="https://calendar.app.google/tA3CQgR2DsRoghYR6" target="_blank" class="btn btn-primary">Book a Strategy Session</a>
+      <a href="/consulting.html" class="btn btn-primary">Work With Me</a>
     </div>
   </div>
 </section>
@@ -666,7 +711,6 @@ a { color: inherit; text-decoration: none; }
         <li><a href="/shop.html">Shop</a></li>
         <li><a href="/consulting.html">Consulting</a></li>
         <li><a href="/about.html">About</a></li>
-        <li><a href="/why-confidence-fly.html">Blog</a></li>
         <li><a href="/checklist.html">Free Checklist</a></li>
       </ul>
     </div>
