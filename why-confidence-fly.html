@@ -307,6 +307,91 @@ a { color: inherit; text-decoration: none; }
   border-radius: 2px;
 }
 
+/* Mid-post email form CTA */
+.midpost-cta {
+  margin: 56px 0;
+  padding: 40px 36px;
+  background: linear-gradient(135deg, rgba(12,46,71,0.04) 0%, rgba(7,105,154,0.08) 100%);
+  border: 1px solid var(--light-border);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius-card);
+}
+.midpost-cta h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(22px, 2.6vw, 28px);
+  text-transform: uppercase;
+  color: var(--navy);
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+.midpost-cta .midpost-sub {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 17px;
+  color: var(--blue);
+  margin-bottom: 24px;
+}
+.midpost-cta form.midpost-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.midpost-cta form.midpost-form input[type="text"],
+.midpost-cta form.midpost-form input[type="email"] {
+  flex: 1 1 180px;
+  min-width: 0;
+  padding: 13px 16px;
+  font-family: 'Lexend', sans-serif;
+  font-size: 15px;
+  color: var(--dark-text);
+  background: var(--white);
+  border: 1px solid var(--light-border);
+  border-radius: var(--radius-btn);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.midpost-cta form.midpost-form input:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(7,105,154,0.15);
+}
+.midpost-cta form.midpost-form button {
+  flex: 0 0 auto;
+  padding: 13px 26px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--navy);
+  border: none;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.midpost-cta form.midpost-form button:hover {
+  background: #e6b93e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(244,202,80,0.35);
+}
+.midpost-cta .midpost-fineprint {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 0;
+}
+@media (max-width: 560px) {
+  .midpost-cta {
+    padding: 28px 20px;
+  }
+  .midpost-cta form.midpost-form {
+    flex-direction: column;
+  }
+  .midpost-cta form.midpost-form button {
+    width: 100%;
+  }
+}
+
 /* Metaphor cards */
 .metaphor-grid {
   display: grid;
@@ -664,6 +749,18 @@ a { color: inherit; text-decoration: none; }
 
       <hr class="article-divider"/>
 
+      <!-- Mid-post email form CTA -->
+      <div class="midpost-cta">
+        <h3>What's your favorite confidence fly?</h3>
+        <p class="midpost-sub">Get 10% off any product when you tell me yours.</p>
+        <form class="midpost-form" action="https://app.kit.com/forms/9333025/subscriptions" method="post" data-sv-form="9333025" data-uid="66e67814f8" data-format="inline" data-version="5">
+          <input aria-label="First Name" name="fields[first_name]" required placeholder="First name" type="text">
+          <input aria-label="Email Address" name="email_address" required placeholder="Email address" type="email">
+          <button type="submit">Get 10% Off</button>
+        </form>
+        <p class="midpost-fineprint">No spam &mdash; unsubscribe any time.</p>
+      </div>
+
       <h2>Why I Built This</h2>
 
       <p>I'm Niki Mosier, and I spend my days doing SEO &mdash; and my weekends fly fishing in the Colorado Rockies. The name Confidence Fly Search came from a moment of connection between those two worlds. I realized that the thing that makes me effective in both isn't talent or luck. It's preparation. It's having tools I trust. It's showing up with a plan I believe in.</p>
@@ -717,7 +814,7 @@ a { color: inherit; text-decoration: none; }
     <div>
       <h4>Connect</h4>
       <ul class="footer-links">
-        <li><a href="https://www.linkedin.com/in/nikimosier/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.linkedin.com/in/niki-mosier/" target="_blank" rel="noopener">LinkedIn</a></li>
         <li><a href="mailto:seo@nikimosier.com">Email</a></li>
         <li><a href="https://nikimosier.com" target="_blank" rel="noopener">nikimosier.com</a></li>
       </ul>
