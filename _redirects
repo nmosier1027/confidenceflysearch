@@ -1,0 +1,6 @@
+# 301 redirects — Netlify
+
+# Blog post moved from root to /blog/ on 2026-04-23
+/why-confidence-fly.html    /blog/why-confidence-fly    301
+/why-confidence-fly         /blog/why-confidence-fly    301
+/blog/why-confidence-fly.html    /blog/why-confidence-fly    301
