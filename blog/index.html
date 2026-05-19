@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Blog — Confidence Fly Search</title>
+<meta name="description" content="SEO, AEO, and GEO writing from Niki Mosier — practical frameworks and field notes for SEO practitioners building for the agentic web."/>
+<meta property="og:title" content="Blog — Confidence Fly Search"/>
+<meta property="og:description" content="SEO, AEO, and GEO writing from Niki Mosier — practical frameworks for practitioners."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://confidenceflysearch.com/blog/"/>
+<link rel="canonical" href="https://confidenceflysearch.com/blog/"/>
+<link rel="icon" type="image/png" href="/logo.png"/>
+<meta property="og:image" content="https://confidenceflysearch.com/logo.png"/>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CN6EXCWFEB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CN6EXCWFEB');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Lora:ital@1&family=Lexend:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ========================================
+   CONFIDENCE FLY SEARCH — BLOG INDEX
+   Colors: #0C2E47, #07699A, #BDBEBF
+   Fonts: Montserrat, Lora, Lexend
+   ======================================== */
+
+:root {
+  --navy: #0C2E47;
+  --blue: #07699A;
+  --silver: #BDBEBF;
+  --gold: #f4ca50;
+  --white: #FFFFFF;
+  --offwhite: #F5F6F7;
+  --dark-text: #1A1A2E;
+  --muted: #5A6677;
+  --light-border: #E2E8F0;
+  --gradient: linear-gradient(135deg, #0C2E47 0%, #07699A 100%);
+  --max-width: 1200px;
+  --radius-card: 12px;
+  --radius-btn: 8px;
+}
+
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: 'Lexend', system-ui, sans-serif;
+  font-weight: 400;
+  color: var(--dark-text);
+  background: var(--white);
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--navy);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.nav.scrolled {
+  box-shadow: 0 2px 20px rgba(12, 46, 71, 0.3);
+}
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 130px;
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.nav-brand img {
+  height: 120px;
+  width: auto;
+  max-width: 500px;
+  object-fit: contain;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: 'Lexend', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: rgba(255,255,255,0.8);
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--white);
+}
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 1px;
+}
+.nav-cta {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: var(--gold) !important;
+  color: var(--navy) !important;
+  padding: 10px 20px;
+  border-radius: var(--radius-btn);
+  transition: background 0.2s, transform 0.2s;
+}
+.nav-cta:hover {
+  background: #e6b93e !important;
+  transform: translateY(-1px);
+}
+
+/* Mobile hamburger */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  margin: 6px 0;
+  transition: all 0.3s;
+  border-radius: 1px;
+}
+.nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+/* Mobile menu */
+.nav-mobile {
+  display: none;
+  position: fixed;
+  top: 130px;
+  right: 0;
+  bottom: 0;
+  width: 280px;
+  background: var(--navy);
+  padding: 32px 24px;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 999;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+}
+.nav-mobile.open { display: flex; }
+.nav-mobile a {
+  font-family: 'Lexend', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.8);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: color 0.2s;
+}
+.nav-mobile a:hover { color: white; }
+.nav-mobile .nav-cta {
+  margin-top: 16px;
+  text-align: center;
+  display: block;
+  border-bottom: none;
+}
+.nav-overlay {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 998;
+}
+.nav-overlay.open { display: block; }
+
+/* ========================================
+   HERO
+   ======================================== */
+.hero {
+  background: var(--navy);
+  padding: 160px 0 80px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: clamp(36px, 5vw, 56px);
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+.hero-eyebrow {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 16px;
+}
+.hero-tagline {
+  font-family: 'Lexend', sans-serif;
+  font-size: 17px;
+  color: rgba(255,255,255,0.7);
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ========================================
+   FEATURED POST
+   ======================================== */
+.featured {
+  padding: 80px 0 40px;
+}
+.featured-card {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 0;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--light-border);
+  box-shadow: 0 4px 24px rgba(12, 46, 71, 0.06);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.featured-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(12, 46, 71, 0.12);
+}
+.featured-visual {
+  background: var(--gradient);
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.featured-visual::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 200px;
+  height: 200px;
+  background: rgba(244, 202, 80, 0.18);
+  border-radius: 50%;
+  filter: blur(40px);
+}
+.featured-tag {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+.featured-visual-quote {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.95);
+  position: relative;
+  z-index: 1;
+}
+.featured-body {
+  padding: 56px 48px;
+}
+.featured-meta {
+  font-family: 'Lexend', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+.featured-body h2 {
+  font-size: clamp(24px, 2.6vw, 30px);
+  color: var(--navy);
+  margin-bottom: 16px;
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+.featured-body p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+.featured-link {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--navy);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.2s, color 0.2s;
+}
+.featured-link:hover {
+  color: var(--blue);
+  gap: 14px;
+}
+.featured-link::after {
+  content: '→';
+  font-size: 16px;
+}
+
+/* ========================================
+   POST GRID
+   ======================================== */
+.posts {
+  padding: 40px 0 80px;
+}
+.posts-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--light-border);
+}
+.posts-header h2 {
+  font-size: clamp(20px, 2.2vw, 24px);
+  text-transform: uppercase;
+  color: var(--navy);
+  letter-spacing: 0.5px;
+}
+.posts-count {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+}
+.post-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--light-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(12, 46, 71, 0.08);
+  border-color: rgba(7, 105, 154, 0.3);
+}
+.post-card-visual {
+  height: 160px;
+  background: var(--gradient);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.post-card-visual::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 140px;
+  height: 140px;
+  background: rgba(244, 202, 80, 0.2);
+  border-radius: 50%;
+  filter: blur(30px);
+}
+.post-card-visual.story {
+  background: linear-gradient(135deg, #07699A 0%, #0C2E47 100%);
+}
+.post-card-visual.story::before {
+  background: rgba(244, 202, 80, 0.25);
+  top: auto;
+  bottom: -30px;
+  left: -30px;
+  right: auto;
+}
+.post-card-emoji {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  position: relative;
+  z-index: 1;
+}
+.post-card-body {
+  padding: 28px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.post-card-meta {
+  font-family: 'Lexend', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+.post-card-body h3 {
+  font-size: 20px;
+  color: var(--navy);
+  margin-bottom: 12px;
+  line-height: 1.35;
+  text-transform: none;
+}
+.post-card-body p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  flex: 1;
+}
+.post-card-link {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--navy);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s, color 0.2s;
+}
+.post-card:hover .post-card-link {
+  color: var(--blue);
+  gap: 12px;
+}
+.post-card-link::after {
+  content: '→';
+  font-size: 14px;
+}
+
+/* ========================================
+   NEWSLETTER CTA
+   ======================================== */
+.section {
+  padding: 80px 0;
+}
+.section-alt {
+  background: var(--offwhite);
+}
+
+.newsletter {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.newsletter h2 {
+  font-size: clamp(28px, 3.5vw, 40px);
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+.newsletter p {
+  font-size: 17px;
+  color: var(--muted);
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+.newsletter form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 520px;
+  margin: 0 auto 16px;
+}
+.newsletter input[type="text"],
+.newsletter input[type="email"] {
+  flex: 1 1 180px;
+  min-width: 0;
+  padding: 14px 16px;
+  font-family: 'Lexend', sans-serif;
+  font-size: 15px;
+  color: var(--dark-text);
+  background: var(--white);
+  border: 1px solid var(--light-border);
+  border-radius: var(--radius-btn);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.newsletter input:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(7,105,154,0.15);
+}
+.newsletter button {
+  flex: 0 0 auto;
+  padding: 14px 28px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--navy);
+  border: none;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.newsletter button:hover {
+  background: #e6b93e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(244,202,80,0.35);
+}
+.newsletter .fineprint {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+  background: var(--navy);
+  padding: 64px 0 32px;
+}
+.footer-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.footer-brand img {
+  height: 80px;
+  width: auto;
+  max-width: 360px;
+  object-fit: contain;
+}
+.footer-tagline {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  max-width: 320px;
+  line-height: 1.7;
+}
+.footer h4 {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--silver);
+  margin-bottom: 16px;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-links a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px 24px 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 860px) {
+  .featured-card {
+    grid-template-columns: 1fr;
+  }
+  .featured-visual {
+    padding: 40px 32px;
+  }
+  .featured-body {
+    padding: 40px 32px;
+  }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+
+  .newsletter form {
+    flex-direction: column;
+  }
+  .newsletter button {
+    width: 100%;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  body { font-size: 16px; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+  {
+    "@type": "Blog",
+    "@id": "https://confidenceflysearch.com/blog/#blog",
+    "name": "Confidence Fly Search Blog",
+    "description": "SEO, AEO, and GEO writing from Niki Mosier — practical frameworks for SEO practitioners.",
+    "url": "https://confidenceflysearch.com/blog/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Confidence Fly Search",
+      "url": "https://confidenceflysearch.com"
+    },
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Agent-Friendly Websites: The New SEO Is Old Accessibility",
+        "url": "https://confidenceflysearch.com/blog/agent-friendly-websites",
+        "datePublished": "2026-05-18",
+        "author": {"@type": "Person", "name": "Niki Mosier"}
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Why Confidence Fly Search — The Story Behind the Name",
+        "url": "https://confidenceflysearch.com/blog/why-confidence-fly",
+        "datePublished": "2026-04-15",
+        "author": {"@type": "Person", "name": "Niki Mosier"}
+      }
+    ]
+  },
+  {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://confidenceflysearch.com"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://confidenceflysearch.com/blog/"}
+    ]
+  }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ========================================
+     NAVIGATION
+     ======================================== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><img src="/logo.png" alt="Confidence Fly Search"></a>
+
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/shop.html">Shop</a></li>
+      <li><a href="/consulting.html">Consulting</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/" class="active">Blog</a></li>
+      <li><a href="/aeo-checklist.html" class="nav-cta">Free Checklist</a></li>
+    </ul>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-overlay" id="navOverlay"></div>
+<div class="nav-mobile" id="navMobile">
+  <a href="/">Home</a>
+  <a href="/shop.html">Shop</a>
+  <a href="/consulting.html">Consulting</a>
+  <a href="/about.html">About</a>
+  <a href="/blog/">Blog</a>
+  <a href="/aeo-checklist.html" class="nav-cta">Free Checklist</a>
+</div>
+
+<!-- ========================================
+     HERO
+     ======================================== -->
+<section class="hero">
+  <div class="container">
+    <p class="hero-eyebrow">Field notes from the river</p>
+    <h1>The Confidence Fly Blog</h1>
+    <p class="hero-tagline">SEO, AEO, and GEO writing for practitioners. Honest takes on the work, the frameworks, and where search is going next.</p>
+  </div>
+</section>
+
+<!-- ========================================
+     FEATURED POST
+     ======================================== -->
+<section class="featured">
+  <div class="container">
+    <a href="/blog/agent-friendly-websites" style="display:block;">
+      <article class="featured-card">
+        <div class="featured-visual">
+          <p class="featured-tag">Latest Post</p>
+          <p class="featured-visual-quote">"The new SEO is not new. It is the old accessibility, finally given a P0."</p>
+        </div>
+        <div class="featured-body">
+          <p class="featured-meta">May 18, 2026 &middot; 7 min read</p>
+          <h2>Agent-Friendly Websites: The New SEO Is Old Accessibility</h2>
+          <p>Google just published a developer guide on building agent-friendly websites. On the surface it's a tutorial about semantic HTML and ARIA roles. Read it in context and it's the most consequential SEO doc Mountain View has shipped in a decade — and the exact playbook accessibility advocates have been begging us to adopt since the Bush administration.</p>
+          <span class="featured-link">Read the full piece</span>
+        </div>
+      </article>
+    </a>
+  </div>
+</section>
+
+<!-- ========================================
+     POST GRID
+     ======================================== -->
+<section class="posts">
+  <div class="container">
+    <div class="posts-header">
+      <h2>All Posts</h2>
+      <span class="posts-count">2 posts</span>
+    </div>
+
+    <div class="posts-grid">
+
+      <!-- Post: Agent-Friendly Websites -->
+      <a href="/blog/agent-friendly-websites">
+        <article class="post-card">
+          <div class="post-card-visual">
+            <span class="post-card-emoji">SEO &middot; AEO</span>
+          </div>
+          <div class="post-card-body">
+            <p class="post-card-meta">May 18, 2026 &middot; 7 min read</p>
+            <h3>Agent-Friendly Websites: The New SEO Is Old Accessibility</h3>
+            <p>Google's new agent-readiness guide is a 20-year-old accessibility brief in a new suit — and the most important SEO playbook in years.</p>
+            <span class="post-card-link">Read</span>
+          </div>
+        </article>
+      </a>
+
+      <!-- Post: Why Confidence Fly -->
+      <a href="/blog/why-confidence-fly">
+        <article class="post-card">
+          <div class="post-card-visual story">
+            <span class="post-card-emoji">The Story</span>
+          </div>
+          <div class="post-card-body">
+            <p class="post-card-meta">April 15, 2026 &middot; 5 min read</p>
+            <h3>Why Confidence Fly Search — The Story Behind the Name</h3>
+            <p>Every fly fisher has a confidence fly: the pattern they trust when nothing else works. That same philosophy drives every framework we build.</p>
+            <span class="post-card-link">Read</span>
+          </div>
+        </article>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     NEWSLETTER CTA
+     ======================================== -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="newsletter">
+      <h2>Get the next one in your inbox</h2>
+      <p>Field notes on SEO, AEO, and GEO from Niki Mosier &mdash; plus the free AEO Quick-Start Checklist when you sign up.</p>
+      <form action="https://app.kit.com/forms/9318023/subscriptions" method="post" data-sv-form="9318023" data-uid="66e67814f8" data-format="inline" data-version="5">
+        <input aria-label="First Name" name="fields[first_name]" required placeholder="First name" type="text">
+        <input aria-label="Email Address" name="email_address" required placeholder="Email address" type="email">
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="fineprint">No spam &mdash; unsubscribe any time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     FOOTER
+     ======================================== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand"><img src="/logo.png" alt="Confidence Fly Search"></div>
+      <p class="footer-tagline">SEO frameworks and consulting from Niki Mosier. Helping practitioners do their best work.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="/shop.html">Shop</a></li>
+        <li><a href="/consulting.html">Consulting</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/aeo-checklist.html">Free Checklist</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <ul class="footer-links">
+        <li><a href="https://www.linkedin.com/in/niki-mosier/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="mailto:seo@nikimosier.com">Email</a></li>
+        <li><a href="https://nikimosier.com" target="_blank" rel="noopener">nikimosier.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Confidence Fly Search. All rights reserved.
+  </div>
+</footer>
+
+<!-- ========================================
+     SCRIPTS
+     ======================================== -->
+<script>
+// Sticky nav shadow on scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Mobile menu toggle
+const toggle = document.getElementById('navToggle');
+const mobile = document.getElementById('navMobile');
+const overlay = document.getElementById('navOverlay');
+
+function toggleMenu() {
+  toggle.classList.toggle('open');
+  mobile.classList.toggle('open');
+  overlay.classList.toggle('open');
+}
+
+toggle.addEventListener('click', toggleMenu);
+overlay.addEventListener('click', toggleMenu);
+
+// Close mobile menu on link click
+mobile.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (mobile.classList.contains('open')) toggleMenu();
+  });
+});
+</script>
+
+</body>
+</html>
