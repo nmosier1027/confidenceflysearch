@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>A New Era for Search: What Google's I/O 2026 Means for SEO</title>
+<meta name="description" content="Google's I/O 2026 reframed what search is for. Here's what changed for SEO &mdash; and why the panic that Google is killing structured data gets it wrong."/>
+<meta property="og:title" content="A New Era for Search: What Google's I/O 2026 Means for SEO"/>
+<meta property="og:description" content="From the new AI search box to background Search agents &mdash; what Google's I/O 2026 changes for SEO, and why 'Google is killing structured data' gets it wrong."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://confidenceflysearch.com/blog/io-2026-what-it-means-for-seo"/>
+<link rel="canonical" href="https://confidenceflysearch.com/blog/io-2026-what-it-means-for-seo"/>
+<link rel="icon" type="image/png" href="/logo.png"/>
+<meta property="og:image" content="https://confidenceflysearch.com/logo.png"/>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CN6EXCWFEB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CN6EXCWFEB');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Lora:ital@1&family=Lexend:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ========================================
+   CONFIDENCE FLY SEARCH — AGENT-FRIENDLY WEBSITES
+   Colors: #0C2E47, #07699A, #BDBEBF
+   Fonts: Montserrat, Lora, Lexend
+   ======================================== */
+
+:root {
+  --navy: #0C2E47;
+  --blue: #07699A;
+  --silver: #BDBEBF;
+  --gold: #f4ca50;
+  --white: #FFFFFF;
+  --offwhite: #F5F6F7;
+  --dark-text: #1A1A2E;
+  --muted: #5A6677;
+  --light-border: #E2E8F0;
+  --gradient: linear-gradient(135deg, #0C2E47 0%, #07699A 100%);
+  --max-width: 1200px;
+  --radius-card: 12px;
+  --radius-btn: 8px;
+}
+
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: 'Lexend', system-ui, sans-serif;
+  font-weight: 400;
+  color: var(--dark-text);
+  background: var(--white);
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--navy);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.nav.scrolled {
+  box-shadow: 0 2px 20px rgba(12, 46, 71, 0.3);
+}
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 130px;
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.nav-brand img {
+  height: 120px;
+  width: auto;
+  max-width: 500px;
+  object-fit: contain;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: 'Lexend', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: rgba(255,255,255,0.8);
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--white);
+}
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 1px;
+}
+.nav-cta {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: var(--gold) !important;
+  color: var(--navy) !important;
+  padding: 10px 20px;
+  border-radius: var(--radius-btn);
+  transition: background 0.2s, transform 0.2s;
+}
+.nav-cta:hover {
+  background: #e6b93e !important;
+  transform: translateY(-1px);
+}
+
+/* Mobile hamburger */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  margin: 6px 0;
+  transition: all 0.3s;
+  border-radius: 1px;
+}
+.nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+/* Mobile menu */
+.nav-mobile {
+  display: none;
+  position: fixed;
+  top: 130px;
+  right: 0;
+  bottom: 0;
+  width: 280px;
+  background: var(--navy);
+  padding: 32px 24px;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 999;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+}
+.nav-mobile.open { display: flex; }
+.nav-mobile a {
+  font-family: 'Lexend', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.8);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: color 0.2s;
+}
+.nav-mobile a:hover { color: white; }
+.nav-mobile .nav-cta {
+  margin-top: 16px;
+  text-align: center;
+  display: block;
+  border-bottom: none;
+}
+.nav-overlay {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 998;
+}
+.nav-overlay.open { display: block; }
+
+/* ========================================
+   HERO
+   ======================================== */
+.hero {
+  background: var(--navy);
+  padding: 160px 0 80px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: clamp(32px, 4.6vw, 52px);
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-eyebrow {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 16px;
+}
+.hero-meta {
+  font-family: 'Lexend', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--silver);
+  margin-top: 24px;
+}
+
+/* ========================================
+   ARTICLE CONTENT
+   ======================================== */
+.article {
+  padding: 80px 0;
+}
+.article-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.article-inner h2 {
+  font-size: clamp(24px, 3vw, 32px);
+  text-transform: uppercase;
+  color: var(--navy);
+  margin: 56px 0 24px;
+  letter-spacing: 0.5px;
+}
+.article-inner h2:first-child {
+  margin-top: 0;
+}
+.article-inner p {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.9;
+  margin-bottom: 24px;
+}
+.article-inner p:last-child {
+  margin-bottom: 0;
+}
+.article-inner .lead {
+  font-size: 19px;
+  color: var(--dark-text);
+  font-weight: 300;
+  line-height: 1.8;
+}
+.article-inner a.inline-link {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.article-inner a.inline-link:hover {
+  color: var(--navy);
+}
+.article-inner strong {
+  color: var(--navy);
+  font-weight: 600;
+}
+.article-inner em { font-style: italic; }
+
+/* Pullquote */
+.pullquote {
+  margin: 48px 0;
+  padding: 32px 40px;
+  border-left: 4px solid var(--gold);
+  background: var(--offwhite);
+  border-radius: 0 var(--radius-card) var(--radius-card) 0;
+}
+.pullquote p {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--navy);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Divider */
+.article-divider {
+  width: 60px;
+  height: 3px;
+  background: var(--gold);
+  border: none;
+  margin: 56px auto;
+  border-radius: 2px;
+}
+
+/* Mid-post email form CTA */
+.midpost-cta {
+  margin: 56px 0;
+  padding: 40px 36px;
+  background: linear-gradient(135deg, rgba(12,46,71,0.04) 0%, rgba(7,105,154,0.08) 100%);
+  border: 1px solid var(--light-border);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius-card);
+}
+.midpost-cta h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(22px, 2.6vw, 28px);
+  text-transform: uppercase;
+  color: var(--navy);
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+.midpost-cta .midpost-sub {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 17px;
+  color: var(--blue);
+  margin-bottom: 24px;
+}
+.midpost-cta form.midpost-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.midpost-cta form.midpost-form input[type="text"],
+.midpost-cta form.midpost-form input[type="email"] {
+  flex: 1 1 180px;
+  min-width: 0;
+  padding: 13px 16px;
+  font-family: 'Lexend', sans-serif;
+  font-size: 15px;
+  color: var(--dark-text);
+  background: var(--white);
+  border: 1px solid var(--light-border);
+  border-radius: var(--radius-btn);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.midpost-cta form.midpost-form input:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(7,105,154,0.15);
+}
+.midpost-cta form.midpost-form button {
+  flex: 0 0 auto;
+  padding: 13px 26px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--navy);
+  border: none;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.midpost-cta form.midpost-form button:hover {
+  background: #e6b93e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(244,202,80,0.35);
+}
+.midpost-cta .midpost-fineprint {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 0;
+}
+@media (max-width: 560px) {
+  .midpost-cta {
+    padding: 28px 20px;
+  }
+  .midpost-cta form.midpost-form {
+    flex-direction: column;
+  }
+  .midpost-cta form.midpost-form button {
+    width: 100%;
+  }
+}
+
+/* Metaphor / parallel cards */
+.metaphor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 40px 0;
+}
+.metaphor-card {
+  padding: 28px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--light-border);
+}
+.metaphor-card.fly {
+  background: linear-gradient(135deg, rgba(12,46,71,0.03) 0%, rgba(7,105,154,0.06) 100%);
+}
+.metaphor-card.seo {
+  background: linear-gradient(135deg, rgba(244,202,80,0.08) 0%, rgba(244,202,80,0.15) 100%);
+}
+.metaphor-card-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+.metaphor-card.seo .metaphor-card-label {
+  color: #b8941a;
+}
+.metaphor-card h3 {
+  font-size: 18px;
+  color: var(--navy);
+  margin-bottom: 10px;
+  text-transform: none;
+}
+.metaphor-card p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* Numbered list block */
+.numbered-list {
+  margin: 32px 0 24px;
+  padding: 0;
+  list-style: none;
+  counter-reset: numlist;
+}
+.numbered-list li {
+  position: relative;
+  padding-left: 56px;
+  margin-bottom: 28px;
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.8;
+  counter-increment: numlist;
+}
+.numbered-list li::before {
+  content: counter(numlist);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--navy);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.numbered-list li strong {
+  display: block;
+  color: var(--navy);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+/* Further reading */
+.further-reading {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--light-border);
+}
+.further-reading h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--silver);
+  margin-bottom: 14px;
+}
+.further-reading ul {
+  list-style: none;
+  padding: 0;
+}
+.further-reading li {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+.further-reading a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ========================================
+   CTA SECTION
+   ======================================== */
+.section {
+  padding: 80px 0;
+}
+.section-alt {
+  background: var(--offwhite);
+}
+
+.btn {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+  display: inline-block;
+  text-align: center;
+}
+.btn-primary {
+  background: var(--white);
+  color: var(--navy);
+  border-color: var(--light-border);
+}
+.btn-primary:hover {
+  background: var(--offwhite);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+.btn-blue {
+  background: var(--gold);
+  color: var(--navy);
+}
+.btn-blue:hover {
+  background: #e6b93e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(7,105,154,0.3);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 48px;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+  background: var(--navy);
+  padding: 64px 0 32px;
+}
+.footer-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.footer-brand img {
+  height: 80px;
+  width: auto;
+  max-width: 360px;
+  object-fit: contain;
+}
+.footer-tagline {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  max-width: 320px;
+  line-height: 1.7;
+}
+.footer h4 {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--silver);
+  margin-bottom: 16px;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-links a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px 24px 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+
+  .article-inner {
+    padding: 0 8px;
+  }
+
+  .pullquote {
+    padding: 24px 20px;
+    margin: 36px 0;
+  }
+  .pullquote p {
+    font-size: 19px;
+  }
+
+  .metaphor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .numbered-list li {
+    padding-left: 48px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  body { font-size: 16px; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+  {
+    "@type": "Article",
+    "headline": "A New Era for Search: What Google's I/O 2026 Means for SEO",
+    "description": "Google's I/O 2026 reframed what search is for. Here's what changed for SEO, and why the panic that Google is killing structured data gets it wrong.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://confidenceflysearch.com/#niki-mosier",
+      "name": "Niki Mosier"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Confidence Fly Search",
+      "url": "https://confidenceflysearch.com"
+    },
+    "datePublished": "2026-05-22",
+    "dateModified": "2026-05-22",
+    "url": "https://confidenceflysearch.com/blog/io-2026-what-it-means-for-seo",
+    "image": "https://confidenceflysearch.com/logo.png",
+    "keywords": "Google I/O 2026, AI Mode, AEO, GEO, structured data, schema markup, FAQ rich results, AI search, SEO strategy"
+  },
+  {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://confidenceflysearch.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://confidenceflysearch.com/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "A New Era for Search",
+        "item": "https://confidenceflysearch.com/blog/io-2026-what-it-means-for-seo"
+      }
+    ]
+  }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ========================================
+     NAVIGATION
+     ======================================== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><img src="/logo.png" alt="Confidence Fly Search"></a>
+
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/shop.html">Shop</a></li>
+      <li><a href="/consulting.html">Consulting</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/" class="active">Blog</a></li>
+      <li><a href="/aeo-checklist.html" class="nav-cta">Free Checklist</a></li>
+    </ul>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-overlay" id="navOverlay"></div>
+<div class="nav-mobile" id="navMobile">
+  <a href="/">Home</a>
+  <a href="/shop.html">Shop</a>
+  <a href="/consulting.html">Consulting</a>
+  <a href="/about.html">About</a>
+  <a href="/blog/">Blog</a>
+  <a href="/aeo-checklist.html" class="nav-cta">Free Checklist</a>
+</div>
+
+<!-- ========================================
+     HERO
+     ======================================== -->
+<section class="hero">
+  <div class="container">
+    <p class="hero-eyebrow">Google has redefined what its search box is for</p>
+    <h1>A New Era for Search: What Google&rsquo;s I/O 2026 Means for SEO</h1>
+    <p class="hero-meta">By Niki Mosier &middot; May 22, 2026 &middot; 6 min read</p>
+  </div>
+</section>
+
+<!-- ========================================
+     ARTICLE
+     ======================================== -->
+<section class="article">
+  <div class="container">
+    <div class="article-inner">
+
+      <p class="lead">On May 19, Google used its I/O stage to announce what VP of Search Liz Reid called <a class="inline-link" href="https://blog.google/products-and-platforms/products/search/search-io-2026/" target="_blank" rel="noopener">&ldquo;a new era for AI Search.&rdquo;</a> The framing was confident: AI Mode passed a billion monthly users a year after launch, queries are more than doubling every quarter, and total search volume just hit an all-time high. The message Google wants the industry to absorb is simple &mdash; AI isn&rsquo;t shrinking search, it&rsquo;s expanding it.</p>
+
+      <p>Regardless of Google&rsquo;s optimistic framing, these product changes are significant and will impact anyone working in SEO. Here&rsquo;s what was announced, what it means for your strategy, and how to adapt.</p>
+
+      <h2>What Actually Changed</h2>
+
+      <p>Four announcements stand out for SEOs.</p>
+
+      <p>The search box has received its most significant update in 25 years. It now accepts a wide range of inputs &mdash; text, images, files, video, and even open Chrome tabs &mdash; and provides AI-powered suggestions that surpass traditional autocomplete. This is powered by Gemini 3.5 Flash, now the standard in AI Mode globally.</p>
+
+      <p>Google is introducing information agents &mdash; background tools that monitor the web continuously and notify you when your set criteria are met. Agentic booking is expanding to local services, and Google can now contact businesses for you.</p>
+
+      <p>Search can now generate custom interfaces in real time using Google&rsquo;s Antigravity platform. This includes interactive visuals, tables, and simulations tailored to the user&rsquo;s query. Persistent dashboards and trackers can also be created directly within Search, functioning as mini-apps.</p>
+
+      <p>Personal Intelligence has expanded as well. AI Mode can now connect to Gmail, Google Photos, and soon Calendar, personalizing answers to your context across nearly 200 countries.</p>
+
+      <h2>What It Means for SEO</h2>
+
+      <p>The core shift is clear: the individual page is no longer the main destination, and keywords are no longer the primary focus.</p>
+
+      <p>With the search box now accepting paragraphs, images, and follow-up questions in a single thread, users are moving from keyword searches to problem descriptions. Google breaks these down into multiple sub-questions and retrieves relevant passages for each. Instead of optimizing a single page for a broad term like &ldquo;best project management software,&rdquo; your goal is to be the source that answers the many specific questions within that query.</p>
+
+      <p>When Search builds a custom interface in real time, there may not be a single ranked page answering the query. Your content becomes the raw material that Google uses to construct answers. Success is now measured by being cited in these synthesized responses. Clicks will be fewer but more targeted, so every visit you earn needs to deliver more value.</p>
+
+      <p>This is the genuine shift, and it predates I/O 2026. What I/O did was make it official.</p>
+
+      <h2>No, Google Isn&rsquo;t Killing Structured Data</h2>
+
+      <p>This is where the confusion starts, and it&rsquo;s important to be precise, because many are misreading the situation.</p>
+
+      <p>Over the past year Google has retired a string of structured data types. Seven went away in June 2025, including Book Actions, Course Info, and Claim Review. HowTo rich results were phased out entirely. And on May 7, 2026, Google deprecated FAQ rich results for every site, with Search Console and the Rich Results Test dropping FAQ support over the following months.</p>
+
+      <p>At first glance, it may seem like Google is abandoning structured data. That is not the case, and the distinction is critical.</p>
+
+      <p>What Google retired is the <em>rich result</em>: the visual enhancement that displayed in the search listing, like the FAQ accordion or the HowTo steps. Google explicitly stated it will continue to read FAQ structured data to understand pages &mdash; it simply won&rsquo;t render the dropdown anymore. When the confusion spread, Google Search Advocate John Mueller stepped in to say it plainly:</p>
+
+      <div class="pullquote">
+        <p>&ldquo;Google is not killing schema.&rdquo;</p>
+      </div>
+
+      <p>Google was equally clear that this is a visual and functional change, not an algorithmic one. Rankings are not affected.</p>
+
+      <p>The reality is the opposite of the panic. For years, structured data was about earning visual enhancements like stars or accordions. Now Google has separated those visual rewards from structured data but continues to use it for machine understanding. Schema&rsquo;s role is shifting from making your listing stand out visually to making your site understandable to machines. This is not a reason to remove your markup &mdash; it is a reason to rethink its purpose.</p>
+
+      <!-- Mid-post email form CTA -->
+      <div class="midpost-cta">
+        <h3>Is your content ready for AI search?</h3>
+        <p class="midpost-sub">Get the free AEO Quick-Start Checklist &mdash; the 12 things to check before AI becomes your biggest source of search visibility.</p>
+        <form class="midpost-form" action="https://app.kit.com/forms/9318023/subscriptions" method="post" data-sv-form="9318023" data-uid="66e67814f8" data-format="inline" data-version="5">
+          <input aria-label="First Name" name="fields[first_name]" required placeholder="First name" type="text">
+          <input aria-label="Email Address" name="email_address" required placeholder="Email address" type="email">
+          <button type="submit">Send the Checklist</button>
+        </form>
+        <p class="midpost-fineprint">Sent instantly. No spam &mdash; unsubscribe any time.</p>
+      </div>
+
+      <h2>How to Think About Optimizing Now</h2>
+
+      <p>Several core principles hold up well against everything I/O 2026 announced.</p>
+
+      <ol class="numbered-list">
+        <li><strong>Focus on retrieval, not just ranking.</strong> Structure your content so each passage stands alone: use clear, question-based headings and provide direct answers at the top. Avoid burying key points. Each section should make sense if extracted on its own, because that&rsquo;s how Google now uses your content.</li>
+        <li><strong>Prioritize building entities, not just pages.</strong> Search engines trust and retrieve entities. Use consistent Organization and Person markup, feature real authors with credentials, and maintain a unified presence across the web. This connects your brand to a recognized entity, which is essential for visibility in personalized, agent-driven results.</li>
+        <li><strong>Keep the structured data that still does double duty.</strong> Product, Review, Article, Breadcrumb, Organization, and LocalBusiness markup still earn rich results and feed understanding. Stop counting on FAQ and HowTo for search real estate; leaving that markup in place is harmless, but it earns nothing visible now.</li>
+        <li><strong>Aim to be a primary source.</strong> Generative search features rely on original, authoritative data. If your content simply repeats what&rsquo;s already available, it is unlikely to be cited or surfaced by AI models.</li>
+        <li><strong>Update your measurement approach.</strong> Traditional rankings matter less as results become more personalized. Focus on metrics like citation share, share of voice in AI answers, and branded demand to gauge your true visibility.</li>
+      </ol>
+
+      <h2>The Throughline</h2>
+
+      <p>I/O 2026 did not create a new SEO paradigm. It confirmed the direction the industry has been moving for the past two years: optimization is now about being the clear, credible, machine-readable source that AI systems rely on. Teams that focus on this shift &mdash; and ignore distractions like the schema panic &mdash; will continue to succeed.</p>
+
+      <div class="pullquote">
+        <p>The new SEO is about being the source AI reaches for: clear, credible, and machine-readable.</p>
+      </div>
+
+      <div class="further-reading">
+        <h3>Further reading</h3>
+        <ul>
+          <li>Google &mdash; <a href="https://blog.google/products-and-platforms/products/search/search-io-2026/" target="_blank" rel="noopener">A new era for AI Search</a> (blog.google)</li>
+          <li>Search Engine Journal &mdash; <a href="https://www.searchenginejournal.com/google-is-not-diminishing-the-use-of-structured-data-in-2026/560516/" target="_blank" rel="noopener">Google Is Not Diminishing The Use Of Structured Data In 2026</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     CTA SECTION
+     ======================================== -->
+<section class="section section-alt">
+  <div class="container" style="text-align:center;">
+    <h2 style="font-size: clamp(28px, 3.5vw, 40px); text-transform: uppercase; color: var(--navy); margin-bottom: 16px; letter-spacing: 0.5px;">Build for the Agentic Web</h2>
+    <p style="font-size: 17px; color: var(--muted); max-width: 560px; margin: 0 auto;">Frameworks for SEO practitioners getting their sites &mdash; and their leadership &mdash; ready for what comes next.</p>
+    <div class="cta-buttons">
+      <a href="/shop.html" class="btn btn-blue">Browse the Templates</a>
+      <a href="/consulting.html" class="btn btn-primary">Work With Me</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     FOOTER
+     ======================================== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand"><img src="/logo.png" alt="Confidence Fly Search"></div>
+      <p class="footer-tagline">SEO frameworks and consulting from Niki Mosier. Helping practitioners do their best work.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="/shop.html">Shop</a></li>
+        <li><a href="/consulting.html">Consulting</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/aeo-checklist.html">Free Checklist</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <ul class="footer-links">
+        <li><a href="https://www.linkedin.com/in/niki-mosier/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="mailto:seo@nikimosier.com">Email</a></li>
+        <li><a href="https://nikimosier.com" target="_blank" rel="noopener">nikimosier.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Confidence Fly Search. All rights reserved.
+  </div>
+</footer>
+
+<!-- ========================================
+     SCRIPTS
+     ======================================== -->
+<script>
+// Sticky nav shadow on scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Mobile menu toggle
+const toggle = document.getElementById('navToggle');
+const mobile = document.getElementById('navMobile');
+const overlay = document.getElementById('navOverlay');
+
+function toggleMenu() {
+  toggle.classList.toggle('open');
+  mobile.classList.toggle('open');
+  overlay.classList.toggle('open');
+}
+
+toggle.addEventListener('click', toggleMenu);
+overlay.addEventListener('click', toggleMenu);
+
+// Close mobile menu on link click
+mobile.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (mobile.classList.contains('open')) toggleMenu();
+  });
+});
+</script>
+
+</body>
+</html>
