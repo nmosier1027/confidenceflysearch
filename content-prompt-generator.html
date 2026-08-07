@@ -108,6 +108,23 @@
     opacity:0;pointer-events:none;transition:all .25s ease;z-index:50;box-shadow:0 8px 24px rgba(0,0,0,.2)}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
+  /* Profiles / onboarding / sample */
+  .savestate{font-size:12px;color:#1f8a54;font-weight:700;opacity:0;transition:opacity .2s}
+  .savestate.show{opacity:1}
+  .hint-note{font-size:12px;color:var(--muted)}
+  .nudge{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:#eaf3f9;border:1px solid #cfe4f0;
+    border-radius:12px;padding:12px 16px;margin-bottom:16px;font-size:14px;color:var(--ink-soft)}
+  .nudge b{color:var(--navy)}
+  .nudge .btn{margin-left:auto}
+  details.sample{margin:0 0 18px;border:1px solid var(--line);border-radius:12px;background:#fbfcfd}
+  details.sample>summary{cursor:pointer;padding:12px 16px;font-weight:700;font-size:14px;color:var(--brandA);list-style:none}
+  details.sample>summary::-webkit-details-marker{display:none}
+  details.sample>summary::before{content:"▸  "}
+  details.sample[open]>summary::before{content:"▾  "}
+  details.sample .sbody{padding:0 16px 14px;font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+  details.sample .sbody ol{margin:8px 0 0;padding-left:20px}
+  details.sample .sbody li{margin:4px 0}
+
   /* Site chrome */
   .site-nav{background:#0a2334;position:sticky;top:0;z-index:40}
   .site-nav .wrap{display:flex;align-items:center;gap:18px;padding-top:13px;padding-bottom:13px}
@@ -152,11 +169,11 @@
     <div>
       <span class="kicker">Content Ideation Engine</span>
       <h1>Brand-Trained Content Prompt Generator</h1>
-      <p>Train it once on your brand, then generate 50+ on-brand content ideas in minutes. Six proven prompt frameworks — copy them, or fire them straight into ChatGPT or Claude.</p>
+      <p>Train it once on your brand, then go from blank page to published: generate ideas, find gaps in AI answers, and turn the best into briefs and drafts — copy the prompts or fire them into ChatGPT, Claude, or Perplexity.</p>
     </div>
     <div class="steps-count">
       <a class="dl" href="content-prompt-generator.html" download>⬇ Download to use offline</a>
-      <div class="steps-lines"><b>Step 1 →</b> Train it on your brand<br><b>Step 2 →</b> Grab a framework &amp; go</div>
+      <div class="steps-lines"><b>1 ·</b> Train on your brand<br><b>2 ·</b> Generate ideas<br><b>3 ·</b> Find AI-answer gaps<br><b>4 ·</b> Brief &amp; draft<br><b>5 ·</b> Update existing pages</div>
     </div>
   </div>
 </header>
@@ -166,18 +183,25 @@
   <!-- STEP 1 -->
   <section class="panel">
     <h2><span class="step-num">1</span>Train the generator on your brand</h2>
-    <p class="lead">Fill this in once. Every framework below rewrites itself around these details in real time. Nothing is uploaded anywhere — it all runs in your browser.</p>
+    <p class="lead">Fill this in once — it saves in your browser and every framework rewrites itself around it in real time. Nothing is uploaded anywhere. Juggling several brands? Keep a profile per client and switch anytime.</p>
+
+    <div class="nudge" id="nudge">
+      <div><b>New here?</b> Load the Fishpond demo to see the whole thing work in ~30 seconds — then make a new profile for your own brand.</div>
+      <button class="btn primary small" id="nudgeDemo">🎣 Load the demo</button>
+    </div>
 
     <div class="toolbar">
-      <label class="sel" for="preset">Start from:</label>
-      <select id="preset">
-        <option value="blank">Blank — my own brand</option>
-        <option value="demo">Demo brand (Fishpond — fly-fishing gear)</option>
-      </select>
-      <button class="btn ghost small" id="clearBtn">Clear all</button>
+      <label class="sel" for="profileSel">Client profile:</label>
+      <select id="profileSel"></select>
+      <button class="btn ghost small" id="newBtn">＋ New</button>
+      <button class="btn ghost small" id="renameBtn">✎ Rename</button>
+      <button class="btn ghost small" id="deleteBtn">🗑 Delete</button>
+      <button class="btn ghost small" id="demoBtn">🎣 Demo</button>
+      <span id="storageNote" class="hint-note" style="display:none">Profiles need browser storage — use Export/Import here.</span>
       <span style="flex:1"></span>
-      <button class="btn ghost small" id="exportBtn">⬇ Save profile</button>
-      <button class="btn ghost small" id="importBtn">⬆ Load profile</button>
+      <span id="saveState" class="savestate">Saved ✓</span>
+      <button class="btn ghost small" id="exportBtn">⬇ Export</button>
+      <button class="btn ghost small" id="importBtn">⬆ Import</button>
       <input type="file" id="importFile" accept="application/json" style="display:none">
     </div>
 
@@ -232,6 +256,20 @@
         <button class="btn ghost" id="copyAllBtn">⧉ Copy all 6</button>
       </div>
     </div>
+    <details class="sample">
+      <summary>See a sample of what you'll get</summary>
+      <div class="sbody">
+        From the <b>Audience Pain-Point Ideas</b> framework, trained on the Fishpond demo — a handful of the 50 it returns:
+        <ol>
+          <li>The 5 pack mistakes that soak your fly boxes — and how to avoid them</li>
+          <li>Carry-on only: a fly-fishing packing list that clears TSA</li>
+          <li>Sling, lumbar, or chest pack? Pick the right one for your water</li>
+          <li>What "Certified B Corp" actually means for the gear you buy</li>
+          <li>Protect your rod in transit: the 60-second pack-down that saves $800</li>
+        </ol>
+        Every framework returns something like this — titled, on-brand, and specific to your audience.
+      </div>
+    </details>
     <div class="cards" id="cards"></div>
   </section>
 
@@ -276,9 +314,149 @@
     </div>
   </section>
 
+  <!-- STEP 4 — IDEAS TO PUBLISHED -->
+  <section class="panel">
+    <div class="fw-head">
+      <div>
+        <h2 style="margin-bottom:2px"><span class="step-num">4</span>From ideas to published</h2>
+        <p class="lead" style="margin:0">You've got ideas — now turn the best ones into a plan and a draft. Work top to bottom: shortlist → brief → draft.</p>
+      </div>
+    </div>
+
+    <!-- 4A prioritize -->
+    <div class="fw" style="margin-bottom:16px">
+      <div class="top">
+        <div class="num">STEP 4A · PRIORITIZE</div>
+        <h3>Shortlist your ideas</h3>
+        <p class="best">Paste the ideas you generated — get them scored and ranked so you know the few to do first.</p>
+        <div class="field full" style="margin-top:8px">
+          <label for="prioritizeInput">Your ideas <span class="hint">(paste your list, one per line)</span></label>
+          <textarea id="prioritizeInput" data-key="prioritizeInput" placeholder="Paste the ideas you generated above…"></textarea>
+        </div>
+      </div>
+      <div class="body">
+        <pre id="prioPre" style="max-height:240px"></pre>
+        <div class="row">
+          <button class="btn primary small" id="prioCopy">⧉ Copy prompt</button>
+          <button class="btn ghost small" id="prioGpt">↗ ChatGPT</button>
+          <button class="btn ghost small" id="prioClaude">↗ Claude</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4B brief -->
+    <div class="fw" style="margin-bottom:16px">
+      <div class="top">
+        <div class="num">STEP 4B · CONTENT BRIEF</div>
+        <h3>Turn one idea into a brief</h3>
+        <p class="best">Paste a chosen idea — get a search- &amp; AI-optimized brief: target query, outline, entities, FAQs, meta, internal links, CTA.</p>
+        <div class="field full" style="margin-top:8px">
+          <label for="briefInput">Chosen idea / working title</label>
+          <textarea id="briefInput" data-key="briefInput" placeholder="Paste one idea or title from your shortlist…" style="min-height:48px"></textarea>
+        </div>
+      </div>
+      <div class="body">
+        <pre id="briefPre" style="max-height:240px"></pre>
+        <div class="row">
+          <button class="btn primary small" id="briefCopy">⧉ Copy prompt</button>
+          <button class="btn ghost small" id="briefGpt">↗ ChatGPT</button>
+          <button class="btn ghost small" id="briefClaude">↗ Claude</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4C draft -->
+    <div class="fw">
+      <div class="top">
+        <div class="num">STEP 4C · FIRST DRAFT</div>
+        <h3>Draft the piece</h3>
+        <p class="best">Paste your brief (or a chosen idea) — get a complete first draft in your brand voice, ready to edit.</p>
+        <div class="field full" style="margin-top:8px">
+          <label for="draftInput">Your brief or idea <span class="hint">(paste the brief from Step 4B)</span></label>
+          <textarea id="draftInput" data-key="draftInput" placeholder="Paste the brief you just generated, or a chosen idea…"></textarea>
+        </div>
+      </div>
+      <div class="body">
+        <pre id="draftPre" style="max-height:240px"></pre>
+        <div class="row">
+          <button class="btn primary small" id="draftCopy">⧉ Copy prompt</button>
+          <button class="btn ghost small" id="draftGpt">↗ ChatGPT</button>
+          <button class="btn ghost small" id="draftClaude">↗ Claude</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:14px">
+      <b>Tip:</b> run Step 4B in a search-enabled AI (ChatGPT with search, Perplexity, or Gemini) so the brief reflects what's ranking and getting cited right now.
+    </div>
+  </section>
+
+  <!-- STEP 5 — IMPROVE EXISTING PAGES -->
+  <section class="panel">
+    <div class="fw-head">
+      <div>
+        <h2 style="margin-bottom:2px"><span class="step-num">5</span>Improve what you already have</h2>
+        <p class="lead" style="margin:0">Not every idea needs a new page. Point these at your existing site to refresh, expand, and win AI citations on pages you've already published.</p>
+      </div>
+    </div>
+
+    <!-- 5A map ideas to site -->
+    <div class="fw" style="margin-bottom:16px">
+      <div class="top">
+        <div class="num">STEP 5A · MAP TO YOUR SITE</div>
+        <h3>Turn ideas into site updates</h3>
+        <p class="best">For each idea: create new vs. update an existing page — plus merges, prunes, and internal links. Uses the ideas from Step 4A.</p>
+        <div class="field full" style="margin-top:8px">
+          <label for="existingPages">Your existing pages <span class="hint">(paste URLs or titles, one per line)</span></label>
+          <textarea id="existingPages" data-key="existingPages" placeholder="/blog/post-one&#10;/services/…&#10;https://yoursite.com/page"></textarea>
+        </div>
+      </div>
+      <div class="body">
+        <pre id="mapPre" style="max-height:240px"></pre>
+        <div class="row">
+          <button class="btn primary small" id="mapCopy">⧉ Copy prompt</button>
+          <button class="btn ghost small" id="mapGpt">↗ ChatGPT</button>
+          <button class="btn ghost small" id="mapClaude">↗ Claude</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5B refresh a page -->
+    <div class="fw">
+      <div class="top">
+        <div class="num">STEP 5B · REFRESH A PAGE</div>
+        <h3>Optimize one existing page</h3>
+        <p class="best">Paste a page and its target query — get a prioritized on-page + AEO/GEO update checklist to win rankings and AI citations.</p>
+        <div class="grid" style="margin-top:8px">
+          <div class="field">
+            <label for="pageToRefresh">Page URL or pasted content</label>
+            <textarea id="pageToRefresh" data-key="pageToRefresh" placeholder="https://yoursite.com/page  (or paste the page text)" style="min-height:48px"></textarea>
+          </div>
+          <div class="field">
+            <label for="refreshQuery">Primary target query</label>
+            <input id="refreshQuery" data-key="refreshQuery" placeholder="the query this page should win">
+          </div>
+        </div>
+      </div>
+      <div class="body">
+        <pre id="refreshPre" style="max-height:240px"></pre>
+        <div class="row">
+          <button class="btn primary small" id="refreshCopy">⧉ Copy prompt</button>
+          <button class="btn ghost small" id="refreshPplx">↗ Perplexity</button>
+          <button class="btn ghost small" id="refreshGpt">↗ ChatGPT</button>
+          <button class="btn ghost small" id="refreshClaude">↗ Claude</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:14px">
+      <b>Tip:</b> run the page refresh in a search-enabled AI (ChatGPT with search, Perplexity, or Gemini) so it compares your page against what's actually ranking and getting cited today.
+    </div>
+  </section>
+
   <section class="panel" style="margin-bottom:8px">
     <div class="callout">
-      <b>How to use it live:</b> Train it on your brand up top, then hit <b>Send to ChatGPT</b> or <b>Send to Claude</b> on any framework — or run the <b>Gap Finder</b> — and the fully-built prompt lands in a fresh chat, ready to go. Prefer to work offline? <b>Copy</b> drops it on your clipboard. <b>Save profile</b> exports your brand so you (or your audience) can reload it next time — no account, no cloud.
+      <b>How to use it live:</b> Train it on your brand up top, then hit <b>Send to ChatGPT</b> or <b>Send to Claude</b> on any framework — run the <b>Gap Finder</b>, take an idea to a <b>draft</b> in Step 4, or point Step 5 at your <b>existing pages</b> — and the fully-built prompt lands in a fresh chat, ready to go. Prefer to work offline? <b>Copy</b> drops it on your clipboard. <b>Save profile</b> exports your brand so you (or your audience) can reload it next time — no account, no cloud.
     </div>
   </section>
 
@@ -301,7 +479,7 @@
 
 <script>
 /* ---------- Brand profile state ---------- */
-const KEYS = ["brand","whatYouDo","audience","painPoints","voice","pillars","channels","cta","avoid","competitors","topic","queries"];
+const KEYS = ["brand","whatYouDo","audience","painPoints","voice","pillars","channels","cta","avoid","competitors","topic","queries","prioritizeInput","briefInput","draftInput","existingPages","pageToRefresh","refreshQuery"];
 const state = Object.fromEntries(KEYS.map(k=>[k,""]));
 
 const DEMO = {
@@ -316,7 +494,13 @@ const DEMO = {
   avoid: "greenwashing, elitist or gatekeeping tone, wasteful consumerism, trophy-hunting bravado",
   competitors: "Orvis\nSimms\nPatagonia (fly fishing)",
   topic: "fly-fishing packs, landing nets, luggage & travel gear",
-  queries: "best fly fishing sling pack\nhow to pack for a fly fishing trip\nbest waterproof fly fishing backpack\nfly fishing net buying guide"
+  queries: "best fly fishing sling pack\nhow to pack for a fly fishing trip\nbest waterproof fly fishing backpack\nfly fishing net buying guide",
+  prioritizeInput: "The 5 pack mistakes that soak your fly boxes\nCarry-on only: a fly-fishing packing list that clears TSA\nSling, lumbar, or chest pack? Pick the right one for your water\nHow our recycled fabric starts as discarded fishing nets\n5 under-the-radar rivers worth the extra drive this fall\nWhat “Certified B Corp” really means for the gear you buy",
+  briefInput: "The 5 pack mistakes that soak your fly boxes — and how to avoid them",
+  draftInput: "The 5 pack mistakes that soak your fly boxes — and how to avoid them",
+  existingPages: "/packs/submersible-sling-pack\n/nets/nomad-native-landing-net\n/blog/how-to-pack-for-a-fishing-trip\n/luggage/rolling-carry-on\n/blog/choosing-a-fly-fishing-pack",
+  pageToRefresh: "https://fishpondusa.com/blog/how-to-pack-for-a-fishing-trip",
+  refreshQuery: "how to pack for a fly fishing trip"
 };
 
 /* ---------- Prompt frameworks ---------- */
@@ -461,6 +645,97 @@ FORMAT:
 - Then a "Top 5 to publish first" list with a one-line reason for each.
 - Cite the sources behind every visibility finding.`;
 
+/* ---------- Step 4: idea → published workflow prompts ---------- */
+const PRIORITIZE_TEMPLATE =
+`You are a content strategist for {{brand}} ({{whatYouDo}}), serving {{audience}}.
+
+Here is a list of content ideas:
+{{prioritizeInput}}
+
+TASK: Score and rank these so I know what to create first. Rate each idea 1–5 on:
+- Audience impact (does it hit a real pain point or desire?)
+- Search & AI-answer opportunity (likely demand + chance to get cited in AI Overviews / ChatGPT / Perplexity)
+- Ease to produce (5 = quick, 1 = heavy lift)
+- Strategic fit with our goal: {{cta}}
+
+Give a weighted total, then output a ranked table (highest priority first) with a one-line reason for each. Finish with a "Top 5 to do first" list and why.
+Voice: {{voice}}. Avoid: {{avoid}}.`;
+
+const BRIEF_TEMPLATE =
+`You are an SEO/AEO content strategist for {{brand}} ({{whatYouDo}}), writing for {{audience}}.
+Use live web search to ground this in what currently ranks and what AI answers cite — and cite your sources.
+
+CONTENT IDEA / TITLE: {{briefInput}}
+
+TASK: Build a complete content brief a writer could hand off from:
+1) Primary target query + search intent, plus 3–5 secondary queries
+2) Three working title options and a one-line angle in our voice
+3) Full outline — H2s and H3s in logical order
+4) Entities, subtopics and questions to cover so AI answer engines can cite us
+5) People-Also-Ask / FAQ questions to answer directly on the page
+6) Suggested meta title (≤60 chars) and meta description (≤155 chars)
+7) Internal links to include and a clear CTA toward: {{cta}}
+8) Target word-count range and the single job this page must do
+
+Voice: {{voice}}. Avoid: {{avoid}}.`;
+
+const DRAFT_TEMPLATE =
+`You are a writer for {{brand}} ({{whatYouDo}}), writing for {{audience}} in our voice: {{voice}}.
+Avoid: {{avoid}}.
+
+Write a complete first draft based on this brief / idea:
+{{draftInput}}
+
+Requirements:
+- Open with a hook tied to the reader's pain or goal — no throat-clearing
+- Follow the outline; use clear H2/H3 headings
+- Answer the core question directly and early (so AI answer engines can quote it), then add depth
+- Concrete and specific — real examples relevant to {{audience}}, never generic filler
+- On-brand tone, short paragraphs, scannable
+- End with a clear CTA toward: {{cta}}
+- Put a suggested meta title + description at the very top
+
+Then list 3 things a human should fact-check or add before publishing.`;
+
+/* ---------- Step 5: improve existing pages ---------- */
+const MAP_TEMPLATE =
+`You are an SEO/AEO content strategist for {{brand}} ({{whatYouDo}}), serving {{audience}}.
+Use live web search where helpful, and note any assumptions.
+
+CONTENT IDEAS to place:
+{{prioritizeInput}}
+
+OUR EXISTING PAGES (URLs or titles):
+{{existingPages}}
+
+TASK: For each idea, decide the smartest way to act on it across our existing site — favour updating what we have over always creating new:
+1) CREATE NEW vs UPDATE EXISTING — if update, name the exact page and why it's the best home
+2) WHAT TO CHANGE on that page (expand a section, answer a new question, add entities/examples, refresh data)
+3) CONSOLIDATE / PRUNE — flag overlapping or thin pages that should merge or be removed, and the canonical target
+4) INTERNAL LINKS — which existing pages should link to this content, with suggested anchor text
+5) PRIORITY (High/Med/Low) based on effort vs. impact
+
+Output a table: Idea | New or Update (which page) | What to do | Internal links | Priority.
+Then a short "quick wins first" list. Voice: {{voice}}. Avoid: {{avoid}}.`;
+
+const REFRESH_TEMPLATE =
+`You are an SEO/AEO content strategist for {{brand}} ({{whatYouDo}}), writing for {{audience}}.
+Use live web search to compare this page against what currently ranks and what AI answers cite — and cite your sources.
+
+PAGE TO IMPROVE (URL or pasted content): {{pageToRefresh}}
+PRIMARY TARGET QUERY: {{refreshQuery}}
+
+TASK: Audit this page and return a prioritized update checklist to win rankings and AI citations:
+1) ANSWER-FIRST — how to restate the core answer high on the page so AI Overviews / ChatGPT / Perplexity can quote it
+2) GAPS — entities, subtopics and questions competitors cover that this page is missing
+3) PEOPLE-ALSO-ASK / FAQ to add and answer directly
+4) ON-PAGE — title tag, meta description, H1/H2 fixes, and schema / structured data to add
+5) FRESHNESS — outdated stats, dates, examples or claims to update
+6) INTERNAL LINKS to add (to and from this page) with anchor text
+7) A clear next CTA toward: {{cta}}
+
+Order everything by impact, and flag anything that needs a human or subject-matter check. Voice: {{voice}}. Avoid: {{avoid}}.`;
+
 /* ---------- Helpers ---------- */
 const $ = s => document.querySelector(s);
 const cardsEl = $("#cards");
@@ -520,6 +795,7 @@ function render(){
     cardsEl.appendChild(card);
   });
   renderGap();
+  renderWF();
 }
 
 function escapeHtml(s){
@@ -548,6 +824,31 @@ function renderGap(){
   if(el) el.textContent = buildGapPrompt();
 }
 
+function wfMerge(tpl, extra){
+  const v = Object.assign({
+    brand: state.brand || "[your brand]",
+    whatYouDo: state.whatYouDo || "[what you do]",
+    audience: state.audience || "[your audience]",
+    voice: state.voice || "[your brand voice]",
+    avoid: state.avoid || "nothing specified",
+    cta: state.cta || "[your main offer / CTA]"
+  }, extra);
+  return tpl.replace(/\{\{(\w+)\}\}/g, (_,k)=> v[k] !== undefined ? v[k] : "{{"+k+"}}");
+}
+function buildPrio(){ return wfMerge(PRIORITIZE_TEMPLATE, {prioritizeInput: state.prioritizeInput || "[paste the ideas you generated above]"}); }
+function buildBrief(){ return wfMerge(BRIEF_TEMPLATE, {briefInput: state.briefInput || "[paste one idea / title]"}); }
+function buildDraft(){ return wfMerge(DRAFT_TEMPLATE, {draftInput: state.draftInput || "[paste your brief, or a chosen idea]"}); }
+function buildMap(){ return wfMerge(MAP_TEMPLATE, {prioritizeInput: state.prioritizeInput || "[paste the ideas you generated above]", existingPages: state.existingPages || "[paste your existing pages / URLs]"}); }
+function buildRefresh(){ return wfMerge(REFRESH_TEMPLATE, {pageToRefresh: state.pageToRefresh || "[paste a page URL or its content]", refreshQuery: state.refreshQuery || "[the query this page should win]"}); }
+function renderWF(){
+  const set=(id,txt)=>{ const e=document.getElementById(id); if(e) e.textContent=txt; };
+  set("prioPre", buildPrio());
+  set("briefPre", buildBrief());
+  set("draftPre", buildDraft());
+  set("mapPre", buildMap());
+  set("refreshPre", buildRefresh());
+}
+
 async function copyText(txt){
   try{
     await navigator.clipboard.writeText(txt);
@@ -562,12 +863,27 @@ async function copyText(txt){
   }
 }
 
-/* ---------- Events: form ---------- */
-KEYS.forEach(k=>{
-  const el = document.querySelector(`[data-key="${k}"]`);
-  if(el) el.addEventListener("input", ()=>{ state[k]=el.value; render(); });
-});
+/* ---------- Send to an AI, with URL-length safeguard ---------- */
+const AI = {
+  gpt:    {base:"https://chatgpt.com/",             q:"?q=", label:"ChatGPT"},
+  claude: {base:"https://claude.ai/new",            q:"?q=", label:"Claude"},
+  pplx:   {base:"https://www.perplexity.ai/search", q:"?q=", label:"Perplexity"}
+};
+const URL_LIMIT = 6000; // encoded chars; beyond this, ?q= prefill is unreliable
+function sendPrompt(kind, prompt){
+  const a = AI[kind]; if(!a) return;
+  copyText(prompt);
+  const enc = encodeURIComponent(prompt);
+  if(enc.length > URL_LIMIT){
+    window.open(a.base, "_blank");
+    toast(a.label + ": prompt copied — paste it in (too long to auto-fill)");
+  } else {
+    window.open(a.base + a.q + enc, "_blank");
+    toast("Opening " + a.label + " (also copied)");
+  }
+}
 
+/* ---------- State binding ---------- */
 function loadState(obj){
   KEYS.forEach(k=>{
     state[k] = obj[k] || "";
@@ -577,85 +893,123 @@ function loadState(obj){
   render();
 }
 
-$("#preset").addEventListener("change", e=>{
-  if(e.target.value==="demo"){ loadState(DEMO); toast("Loaded demo brand"); }
-  else { loadState(Object.fromEntries(KEYS.map(k=>[k,""]))); }
+/* ---------- Saved client profiles (persist on the live site) ---------- */
+const LS_KEY = "cfs_prompt_tool_v1";
+let storageOK = true;
+try { localStorage.setItem("__cfs_t","1"); localStorage.removeItem("__cfs_t"); } catch(e){ storageOK = false; }
+let store = { profiles:{}, active:null };
+function loadStore(){ if(!storageOK) return; try{ const raw=localStorage.getItem(LS_KEY); if(raw) store=JSON.parse(raw); }catch(e){} }
+function saveStore(){ if(!storageOK) return; try{ localStorage.setItem(LS_KEY, JSON.stringify(store)); }catch(e){} }
+function blankProfile(){ return Object.fromEntries(KEYS.map(k=>[k,""])); }
+function currentStateObj(){ return Object.fromEntries(KEYS.map(k=>[k,state[k]||""])); }
+
+let saveFlashTimer, persistTimer;
+function flashSaved(){ const s=$("#saveState"); if(!s) return; s.classList.add("show"); clearTimeout(saveFlashTimer); saveFlashTimer=setTimeout(()=>s.classList.remove("show"),1200); }
+function persistActive(){ if(!storageOK || !store.active) return; store.profiles[store.active]=currentStateObj(); saveStore(); flashSaved(); }
+function persistDebounced(){ clearTimeout(persistTimer); persistTimer=setTimeout(persistActive,400); }
+
+function refreshProfileSelect(){
+  const sel=$("#profileSel"); if(!sel) return;
+  sel.innerHTML = Object.keys(store.profiles)
+    .map(n=>`<option value="${n.replace(/"/g,'&quot;')}">${n.replace(/</g,'&lt;')}</option>`).join("");
+  if(store.active) sel.value=store.active;
+}
+function selectProfile(n){ if(!store.profiles[n]) return; store.active=n; saveStore(); loadState(store.profiles[n]); refreshProfileSelect(); }
+function loadDemo(){
+  const n="Fishpond (demo)";
+  store.profiles[n]=Object.assign(blankProfile(), DEMO);
+  store.active=n; saveStore(); refreshProfileSelect(); loadState(store.profiles[n]);
+  const nu=$("#nudge"); if(nu) nu.style.display="none";
+  toast("Loaded demo brand");
+}
+
+/* form inputs -> state + autosave */
+KEYS.forEach(k=>{
+  const el = document.querySelector(`[data-key="${k}"]`);
+  if(el) el.addEventListener("input", ()=>{ state[k]=el.value; render(); persistDebounced(); });
 });
 
-$("#clearBtn").addEventListener("click", ()=>{
-  loadState(Object.fromEntries(KEYS.map(k=>[k,""])));
-  $("#preset").value="blank";
-  toast("Cleared");
+/* profile controls */
+if($("#profileSel")) $("#profileSel").addEventListener("change", e=> selectProfile(e.target.value));
+if($("#newBtn")) $("#newBtn").addEventListener("click", ()=>{
+  const n=(prompt("Name this profile (e.g. a client or brand):")||"").trim(); if(!n) return;
+  if(store.profiles[n] && !confirm("“"+n+"” already exists. Overwrite it?")) return;
+  store.profiles[n]=blankProfile(); store.active=n; saveStore(); refreshProfileSelect(); loadState(store.profiles[n]); toast("Profile “"+n+"” created");
 });
+if($("#renameBtn")) $("#renameBtn").addEventListener("click", ()=>{
+  if(!store.active) return; const n=(prompt("Rename profile:",store.active)||"").trim(); if(!n||n===store.active) return;
+  store.profiles[n]=store.profiles[store.active]; delete store.profiles[store.active]; store.active=n; saveStore(); refreshProfileSelect(); toast("Renamed");
+});
+if($("#deleteBtn")) $("#deleteBtn").addEventListener("click", ()=>{
+  if(!store.active) return; if(!confirm("Delete profile “"+store.active+"”? This can't be undone.")) return;
+  delete store.profiles[store.active]; store.active=Object.keys(store.profiles)[0]||null;
+  if(!store.active){ store.profiles["My brand"]=blankProfile(); store.active="My brand"; }
+  saveStore(); refreshProfileSelect(); loadState(store.profiles[store.active]); toast("Deleted");
+});
+if($("#demoBtn")) $("#demoBtn").addEventListener("click", loadDemo);
+if($("#nudgeDemo")) $("#nudgeDemo").addEventListener("click", loadDemo);
 
-/* ---------- Events: framework buttons ---------- */
+/* framework buttons */
 cardsEl.addEventListener("click", e=>{
-  const btn = e.target.closest("button[data-act]");
-  if(!btn) return;
-  const i = +btn.dataset.i;
-  const prompt = buildPrompt(FRAMEWORKS[i].template);
-  const act = btn.dataset.act;
-  if(act==="copy"){
-    copyText(prompt).then(()=>toast("Prompt copied — paste into any AI"));
-  } else if(act==="gpt"){
-    copyText(prompt);
-    window.open("https://chatgpt.com/?q="+encodeURIComponent(prompt), "_blank");
-    toast("Opening ChatGPT (also copied as backup)");
-  } else if(act==="claude"){
-    copyText(prompt);
-    window.open("https://claude.ai/new?q="+encodeURIComponent(prompt), "_blank");
-    toast("Opening Claude (also copied as backup)");
-  }
+  const btn = e.target.closest("button[data-act]"); if(!btn) return;
+  const prompt = buildPrompt(FRAMEWORKS[+btn.dataset.i].template);
+  if(btn.dataset.act==="copy") copyText(prompt).then(()=>toast("Prompt copied — paste into any AI"));
+  else sendPrompt(btn.dataset.act, prompt);
 });
 
-/* ---------- Copy all ---------- */
+/* copy all */
 $("#copyAllBtn").addEventListener("click", ()=>{
-  const all = FRAMEWORKS.map((fw,i)=>
-    `===== ${fw.name} (${fw.n}) =====\n${buildPrompt(fw.template)}`
-  ).join("\n\n\n");
+  const all = FRAMEWORKS.map(fw=>`===== ${fw.name} (${fw.n}) =====\n${buildPrompt(fw.template)}`).join("\n\n\n");
   copyText(all).then(()=>toast(`All ${FRAMEWORKS.length} prompts copied`));
 });
 
-/* ---------- Gap finder buttons ---------- */
-function gapSend(url,label){
-  const t = buildGapPrompt();
-  copyText(t);
-  window.open(url+encodeURIComponent(t), "_blank");
-  toast("Opening "+label+" (also copied as backup)");
-}
+/* gap finder */
 $("#gapCopy").addEventListener("click", ()=> copyText(buildGapPrompt()).then(()=>toast("Gap prompt copied — run it in a search AI")));
-$("#gapPplx").addEventListener("click", ()=> gapSend("https://www.perplexity.ai/search?q=","Perplexity"));
-$("#gapGpt").addEventListener("click", ()=> gapSend("https://chatgpt.com/?q=","ChatGPT"));
-$("#gapClaude").addEventListener("click", ()=> gapSend("https://claude.ai/new?q=","Claude"));
+$("#gapPplx").addEventListener("click", ()=> sendPrompt("pplx", buildGapPrompt()));
+$("#gapGpt").addEventListener("click", ()=> sendPrompt("gpt", buildGapPrompt()));
+$("#gapClaude").addEventListener("click", ()=> sendPrompt("claude", buildGapPrompt()));
 
-/* ---------- Export / import profile ---------- */
+/* step 4 & 5 workflow buttons */
+function wfWire(k, fn){
+  const c=$("#"+k+"Copy");   if(c)  c.addEventListener("click", ()=> copyText(fn()).then(()=>toast("Prompt copied — paste into any AI")));
+  const g=$("#"+k+"Gpt");    if(g)  g.addEventListener("click", ()=> sendPrompt("gpt", fn()));
+  const l=$("#"+k+"Claude"); if(l)  l.addEventListener("click", ()=> sendPrompt("claude", fn()));
+}
+[["prio",buildPrio],["brief",buildBrief],["draft",buildDraft],["map",buildMap],["refresh",buildRefresh]].forEach(([k,fn])=>wfWire(k,fn));
+if($("#refreshPplx")) $("#refreshPplx").addEventListener("click", ()=> sendPrompt("pplx", buildRefresh()));
+
+/* export / import (portable backup) */
 $("#exportBtn").addEventListener("click", ()=>{
-  const blob = new Blob([JSON.stringify(state,null,2)], {type:"application/json"});
+  const blob = new Blob([JSON.stringify(currentStateObj(),null,2)], {type:"application/json"});
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
-  const name = (state.brand||"brand").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"") || "brand";
-  a.href = url; a.download = name+"-content-profile.json";
+  const name = (state.brand||store.active||"brand").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"") || "brand";
+  a.href=url; a.download=name+"-content-profile.json";
   document.body.appendChild(a); a.click(); document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-  toast("Profile saved");
+  URL.revokeObjectURL(url); toast("Profile exported");
 });
 $("#importBtn").addEventListener("click", ()=> $("#importFile").click());
 $("#importFile").addEventListener("change", e=>{
-  const file = e.target.files[0]; if(!file) return;
-  const reader = new FileReader();
-  reader.onload = ()=>{
-    try{
-      const obj = JSON.parse(reader.result);
-      loadState(obj);
-      $("#preset").value="blank";
-      toast("Profile loaded");
-    }catch(err){ toast("Couldn't read that file"); }
-  };
-  reader.readAsText(file);
-  e.target.value="";
+  const file=e.target.files[0]; if(!file) return;
+  const reader=new FileReader();
+  reader.onload=()=>{ try{ loadState(JSON.parse(reader.result)); persistActive(); toast("Profile imported"); }catch(err){ toast("Couldn't read that file"); } };
+  reader.readAsText(file); e.target.value="";
 });
 
 /* ---------- Init ---------- */
+loadStore();
+if(!storageOK){
+  ["profileSel","newBtn","renameBtn","deleteBtn"].forEach(id=>{ const el=$("#"+id); if(el) el.style.display="none"; });
+  const lbl=document.querySelector('label.sel[for="profileSel"]'); if(lbl) lbl.style.display="none";
+  const note=$("#storageNote"); if(note) note.style.display="inline";
+  loadState(blankProfile());
+} else {
+  if(Object.keys(store.profiles).length===0){ store.profiles["My brand"]=blankProfile(); store.active="My brand"; saveStore(); }
+  if(!store.active || !store.profiles[store.active]) store.active=Object.keys(store.profiles)[0];
+  refreshProfileSelect();
+  loadState(store.profiles[store.active]);
+  if(state.brand){ const nu=$("#nudge"); if(nu) nu.style.display="none"; }
+}
 render();
 </script>
 </body>
