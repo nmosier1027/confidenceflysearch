@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Consulting — Confidence Fly Search</title>
-<meta name="description" content="Strategic SEO consulting for teams that want to move faster. Technical audits, AEO/GEO strategy, recovery planning, and team enablement."/>
-<meta property="og:title" content="Consulting — Confidence Fly Search"/>
-<meta property="og:description" content="Strategic SEO consulting for teams that want to move faster."/>
+<title>AI Visibility Audit — Confidence Fly Search</title>
+<meta name="description" content="Find out how ChatGPT, Perplexity, Gemini, and Google's AI Overviews see your brand. AI Visibility Snapshot ($297) and full AI Visibility Audit ($997) with competitor share of voice and a 90-day roadmap."/>
+<meta property="og:title" content="AI Visibility Audit — Confidence Fly Search"/>
+<meta property="og:description" content="Is AI recommending your brand — or your competitors? Get your AI Visibility Score in 5 business days."/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://confidenceflysearch.com/consulting.html"/>
-<link rel="canonical" href="https://confidenceflysearch.com/consulting.html"/>
+<meta property="og:url" content="https://confidenceflysearch.com/ai-visibility-audit"/>
+<link rel="canonical" href="https://confidenceflysearch.com/ai-visibility-audit"/>
 <link rel="icon" type="image/png" href="logo.png"/>
 <meta property="og:image" content="https://confidenceflysearch.com/logo.png"/>
 <!-- Google Analytics -->
@@ -25,7 +25,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Lora:ital@1&family=Lexend:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 /* ========================================
-   CONFIDENCE FLY SEARCH — CONSULTING PAGE
+   CONFIDENCE FLY SEARCH — AI VISIBILITY AUDIT PAGE
    Colors: #0C2E47, #07699A, #BDBEBF
    Fonts: Montserrat, Lora, Lexend
    ======================================== */
@@ -742,87 +742,63 @@ a { color: inherit; text-decoration: none; }
 
   body { font-size: 16px; }
 }
+
+/* ===== AI VISIBILITY AUDIT additions ===== */
+.hero-price-note { margin-top: 18px; font-size: 14px; color: rgba(255,255,255,0.7); }
+.what-you-get-grid.three { grid-template-columns: repeat(3, 1fr); }
+.pricing-grid.two { grid-template-columns: repeat(2, 1fr); max-width: 920px; margin-left: auto; margin-right: auto; }
+.pricing-list { list-style: none; margin: 0 0 28px; flex-grow: 1; }
+.pricing-list li { font-size: 15px; color: var(--dark-text); padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid var(--light-border); line-height: 1.5; }
+.pricing-list li:last-child { border-bottom: none; }
+.pricing-list li::before { content: ''; position: absolute; left: 4px; top: 15px; width: 10px; height: 6px; border-left: 2px solid var(--blue); border-bottom: 2px solid var(--blue); transform: rotate(-45deg); }
+.pricing-meta { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+.pricing-card .btn { align-self: stretch; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; counter-reset: step; }
+.step { background: var(--white); border: 1px solid var(--light-border); border-radius: var(--radius-card); padding: 28px 24px; }
+.step::before { counter-increment: step; content: counter(step); display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: var(--navy); color: var(--white); font-family: 'Montserrat', sans-serif; font-weight: 700; margin-bottom: 16px; }
+.step h3 { font-size: 17px; color: var(--navy); margin-bottom: 8px; }
+.step p { font-size: 15px; color: var(--muted); line-height: 1.6; }
+.about-strip { display: grid; grid-template-columns: 200px 1fr; gap: 40px; align-items: center; max-width: 900px; margin: 0 auto; }
+.about-strip img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 4px solid var(--white); box-shadow: 0 8px 30px rgba(12,46,71,0.12); }
+.about-strip p { color: var(--muted); margin-bottom: 12px; }
+.stat-row { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 16px; }
+.stat { font-family: 'Montserrat', sans-serif; flex: 1 1 0; min-width: 140px; }
+.stat strong { display: block; font-size: 32px; color: var(--blue); }
+.stat span { font-family: 'Lexend', sans-serif; font-size: 13px; color: var(--muted); }
+.center { text-align: center; }
+@media (max-width: 900px) {
+  .what-you-get-grid.three, .pricing-grid.two { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .about-strip { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+  .stat-row { justify-content: center; }
+}
+@media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
 </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
-  {
-    "@type": "ProfessionalService",
-    "name": "Confidence Fly Search — SEO Consulting",
-    "url": "https://confidenceflysearch.com/consulting.html",
-    "description": "Strategic SEO consulting for teams that want to move faster. Technical audits, AEO/GEO strategy, recovery planning, and team enablement.",
-    "provider": {
-      "@type": "Person",
-      "name": "Niki Mosier",
-      "jobTitle": "SEO Consultant",
-      "url": "https://confidenceflysearch.com/about.html"
+    {
+      "@type": "Service",
+      "name": "AI Visibility Audit",
+      "serviceType": "AI search visibility audit (AEO/GEO)",
+      "url": "https://confidenceflysearch.com/ai-visibility-audit",
+      "description": "An audit of how ChatGPT, Perplexity, Gemini, Microsoft Copilot, and Google AI Overviews mention and cite a brand, benchmarked against competitors, with prioritized fixes.",
+      "provider": {"@type": "Person", "name": "Niki Mosier", "jobTitle": "SEO Consultant", "url": "https://confidenceflysearch.com/about.html"},
+      "areaServed": "US",
+      "offers": [
+        {"@type": "Offer", "name": "AI Visibility Snapshot", "price": "297", "priceCurrency": "USD", "url": "https://nikifly.gumroad.com/l/ai-visibility-snapshot"},
+        {"@type": "Offer", "name": "AI Visibility Audit", "price": "997", "priceCurrency": "USD", "url": "https://nikifly.gumroad.com/l/ai-visibility-audit"}
+      ]
     },
-    "areaServed": "US",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "SEO Consulting Services",
+    {
+      "@type": "BreadcrumbList",
       "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "30-Minute Strategy Session",
-            "description": "A focused one-on-one session to discuss your SEO strategy and get clear direction."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Technical SEO Audits",
-            "description": "Comprehensive technical SEO audit covering crawlability, indexation, site architecture, and performance."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "AEO/GEO Strategy",
-            "description": "Answer Engine Optimization and Generative Engine Optimization strategy development."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Recovery Planning",
-            "description": "SEO traffic recovery diagnosis, root cause analysis, and recovery roadmap."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Team Enablement",
-            "description": "SEO training and enablement for marketing teams and cross-functional stakeholders."
-          }
-        }
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://confidenceflysearch.com"},
+        {"@type": "ListItem", "position": 2, "name": "Consulting", "item": "https://confidenceflysearch.com/consulting.html"},
+        {"@type": "ListItem", "position": 3, "name": "AI Visibility Audit", "item": "https://confidenceflysearch.com/ai-visibility-audit"}
       ]
     }
-  },
-  {
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://confidenceflysearch.com"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Consulting",
-        "item": "https://confidenceflysearch.com/consulting.html"
-      }
-    ]
-  }
   ]
 }
 </script>
@@ -839,7 +815,7 @@ a { color: inherit; text-decoration: none; }
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
       <li><a href="/shop.html">Shop</a></li>
-      <li><a href="/consulting.html" class="active">Consulting</a></li>
+      <li><a href="/consulting.html">Consulting</a></li>
       <li><a href="/about.html">About</a></li>
       <li><a href="/blog/">Blog</a></li>
       <li><a href="/tools.html">Tools</a></li>
@@ -856,11 +832,12 @@ a { color: inherit; text-decoration: none; }
 <div class="nav-mobile" id="navMobile">
   <a href="/">Home</a>
   <a href="/shop.html">Shop</a>
-  <a href="/consulting.html" class="active">Consulting</a>
+  <a href="/consulting.html">Consulting</a>
   <a href="/about.html">About</a>
   <a href="/blog/">Blog</a>
   <a href="/aeo-checklist.html" class="nav-cta">Free Checklist</a>
 </div>
+
 
 <!-- ========================================
      HERO
@@ -868,124 +845,178 @@ a { color: inherit; text-decoration: none; }
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-content">
-      <h1>Work With Me</h1>
-      <p class="hero-eyebrow">SEO consulting shaped by 15+ years of hands-on experience</p>
+      <p class="hero-eyebrow">AI Visibility Audit</p>
+      <h1>Is AI recommending your brand &mdash; or your competitors?</h1>
+      <p class="hero-body">Find out exactly what ChatGPT, Perplexity, and Google&rsquo;s AI say when your buyers ask for recommendations: how often you&rsquo;re named, who gets named instead, which sources AI trusts in your category, and the fixes that change it.</p>
+      <div class="hero-buttons">
+        <a href="https://nikifly.gumroad.com/l/ai-visibility-snapshot" target="_blank" rel="noopener" class="btn btn-blue buy-btn" data-tier="snapshot">Get the Snapshot &mdash; $297</a>
+        <a href="#pricing" class="btn btn-secondary">Compare options</a>
+      </div>
+      <p class="hero-price-note">Delivered in 5 business days &middot; 4 audit slots per month</p>
     </div>
   </div>
 </section>
 
 <!-- ========================================
-     WHAT YOU GET
+     WHY NOW
      ======================================== -->
 <section class="section">
   <div class="container">
-    <div style="text-align:center; margin-bottom: 48px;">
-      <h2>What You Get</h2>
+    <div class="center">
+      <p class="section-eyebrow">Why it matters</p>
+      <h2>AI answers are the new shortlist</h2>
+      <p class="section-sub">Buyers are asking AI for recommendations before they ever visit your site.</p>
     </div>
-
-    <div class="what-you-get-grid">
+    <div class="what-you-get-grid three">
       <div class="what-card">
-        <div class="what-card-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-          </svg>
-        </div>
-        <h3>Technical SEO Audits</h3>
-        <p>Comprehensive crawl analysis, indexation review, Core Web Vitals optimization, and structured data implementation. The solid foundation your SEO program needs.</p>
+        <h3>You&rsquo;re either named or you&rsquo;re not</h3>
+        <p>When someone asks &ldquo;what&rsquo;s the best [your category]?&rdquo;, AI gives a handful of names. If yours isn&rsquo;t one of them, you&rsquo;re out of the conversation before it starts.</p>
       </div>
 
       <div class="what-card">
-        <div class="what-card-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
-          </svg>
-        </div>
-        <h3>AEO/GEO Strategy</h3>
-        <p>Answer Engine and Generative Engine Optimization strategy. Position your content to be cited in AI Overviews, ChatGPT, Perplexity, and Gemini.</p>
+        <h3>Leadership is already asking</h3>
+        <p>&ldquo;Why aren&rsquo;t we showing up in ChatGPT?&rdquo; is landing in marketing inboxes everywhere. This gives you a data-backed answer and a plan &mdash; not a guess.</p>
       </div>
 
       <div class="what-card">
-        <div class="what-card-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
-          </svg>
-        </div>
-        <h3>Recovery Planning</h3>
-        <p>Algorithm update recovery, traffic decline diagnosis, and prioritized action plans. A clear path forward when the numbers shift.</p>
+        <h3>Dashboards aren&rsquo;t decisions</h3>
+        <p>AI tracking tools report numbers. This audit tells you why you&rsquo;re missing and what to fix first across technical, content, and third-party sources.</p>
       </div>
 
-      <div class="what-card">
-        <div class="what-card-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
-          </svg>
-        </div>
-        <h3>Team Enablement</h3>
-        <p>Training, frameworks, and processes that help your internal team grow their SEO capabilities. Includes workshops, templates, and ongoing advisory.</p>
-      </div>
     </div>
   </div>
 </section>
 
 <!-- ========================================
-     AI VISIBILITY AUDIT PROMO
-     ======================================== -->
-<section class="section" style="padding-top:0;">
-  <div class="container">
-    <div class="calendly-section" style="margin-top:0;">
-      <p class="section-eyebrow">New</p>
-      <h2 style="margin-bottom:12px;">AI Visibility Audit</h2>
-      <p style="font-size:17px; color:var(--muted); margin:0 auto 28px; max-width:600px;">Find out how ChatGPT, Perplexity, and Google&rsquo;s AI see your brand vs. your competitors &mdash; and what to fix. Snapshot from $297, full audit $997.</p>
-      <a href="/ai-visibility-audit" class="btn btn-blue">See the AI Visibility Audit</a>
-    </div>
-  </div>
-</section>
-
-<!-- ========================================
-     PACKAGES
+     WHAT I CHECK
      ======================================== -->
 <section class="section section-alt">
   <div class="container">
-    <div style="text-align:center; margin-bottom: 48px;">
-      <h2>Packages</h2>
+    <div class="center">
+      <p class="section-eyebrow">What I measure</p>
+      <h2>Your AI visibility, end to end</h2>
+      <p class="section-sub">Real buyer prompts. Real AI answers. Benchmarked against your competitors.</p>
     </div>
-
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <h3 class="pricing-title">30-Min Strategy Session</h3>
-        <div class="pricing-price">$149</div>
-        <p class="pricing-description">A focused conversation about your biggest SEO challenge. Come with questions, leave with clarity. Booking link delivered after purchase.</p>
-        <a href="https://nikifly.gumroad.com/l/30-minute-strategy-session" target="_blank" class="btn btn-blue pricing-cta">Purchase &amp; Book</a>
+    <div class="what-you-get-grid three">
+      <div class="what-card">
+        <h3>Mentions</h3>
+        <p>How often AI engines name your brand when buyers ask category, comparison, and problem-solving questions.</p>
       </div>
 
+      <div class="what-card">
+        <h3>Citations</h3>
+        <p>How often AI links to or cites your own site as a source &mdash; the difference between being mentioned and being trusted.</p>
+      </div>
+
+      <div class="what-card">
+        <h3>Share of voice</h3>
+        <p>Your share of mentions vs. the competitors you name, by engine and topic, rolled into a 0&ndash;100 AI Visibility Score.</p>
+      </div>
+
+      <div class="what-card">
+        <h3>Source map</h3>
+        <p>The review sites, communities, publications, and pages AI leans on in your category &mdash; and which ones feature competitors but not you.</p>
+      </div>
+
+      <div class="what-card">
+        <h3>AI crawler access</h3>
+        <p>Whether your robots.txt or CDN/firewall settings are quietly blocking GPTBot, PerplexityBot, Google-Extended, and other AI crawlers.</p>
+      </div>
+
+      <div class="what-card">
+        <h3>Accuracy</h3>
+        <p>Where AI gets your pricing, features, or positioning wrong, and which source is feeding the error (Full Audit).</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     PRICING
+     ======================================== -->
+<section class="section" id="pricing">
+  <div class="container">
+    <div class="center">
+      <p class="section-eyebrow">Choose your audit</p>
+      <h2>Two ways to start</h2>
+      <p class="section-sub">Start with the Snapshot &mdash; your $297 is credited toward the Full Audit if you upgrade within 30 days.</p>
+    </div>
+    <div class="pricing-grid two">
+      <div class="pricing-card">
+        <h3 class="pricing-title">AI Visibility Snapshot</h3>
+        <div class="pricing-price">$297</div>
+        <p class="pricing-meta">Delivered in 5 business days</p>
+        <ul class="pricing-list">
+          <li>25 buyer-intent prompts</li>
+          <li>ChatGPT, Perplexity &amp; Google AI Overviews</li>
+          <li>Benchmarked against 2 competitors</li>
+          <li>AI Visibility Score (0&ndash;100)</li>
+          <li>Top 10 sources AI cites in your category</li>
+          <li>AI crawler access check</li>
+          <li>Top 5 fixes, ranked by impact</li>
+          <li>15-minute Loom walkthrough + full answer log</li>
+        </ul>
+        <a href="https://nikifly.gumroad.com/l/ai-visibility-snapshot" target="_blank" rel="noopener" class="btn btn-blue buy-btn" data-tier="snapshot">Get the Snapshot</a>
+      </div>
       <div class="pricing-card flagship">
-        <div class="pricing-badge">Flagship</div>
-        <h3 class="pricing-title">The Complete Practitioner Package + Strategy Session</h3>
-        <div class="pricing-price">$347</div>
-        <p class="pricing-description">Every framework in the Confidence Fly Search library plus 30 minutes of personalized strategy. The best way to get started with confidence. Booking link delivered after purchase.</p>
-        <a href="https://nikifly.gumroad.com/l/complete-practitioner-package-strategy-session" target="_blank" class="btn btn-blue pricing-cta">Get the Package + Session</a>
-      </div>
-
-      <div class="pricing-card">
-        <h3 class="pricing-title">Custom Engagement</h3>
-        <div class="pricing-price">Let's Talk</div>
-        <p class="pricing-description">Ongoing consulting, team training, or project-based work. Tailored to fit your team's needs and goals.</p>
-        <a href="mailto:seo@nikimosier.com" class="btn btn-blue pricing-cta">Get in Touch</a>
+        <div class="pricing-badge">Most complete</div>
+        <h3 class="pricing-title">AI Visibility Audit</h3>
+        <div class="pricing-price">$997</div>
+        <p class="pricing-meta">Delivered in 10 business days</p>
+        <ul class="pricing-list">
+          <li>50 buyer-intent prompts, by funnel stage</li>
+          <li>5 engines: ChatGPT, Perplexity, Google AI Overviews &amp; AI Mode, Gemini, Copilot</li>
+          <li>Share of voice vs. 3 competitors, by topic</li>
+          <li>Brand accuracy check</li>
+          <li>Full citation source map + outreach targets</li>
+          <li>Technical AI-readiness review of your top 10 pages</li>
+          <li>Content gap analysis</li>
+          <li>90-day roadmap + executive summary</li>
+          <li>45-minute readout call + 30 days of email support</li>
+        </ul>
+        <a href="https://nikifly.gumroad.com/l/ai-visibility-audit" target="_blank" rel="noopener" class="btn btn-blue buy-btn" data-tier="full">Get the Full Audit</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ========================================
-     BOOK A SESSION
+     HOW IT WORKS
      ======================================== -->
-<section class="section" id="book">
+<section class="section section-alt">
   <div class="container">
-    <div class="calendly-section">
-      <h2 style="margin-bottom: 32px;">Ready to Talk?</h2>
-      <p style="font-size: 18px; color: var(--muted); margin-bottom: 32px; max-width: 540px; margin-left: auto; margin-right: auto;">Grab a 30-minute strategy session. You'll get the booking link delivered to your inbox the moment you check out &mdash; pick a time that works for you.</p>
-      <a href="https://nikifly.gumroad.com/l/30-minute-strategy-session" target="_blank" class="btn btn-blue" style="font-size: 16px; padding: 18px 40px;">Purchase &amp; Book a Session &mdash; $149</a>
-      <p style="font-size: 14px; color: var(--muted); margin-top: 20px;">Already purchased? Check your Gumroad receipt for the booking link.</p>
+    <div class="center">
+      <p class="section-eyebrow">How it works</p>
+      <h2>Simple from checkout to results</h2>
+      <p class="section-sub">No sales calls, no long onboarding.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Check out</h3><p>Answer a few quick questions at checkout: your site, competitors, and what your buyers ask.</p></div>
+      <div class="step"><h3>I confirm</h3><p>Within 1 business day I confirm your intake and your delivery date.</p></div>
+      <div class="step"><h3>I run the audit</h3><p>Real prompts across each AI engine, scored and benchmarked &mdash; analysis, not a tool export.</p></div>
+      <div class="step"><h3>You get the plan</h3><p>Scorecard and walkthrough (Snapshot) or full report, roadmap, and readout call (Full Audit).</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     ABOUT
+     ======================================== -->
+<section class="section">
+  <div class="container">
+    <div class="about-strip">
+      <img src="headshot.jpg" alt="Niki Mosier, SEO consultant" width="200" height="200" loading="lazy">
+      <div>
+        <p class="section-eyebrow">Who&rsquo;s doing the work</p>
+        <h2 style="font-size: clamp(24px,3vw,32px);">Hi, I&rsquo;m Niki Mosier</h2>
+        <p>I&rsquo;ve spent 15+ years in SEO across agency, in-house, and consulting work, with deep focus on technical SEO, AEO, and GEO. Every audit is done by me personally &mdash; that&rsquo;s why I cap it at 4 a month.</p>
+        <div class="stat-row">
+          <div class="stat"><strong>90%</strong><span>YoY growth in AI referral traffic for an enterprise brand</span></div>
+          <div class="stat"><strong>120%</strong><span>YoY growth in AI-referred sales</span></div>
+          <div class="stat"><strong>15+</strong><span>years in SEO</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -995,42 +1026,64 @@ a { color: inherit; text-decoration: none; }
      ======================================== -->
 <section class="section section-alt">
   <div class="container">
-    <div style="text-align:center; margin-bottom: 48px;">
-      <h2>FAQ</h2>
-    </div>
-
+    <div class="center"><h2>FAQ</h2></div>
     <div class="faq-section">
       <div class="faq-items">
         <div class="faq-item">
-          <button class="faq-question">
-            <span>What happens during a strategy session?</span>
-            <span class="faq-toggle"></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-text">We spend 30 focused minutes on your specific SEO challenges. You bring the questions — I bring 15+ years of experience. You'll leave with a clear action plan, not generic advice.</div>
-          </div>
+          <button class="faq-question"><span>Which AI engines do you test?</span><span class="faq-toggle"></span></button>
+          <div class="faq-answer"><div class="faq-answer-text">The Snapshot covers ChatGPT, Perplexity, and Google AI Overviews. The Full Audit adds Google AI Mode, Gemini, and Microsoft Copilot.</div></div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">
-            <span>Do you offer ongoing retainers?</span>
-            <span class="faq-toggle"></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-text">Yes. Custom engagements can be scoped as monthly retainers, project-based work, or team training. Reach out and we'll figure out the right structure.</div>
-          </div>
+          <button class="faq-question"><span>How do you choose the prompts?</span><span class="faq-toggle"></span></button>
+          <div class="faq-answer"><div class="faq-answer-text">I build them from your intake: category and &ldquo;best of&rdquo; questions, comparisons and alternatives, problem-solving questions, and brand questions. Full Audit clients review the prompt set before I run it.</div></div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">
-            <span>Can I apply the session cost toward a larger engagement?</span>
-            <span class="faq-toggle"></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-text">Absolutely. If we decide to work together on a larger project, the session fee gets credited toward the engagement.</div>
-          </div>
+          <button class="faq-question"><span>AI answers change all the time. Is this reliable?</span><span class="faq-toggle"></span></button>
+          <div class="faq-answer"><div class="faq-answer-text">Answers do vary, so I run prompts in clean sessions, record dates and engines, and (in the Full Audit) run key prompts more than once. You also get the full answer log so you can re-run the same prompts later and measure progress.</div></div>
         </div>
+
+        <div class="faq-item">
+          <button class="faq-question"><span>Is this just a tool report?</span><span class="faq-toggle"></span></button>
+          <div class="faq-answer"><div class="faq-answer-text">No. I use tools to cross-check, but the prompts are run and analyzed by hand, and the output is a prioritized list of fixes &mdash; not a dashboard export.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question"><span>How fast will I get results?</span><span class="faq-toggle"></span></button>
+          <div class="faq-answer"><div class="faq-answer-text">Snapshot: 5 business days. Full Audit: 10 business days. The clock starts once your intake is confirmed, usually the same or next business day.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question"><span>Can I upgrade from the Snapshot?</span><span class="faq-toggle"></span></button>
+          <div class="faq-answer"><div class="faq-answer-text">Yes. Your $297 is credited toward the $997 Full Audit if you upgrade within 30 days of delivery.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question"><span>What if I need help implementing the fixes?</span><span class="faq-toggle"></span></button>
+          <div class="faq-answer"><div class="faq-answer-text">Many clients handle fixes in-house using the roadmap. If you&rsquo;d like help, the Full Audit fee is credited toward any consulting engagement booked within 30 days.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question"><span>What&rsquo;s your refund policy?</span><span class="faq-toggle"></span></button>
+          <div class="faq-answer"><div class="faq-answer-text">Full refund any time before prompt testing begins. After that, if the deliverable misses anything listed here, I&rsquo;ll fix it at no cost.</div></div>
+        </div>
+
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     CTA
+     ======================================== -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2>Find out where you stand</h2>
+    <p class="cta-sub">Your buyers are already asking AI. Know what it tells them.</p>
+    <div class="hero-buttons">
+      <a href="https://nikifly.gumroad.com/l/ai-visibility-snapshot" target="_blank" rel="noopener" class="btn btn-primary buy-btn" data-tier="snapshot">Snapshot &mdash; $297</a>
+      <a href="https://nikifly.gumroad.com/l/ai-visibility-audit" target="_blank" rel="noopener" class="btn btn-secondary buy-btn" data-tier="full">Full Audit &mdash; $997</a>
     </div>
   </div>
 </section>
@@ -1120,5 +1173,30 @@ faqQuestions.forEach(question => {
 });
 </script>
 
+<script>
+// LinkedIn "Buy click" conversion — replace CONVERSION_ID with the ID from Campaign Manager
+document.querySelectorAll('.buy-btn').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    try { if (window.lintrk) window.lintrk('track', { conversion_id: 'CONVERSION_ID' }); } catch (e) {}
+    try { if (window.gtag) gtag('event', 'begin_checkout', { item_name: 'AI Visibility ' + btn.dataset.tier }); } catch (e) {}
+  });
+});
+</script>
+<!-- LinkedIn Insight Tag: replace PARTNER_ID with your Partner ID from Campaign Manager -->
+<script type="text/javascript">
+_linkedin_partner_id = "PARTNER_ID";
+window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script>
+<script type="text/javascript">
+(function(l) {
+if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+window.lintrk.q=[]}
+var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})(window.lintrk);
+</script>
 </body>
 </html>
