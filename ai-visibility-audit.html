@@ -1177,18 +1177,17 @@ faqQuestions.forEach(question => {
 // LinkedIn "Buy click" conversion — replace CONVERSION_ID with the ID from Campaign Manager
 document.querySelectorAll('.buy-btn').forEach(function (btn) {
   btn.addEventListener('click', function () {
-    try { if (window.lintrk) window.lintrk('track', { conversion_id: 'CONVERSION_ID' }); } catch (e) {}
+    try { var cid = 'CONVERSION_ID'; if (window.lintrk && /^\d+$/.test(cid)) window.lintrk('track', { conversion_id: cid }); } catch (e) {}
     try { if (window.gtag) gtag('event', 'begin_checkout', { item_name: 'AI Visibility ' + btn.dataset.tier }); } catch (e) {}
   });
 });
 </script>
-<!-- LinkedIn Insight Tag: replace PARTNER_ID with your Partner ID from Campaign Manager -->
+<!-- LinkedIn Insight Tag -->
 <script type="text/javascript">
-_linkedin_partner_id = "PARTNER_ID";
+_linkedin_partner_id = "10071524";
 window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
 window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-</script>
-<script type="text/javascript">
+</script><script type="text/javascript">
 (function(l) {
 if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
 window.lintrk.q=[]}
@@ -1198,5 +1197,8 @@ b.type = "text/javascript";b.async = true;
 b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
 s.parentNode.insertBefore(b, s);})(window.lintrk);
 </script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=10071524&fmt=gif" />
+</noscript>
 </body>
 </html>
