@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AI Visibility Snapshot Intake — Confidence Fly Search</title>
+<meta name="description" content="Intake form for AI Visibility Snapshot clients."/>
+<meta name="robots" content="noindex, nofollow"/>
+<meta property="og:title" content="AI Visibility Snapshot Intake"/>
+<meta property="og:description" content="Intake form for AI Visibility Snapshot clients."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://confidenceflysearch.com/intake-snapshot"/>
+<link rel="canonical" href="https://confidenceflysearch.com/intake-snapshot"/>
+<link rel="icon" type="image/png" href="/logo.png"/>
+<meta property="og:image" content="https://confidenceflysearch.com/logo.png"/>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CN6EXCWFEB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CN6EXCWFEB');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Lora:ital@1&family=Lexend:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ========================================
+   CONFIDENCE FLY SEARCH — INTAKE FORM
+   Colors: #0C2E47, #07699A, #BDBEBF
+   Fonts: Montserrat, Lora, Lexend
+   ======================================== */
+
+:root {
+  --navy: #0C2E47;
+  --blue: #07699A;
+  --silver: #BDBEBF;
+  --gold: #f4ca50;
+  --white: #FFFFFF;
+  --offwhite: #F5F6F7;
+  --dark-text: #1A1A2E;
+  --muted: #5A6677;
+  --light-border: #E2E8F0;
+  --gradient: linear-gradient(135deg, #0C2E47 0%, #07699A 100%);
+  --max-width: 1200px;
+  --radius-card: 12px;
+  --radius-btn: 8px;
+}
+
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: 'Lexend', system-ui, sans-serif;
+  font-weight: 400;
+  color: var(--dark-text);
+  background: var(--white);
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--navy);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.nav.scrolled {
+  box-shadow: 0 2px 20px rgba(12, 46, 71, 0.3);
+}
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 130px;
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.nav-brand img {
+  height: 120px;
+  width: auto;
+  max-width: 500px;
+  object-fit: contain;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: 'Lexend', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: rgba(255,255,255,0.8);
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--white);
+}
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 1px;
+}
+.nav-cta {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: var(--gold) !important;
+  color: var(--navy) !important;
+  padding: 10px 20px;
+  border-radius: var(--radius-btn);
+  transition: background 0.2s, transform 0.2s;
+}
+.nav-cta:hover {
+  background: #e6b93e !important;
+  transform: translateY(-1px);
+}
+
+/* Mobile hamburger */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  margin: 6px 0;
+  transition: all 0.3s;
+  border-radius: 1px;
+}
+.nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+/* Mobile menu */
+.nav-mobile {
+  display: none;
+  position: fixed;
+  top: 130px;
+  right: 0;
+  bottom: 0;
+  width: 280px;
+  background: var(--navy);
+  padding: 32px 24px;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 999;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+}
+.nav-mobile.open { display: flex; }
+.nav-mobile a {
+  font-family: 'Lexend', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.8);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: color 0.2s;
+}
+.nav-mobile a:hover { color: white; }
+.nav-mobile .nav-cta {
+  margin-top: 16px;
+  text-align: center;
+  display: block;
+  border-bottom: none;
+}
+.nav-overlay {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 998;
+}
+.nav-overlay.open { display: block; }
+
+/* ========================================
+   HERO
+   ======================================== */
+.hero {
+  background: var(--gradient);
+  padding: 190px 0 96px;
+  overflow: hidden;
+  text-align: center;
+}
+.hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-content {
+  max-width: 700px;
+}
+.hero-eyebrow {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 16px;
+}
+.hero h1 {
+  font-size: clamp(32px, 4vw, 48px);
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  line-height: 1.15;
+}
+.hero-body {
+  font-size: 18px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 32px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.btn {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+  display: inline-block;
+  text-align: center;
+}
+.btn-primary {
+  background: var(--white);
+  color: var(--navy);
+}
+.btn-primary:hover {
+  background: var(--offwhite);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255,255,255,0.4);
+}
+.btn-secondary:hover {
+  border-color: white;
+  background: rgba(255,255,255,0.1);
+}
+.btn-blue {
+  background: var(--gold);
+  color: var(--navy);
+}
+.btn-blue:hover {
+  background: #e6b93e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(244,202,80,0.3);
+}
+
+/* ========================================
+   SECTION STYLES
+   ======================================== */
+.section {
+  padding: 80px 0;
+}
+.section-alt {
+  background: var(--offwhite);
+}
+.section-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+.section h2 {
+  font-size: clamp(28px, 3.5vw, 40px);
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+.section-sub {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--navy);
+  opacity: 0.7;
+  margin-bottom: 48px;
+}
+
+/* ========================================
+   WHAT YOU GET - CARDS GRID
+   ======================================== */
+.what-you-get-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.what-card {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  padding: 32px 28px;
+  border: 1px solid var(--light-border);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.what-card:hover {
+  box-shadow: 0 8px 30px rgba(12, 46, 71, 0.08);
+  transform: translateY(-4px);
+}
+.what-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(7, 105, 154, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.what-card-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--blue);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.what-card h3 {
+  font-size: 20px;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.what-card p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ========================================
+   PRICING PACKAGES
+   ======================================== */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.pricing-card {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--light-border);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
+}
+.pricing-card:hover {
+  box-shadow: 0 8px 30px rgba(12, 46, 71, 0.08);
+  transform: translateY(-4px);
+}
+.pricing-card.flagship {
+  border: 2px solid var(--gold);
+  box-shadow: 0 8px 30px rgba(244, 202, 80, 0.15);
+}
+.pricing-card.flagship:hover {
+  box-shadow: 0 12px 40px rgba(244, 202, 80, 0.25);
+}
+.pricing-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  width: fit-content;
+}
+.pricing-title {
+  font-size: 18px;
+  color: var(--navy);
+  margin-bottom: 12px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.pricing-price {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+.pricing-period {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.pricing-description {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  flex-grow: 1;
+}
+.pricing-cta {
+  align-self: flex-start;
+}
+
+/* ========================================
+   CALENDLY SECTION
+   ======================================== */
+.calendly-section {
+  background: var(--offwhite);
+  border-radius: var(--radius-card);
+  padding: 48px;
+  text-align: center;
+  margin-top: 48px;
+}
+.calendly-placeholder {
+  background: var(--white);
+  border: 2px dashed var(--light-border);
+  border-radius: var(--radius-card);
+  padding: 60px 40px;
+  margin-bottom: 24px;
+}
+.calendly-placeholder-text {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.calendly-placeholder-note {
+  font-size: 13px;
+  color: var(--silver);
+  font-style: italic;
+}
+.calendly-fallback {
+  margin-top: 24px;
+}
+
+/* ========================================
+   FAQ / ACCORDION
+   ======================================== */
+.faq-section {
+  margin-top: 48px;
+}
+.faq-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--light-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+.faq-question {
+  width: 100%;
+  padding: 20px 24px;
+  text-align: left;
+  background: var(--white);
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--navy);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s;
+}
+.faq-question:hover {
+  background: var(--offwhite);
+}
+.faq-toggle {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+.faq-toggle::after {
+  content: '+';
+  font-size: 24px;
+  color: var(--blue);
+  font-weight: 400;
+}
+.faq-item.open .faq-toggle::after {
+  content: '−';
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.faq-item.open .faq-answer {
+  max-height: 500px;
+  padding: 0 24px 20px 24px;
+}
+.faq-answer-text {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ========================================
+   CTA SECTION
+   ======================================== */
+.cta-section {
+  background: var(--gradient);
+  padding: 80px 0;
+}
+.cta-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 24px;
+}
+.cta-inner h2 {
+  color: var(--white);
+  font-size: clamp(26px, 3.5vw, 38px);
+  margin-bottom: 12px;
+}
+.cta-sub {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 19px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 32px;
+}
+.cta-form {
+  display: flex;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto 16px;
+}
+.cta-form input {
+  flex: 1;
+  font-family: 'Lexend', sans-serif;
+  font-size: 15px;
+  padding: 14px 20px;
+  border: 2px solid rgba(255,255,255,0.25);
+  border-radius: var(--radius-btn);
+  background: rgba(255,255,255,0.1);
+  color: white;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.cta-form input::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+.cta-form input:focus {
+  border-color: rgba(255,255,255,0.6);
+}
+.cta-form button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 14px 24px;
+  background: var(--white);
+  color: var(--navy);
+  border: none;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.cta-form button:hover {
+  background: var(--offwhite);
+  transform: translateY(-1px);
+}
+.cta-fine {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+  background: var(--navy);
+  padding: 64px 0 32px;
+}
+.footer-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.footer-brand img {
+  height: 80px;
+  width: auto;
+  max-width: 360px;
+  object-fit: contain;
+}
+.footer-tagline {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  max-width: 320px;
+  line-height: 1.7;
+}
+.footer h4 {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--silver);
+  margin-bottom: 16px;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-links a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px 24px 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 900px) {
+  .what-you-get-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calendly-section {
+    padding: 32px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+
+  .hero {
+    padding: 140px 0 72px;
+  }
+
+  .cta-form {
+    flex-direction: column;
+  }
+
+  body { font-size: 16px; }
+}
+
+/* ===== INTAKE FORMS ===== */
+.hero.hero-sm { padding: 170px 0 64px; }
+.form-wrap { max-width: 760px; margin: 0 auto; }
+.form-intro { background: var(--offwhite); border-left: 4px solid var(--blue); border-radius: 8px; padding: 18px 22px; color: var(--muted); font-size: 15px; margin-bottom: 40px; }
+.form-intro strong { color: var(--navy); }
+fieldset { border: none; margin: 0 0 40px; padding: 0; }
+legend { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 20px; color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 20px; padding-bottom: 8px; border-bottom: 2px solid var(--light-border); width: 100%; }
+.field { margin-bottom: 22px; }
+.field > label, .field .q { display: block; font-weight: 500; font-size: 15px; color: var(--navy); margin-bottom: 8px; }
+.req { color: var(--blue); margin-left: 2px; }
+.field input[type=text], .field input[type=email], .field input[type=url], .field textarea, .field select {
+  width: 100%; font-family: 'Lexend', sans-serif; font-size: 15px; color: var(--dark-text);
+  padding: 12px 14px; border: 1.5px solid var(--light-border); border-radius: 8px; background: var(--white); transition: border-color .2s, box-shadow .2s; }
+.field textarea { min-height: 110px; resize: vertical; }
+.field input:focus, .field textarea:focus, .field select:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(7,105,154,.15); }
+.options { display: grid; gap: 8px; }
+.options label { display: flex; gap: 10px; align-items: center; font-size: 15px; color: var(--dark-text); cursor: pointer; }
+.options input { width: 18px; height: 18px; accent-color: var(--blue); }
+.hint { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.submit-row { text-align: center; margin-top: 12px; }
+.submit-row .btn { border: none; font-size: 15px; padding: 18px 44px; }
+.hidden { display: none; }
+@media (max-width: 768px) { .hero.hero-sm { padding: 140px 0 48px; } }
+</style>
+</head>
+<body>
+
+<!-- ========================================
+     NAVIGATION
+     ======================================== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><img src="/logo.png" alt="Confidence Fly Search"></a>
+
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/shop.html">Shop</a></li>
+      <li><a href="/consulting.html">Consulting</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/tools.html">Tools</a></li>
+      <li><a href="/aeo-checklist.html" class="nav-cta">Free Checklist</a></li>
+    </ul>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-overlay" id="navOverlay"></div>
+<div class="nav-mobile" id="navMobile">
+  <a href="/">Home</a>
+  <a href="/shop.html">Shop</a>
+  <a href="/consulting.html">Consulting</a>
+  <a href="/about.html">About</a>
+  <a href="/blog/">Blog</a>
+  <a href="/aeo-checklist.html" class="nav-cta">Free Checklist</a>
+</div>
+
+
+<section class="hero hero-sm">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <p class="hero-eyebrow">AI Visibility Snapshot</p>
+      <h1>Your Snapshot intake</h1>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+   <div class="form-wrap">
+    <div class="form-intro">Thanks for booking your <strong>AI Visibility Snapshot</strong>. Your answers shape the buyer prompts I test, so the more specific, the better. It takes about 5 minutes. Your <strong>5-business-day</strong> timeline starts when you submit.</div>
+    <form name="ai-visibility-snapshot-intake" method="POST" action="/intake-thanks" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="ai-visibility-snapshot-intake">
+    <p class="hidden"><label>Leave this empty: <input name="bot-field"></label></p>
+    <fieldset>
+      <legend>Your order</legend>
+      <div class="field">
+        <label for="email">Email you used at checkout<span class="req">*</span></label>
+        <input type="email" id="email" name="email" required>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>About your business</legend>
+      <div class="field">
+        <label for="company_name">Company name<span class="req">*</span></label>
+        <input type="text" id="company_name" name="company_name" required>
+      </div>
+      <div class="field">
+        <label for="website_url">Website URL<span class="req">*</span></label>
+        <input type="text" id="website_url" name="website_url" placeholder="example.com" required>
+      </div>
+      <div class="field">
+        <label for="your_name_and_role">Your name and role<span class="req">*</span></label>
+        <input type="text" id="your_name_and_role" name="your_name_and_role" required>
+      </div>
+      <div class="field">
+        <label for="in_one_or_two_sentences_what_do_you_sell_and_to_">In one or two sentences, what do you sell and to whom?<span class="req">*</span></label>
+        <textarea id="in_one_or_two_sentences_what_do_you_sell_and_to_" name="in_one_or_two_sentences_what_do_you_sell_and_to_" required></textarea>
+      </div>
+      <div class="field">
+        <label for="which_product_service_or_topic_should_this_audit">Which product, service, or topic should this audit focus on? (up to 2)<span class="req">*</span></label>
+        <input type="text" id="which_product_service_or_topic_should_this_audit" name="which_product_service_or_topic_should_this_audit" required>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Buyers and prompts</legend>
+      <div class="field">
+        <label for="describe_your_ideal_customer">Describe your ideal customer (role, industry, company size)<span class="req">*</span></label>
+        <textarea id="describe_your_ideal_customer" name="describe_your_ideal_customer" required></textarea>
+      </div>
+      <div class="field">
+        <label for="list_3_5_questions_buyers_ask_before_choosing_a_">List 3–5 questions buyers ask before choosing a solution like yours<span class="req">*</span></label>
+        <textarea id="list_3_5_questions_buyers_ask_before_choosing_a_" name="list_3_5_questions_buyers_ask_before_choosing_a_" required></textarea>
+      </div>
+      <div class="field">
+        <label for="words_or_phrases_buyers_use_to_describe_your_cat">Words or phrases buyers use to describe your category<span class="req">*</span></label>
+        <input type="text" id="words_or_phrases_buyers_use_to_describe_your_cat" name="words_or_phrases_buyers_use_to_describe_your_cat" required>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Competitors</legend>
+      <div class="field">
+        <label for="competitor_1">Competitor #1 (name + URL)<span class="req">*</span></label>
+        <input type="text" id="competitor_1" name="competitor_1" required>
+      </div>
+      <div class="field">
+        <label for="competitor_2">Competitor #2 (name + URL)<span class="req">*</span></label>
+        <input type="text" id="competitor_2" name="competitor_2" required>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Anything else</legend>
+      <div class="field">
+        <label for="anything_ai_currently_gets_wrong_about_you">Anything AI currently gets wrong about you?</label>
+        <textarea id="anything_ai_currently_gets_wrong_about_you" name="anything_ai_currently_gets_wrong_about_you"></textarea>
+      </div>
+      <div class="field">
+        <label for="cdn_or_firewall_provider_if_known">CDN or firewall provider, if known</label>
+        <select id="cdn_or_firewall_provider_if_known" name="cdn_or_firewall_provider_if_known">
+          <option value="">Select one</option>
+          <option>Cloudflare</option>
+          <option>Akamai</option>
+          <option>Fastly</option>
+          <option>AWS CloudFront</option>
+          <option>None</option>
+          <option>Not sure</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="anything_else_i_should_know">Anything else I should know?</label>
+        <textarea id="anything_else_i_should_know" name="anything_else_i_should_know"></textarea>
+      </div>
+    </fieldset>
+    <div class="submit-row"><button type="submit" class="btn btn-blue">Submit intake</button></div>
+    </form>
+   </div>
+  </div>
+</section>
+
+<!-- ========================================
+     FOOTER
+     ======================================== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand"><img src="/logo.png" alt="Confidence Fly Search"></div>
+      <p class="footer-tagline">SEO frameworks and consulting from Niki Mosier. Helping practitioners do their best work.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="/shop.html">Shop</a></li>
+        <li><a href="/consulting.html">Consulting</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/aeo-checklist.html">Free Checklist</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <ul class="footer-links">
+        <li><a href="https://www.linkedin.com/in/niki-mosier/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="mailto:seo@nikimosier.com">Email</a></li>
+        <li><a href="https://nikimosier.com" target="_blank" rel="noopener">nikimosier.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Confidence Fly Search. All rights reserved.
+  </div>
+</footer>
+
+<!-- ========================================
+     SCRIPTS
+     ======================================== -->
+<script>
+// Sticky nav shadow on scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Mobile menu toggle
+const toggle = document.getElementById('navToggle');
+const mobile = document.getElementById('navMobile');
+const overlay = document.getElementById('navOverlay');
+
+function toggleMenu() {
+  toggle.classList.toggle('open');
+  mobile.classList.toggle('open');
+  overlay.classList.toggle('open');
+}
+
+toggle.addEventListener('click', toggleMenu);
+overlay.addEventListener('click', toggleMenu);
+
+// Close mobile menu on link click
+mobile.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (mobile.classList.contains('open')) toggleMenu();
+  });
+});
+
+// FAQ Accordion functionality
+const faqQuestions = document.querySelectorAll('.faq-question');
+
+faqQuestions.forEach(question => {
+  question.addEventListener('click', () => {
+    const faqItem = question.closest('.faq-item');
+    const isOpen = faqItem.classList.contains('open');
+
+    // Close all other items
+    document.querySelectorAll('.faq-item.open').forEach(item => {
+      if (item !== faqItem) {
+        item.classList.remove('open');
+      }
+    });
+
+    // Toggle current item
+    faqItem.classList.toggle('open');
+  });
+});
+</script>
+
+</body>
+</html>
