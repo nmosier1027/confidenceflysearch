@@ -764,6 +764,57 @@ a { color: inherit; text-decoration: none; }
 
   body { font-size: 16px; }
 }
+
+/* ========================================
+   AI VISIBILITY AUDIT FEATURE
+   ======================================== */
+.hero-announce {
+  display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 100px; padding: 6px 16px 6px 6px; margin-bottom: 20px;
+  font-size: 14px; color: var(--white); transition: background 0.2s;
+}
+.hero-announce:hover { background: rgba(255,255,255,0.18); }
+.hero-announce-tag {
+  background: var(--gold); color: var(--navy); border-radius: 100px; padding: 3px 10px;
+  font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
+}
+.aiva { background: var(--navy); padding: 88px 0; position: relative; overflow: hidden; }
+.aiva::before {
+  content: ''; position: absolute; right: -180px; top: -180px; width: 480px; height: 480px;
+  border-radius: 50%; background: radial-gradient(circle, rgba(7,105,154,0.45) 0%, rgba(7,105,154,0) 70%);
+}
+.aiva-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; position: relative; }
+.aiva .section-eyebrow { color: var(--gold); }
+.aiva h2 { font-size: clamp(28px, 3.5vw, 40px); text-transform: uppercase; color: var(--white); letter-spacing: 0.5px; margin-bottom: 12px; }
+.aiva-sub { font-family: 'Lora', serif; font-style: italic; font-size: 19px; color: rgba(255,255,255,0.8); margin-bottom: 20px; }
+.aiva-body { color: rgba(255,255,255,0.85); font-weight: 300; font-size: 17px; line-height: 1.7; margin-bottom: 24px; }
+.aiva-points { list-style: none; margin: 0 0 32px; display: grid; gap: 10px; }
+.aiva-points li { color: var(--white); font-size: 16px; padding-left: 28px; position: relative; }
+.aiva-points li::before { content: ''; position: absolute; left: 4px; top: 8px; width: 10px; height: 6px; border-left: 2px solid var(--gold); border-bottom: 2px solid var(--gold); transform: rotate(-45deg); }
+.aiva-tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.aiva-tier { background: var(--white); border-radius: var(--radius-card, 12px); padding: 28px 24px; display: flex; flex-direction: column; }
+.aiva-tier.featured { background: #123a57; border: 2px solid var(--gold); }
+.aiva-tier-name { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+.aiva-tier.featured .aiva-tier-name { color: var(--gold); }
+.aiva-tier-price { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 40px; color: var(--navy); line-height: 1.1; }
+.aiva-tier.featured .aiva-tier-price { color: var(--white); }
+.aiva-tier-meta { font-size: 13px; color: var(--muted, #5A6677); margin: 4px 0 16px; }
+.aiva-tier.featured .aiva-tier-meta { color: rgba(255,255,255,0.7); }
+.aiva-tier ul { list-style: none; margin: 0 0 22px; flex-grow: 1; }
+.aiva-tier li { font-size: 14px; color: var(--dark-text, #1A1A2E); padding: 6px 0; border-bottom: 1px solid #E2E8F0; }
+.aiva-tier.featured li { color: rgba(255,255,255,0.9); border-color: rgba(255,255,255,0.15); }
+.aiva-tier li:last-child { border-bottom: none; }
+.aiva-tier .btn { text-align: center; }
+.aiva-note { grid-column: 1 / -1; text-align: center; font-size: 14px; color: rgba(255,255,255,0.65); margin-top: 4px; }
+.aiva-note a { color: var(--gold); text-decoration: underline; }
+@media (max-width: 960px) {
+  .aiva-inner { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 560px) {
+  .aiva { padding: 64px 0; }
+  .aiva-tiers { grid-template-columns: 1fr; }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -861,6 +912,7 @@ a { color: inherit; text-decoration: none; }
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-content">
+      <a href="/ai-visibility-audit" class="hero-announce"><span class="hero-announce-tag">New</span>AI Visibility Audit: see how ChatGPT &amp; Google AI see your brand &rarr;</a>
       <p class="hero-eyebrow">Frameworks designed by someone who's been where you are</p>
       <h1><span style="display:block;">SEO Templates for Practitioners</span><span style="display:block; font-size: 0.65em;">Audits, Proposals, AEO &amp; GEO Frameworks</span></h1>
       <p class="hero-body">Ready-to-use SEO templates and frameworks from 15+ years of hands-on work. Built for in-house teams, consultants, and agencies who want to spend less time formatting and more time driving results.</p>
@@ -891,6 +943,56 @@ a { color: inherit; text-decoration: none; }
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     AI VISIBILITY AUDIT
+     ======================================== -->
+<section class="aiva" id="ai-visibility-audit">
+  <div class="aiva-inner">
+    <div>
+      <div class="section-eyebrow">Done-for-you audit</div>
+      <h2>Is AI recommending your brand?</h2>
+      <p class="aiva-sub">Or your competitors?</p>
+      <p class="aiva-body">Buyers are asking ChatGPT, Perplexity, and Google&rsquo;s AI for recommendations before they ever visit your site. The AI Visibility Audit shows you exactly where you stand and what to fix.</p>
+      <ul class="aiva-points">
+        <li>Real buyer prompts, tested across the AI engines your customers use</li>
+        <li>Your AI Visibility Score, benchmarked against competitors</li>
+        <li>The sources AI trusts in your category, and how to earn them</li>
+        <li>Prioritized fixes across technical, content, and off-site</li>
+      </ul>
+      <div class="hero-buttons">
+        <a href="/ai-visibility-audit" class="btn btn-blue">See the AI Visibility Audit</a>
+      </div>
+    </div>
+    <div class="aiva-tiers">
+      <div class="aiva-tier">
+        <div class="aiva-tier-name">Snapshot</div>
+        <div class="aiva-tier-price">$297</div>
+        <div class="aiva-tier-meta">Delivered in 5 business days</div>
+        <ul>
+          <li>25 buyer prompts</li>
+          <li>3 AI engines</li>
+          <li>2 competitors</li>
+          <li>Top 5 fixes + Loom walkthrough</li>
+        </ul>
+        <a href="https://nikifly.gumroad.com/l/ai-visibility-snapshot" target="_blank" rel="noopener" class="btn btn-blue">Get the Snapshot</a>
+      </div>
+      <div class="aiva-tier featured">
+        <div class="aiva-tier-name">Full Audit</div>
+        <div class="aiva-tier-price">$997</div>
+        <div class="aiva-tier-meta">Delivered in 10 business days</div>
+        <ul>
+          <li>50 buyer prompts</li>
+          <li>5 AI engines</li>
+          <li>3 competitors</li>
+          <li>90-day roadmap + readout call</li>
+        </ul>
+        <a href="https://nikifly.gumroad.com/l/ai-visibility-audit" target="_blank" rel="noopener" class="btn btn-primary">Get the Full Audit</a>
+      </div>
+      <p class="aiva-note">Limited to 4 audits a month. <a href="/ai-visibility-audit">Compare what&rsquo;s included</a></p>
     </div>
   </div>
 </section>
