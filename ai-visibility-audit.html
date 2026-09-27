@@ -773,6 +773,34 @@ a { color: inherit; text-decoration: none; }
   .stat-row { justify-content: center; }
 }
 @media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
+
+/* ===== SAMPLE SNAPSHOT ===== */
+.sample-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 28px; align-items: stretch; }
+.sample-card { background: var(--white); border: 1px solid var(--light-border); border-radius: var(--radius-card); padding: 32px 28px; }
+.sample-label { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+.sample-score { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; }
+.sample-score strong { font-family: 'Montserrat', sans-serif; font-size: 64px; line-height: 1; color: var(--blue); }
+.sample-score span { font-size: 18px; color: var(--muted); }
+.sample-band { display: inline-block; background: rgba(7,105,154,0.1); color: var(--navy); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; border-radius: 100px; padding: 4px 12px; margin-bottom: 24px; }
+.sample-bars { display: grid; gap: 12px; }
+.sample-bar { display: grid; grid-template-columns: 110px 1fr 32px; align-items: center; gap: 10px; font-size: 14px; color: var(--navy); }
+.sample-track { height: 14px; background: var(--offwhite); border-radius: 4px; overflow: hidden; }
+.sample-fill { height: 100%; background: var(--silver); border-radius: 0 4px 4px 0; }
+.sample-bar.you .sample-fill { background: var(--blue); }
+.sample-bar.you { font-weight: 600; }
+.sample-bar b { text-align: right; font-weight: 600; }
+.sample-caption { font-size: 12px; color: var(--muted); margin-top: 16px; }
+.sample-findings { list-style: none; display: grid; gap: 18px; margin: 0 0 24px; }
+.sample-findings li { display: grid; grid-template-columns: 76px 1fr; gap: 14px; align-items: start; }
+.sample-findings strong { font-family: 'Montserrat', sans-serif; font-size: 28px; color: var(--navy); line-height: 1.1; }
+.sample-findings p { font-size: 15px; color: var(--muted); line-height: 1.6; }
+.sample-fix { background: var(--offwhite); border-left: 4px solid var(--gold); border-radius: 8px; padding: 14px 18px; font-size: 15px; color: var(--dark-text); }
+.sample-fix b { color: var(--navy); }
+.sample-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-top: 36px; }
+.btn-outline { background: transparent; color: var(--navy); border-color: var(--navy); }
+.btn-outline:hover { background: var(--navy); color: var(--white); }
+@media (max-width: 900px) { .sample-grid { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .sample-bar { grid-template-columns: 96px 1fr 28px; font-size: 13px; } .sample-findings li { grid-template-columns: 64px 1fr; } .sample-findings strong { font-size: 24px; } }
 </style>
 <script type="application/ld+json">
 {
@@ -850,7 +878,7 @@ a { color: inherit; text-decoration: none; }
       <p class="hero-body">Find out exactly what ChatGPT, Perplexity, and Google&rsquo;s AI say when your buyers ask for recommendations: how often you&rsquo;re named, who gets named instead, which sources AI trusts in your category, and the fixes that change it.</p>
       <div class="hero-buttons">
         <a href="https://nikifly.gumroad.com/l/ai-visibility-snapshot" target="_blank" rel="noopener" class="btn btn-blue buy-btn" data-tier="snapshot">Get the Snapshot &mdash; $297</a>
-        <a href="#pricing" class="btn btn-secondary">Compare options</a>
+        <a href="#sample" class="btn btn-secondary">See a sample</a>
       </div>
       <p class="hero-price-note">Delivered in 5 business days &middot; 4 audit slots per month</p>
     </div>
@@ -928,6 +956,46 @@ a { color: inherit; text-decoration: none; }
         <p>Where AI gets your pricing, features, or positioning wrong, and which source is feeding the error (Full Audit).</p>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     SAMPLE SNAPSHOT
+     ======================================== -->
+<section class="section" id="sample">
+  <div class="container">
+    <div class="center">
+      <p class="section-eyebrow">Sample Snapshot</p>
+      <h2>See exactly what you get</h2>
+      <p class="section-sub">A real Snapshot for a fly fishing gear brand, anonymized. Same format, same depth.</p>
+    </div>
+    <div class="sample-grid">
+      <div class="sample-card">
+        <p class="sample-label">AI Visibility Score</p>
+        <div class="sample-score"><strong>29</strong><span>/ 100</span></div>
+        <span class="sample-band">Emerging</span>
+        <div class="sample-bars">
+          <div class="sample-bar"><span>Competitor A</span><div class="sample-track"><div class="sample-fill" style="width:58%"></div></div><b>58</b></div>
+          <div class="sample-bar"><span>Competitor B</span><div class="sample-track"><div class="sample-fill" style="width:51%"></div></div><b>51</b></div>
+          <div class="sample-bar"><span>Competitor C</span><div class="sample-track"><div class="sample-fill" style="width:46%"></div></div><b>46</b></div>
+          <div class="sample-bar you"><span>Brand X</span><div class="sample-track"><div class="sample-fill" style="width:29%"></div></div><b>29</b></div>
+        </div>
+        <p class="sample-caption">80 AI answers across ChatGPT, Perplexity, Google AI Overviews, and DeepSeek.</p>
+      </div>
+      <div class="sample-card">
+        <p class="sample-label">What we found</p>
+        <ul class="sample-findings">
+          <li><strong>55%</strong><p>of AI answers name Brand X, and it ties the leaders on pack organization questions (96%). AI knows the brand.</p></li>
+          <li><strong>8%</strong><p>of answers link to Brand X&rsquo;s website, all from ChatGPT. Perplexity and Google AI Overviews never cited it.</p></li>
+          <li><strong>21</strong><p>Perplexity and AI Overview answers cited Competitor A&rsquo;s own site instead, mostly its need-based category pages.</p></li>
+        </ul>
+        <div class="sample-fix"><b>Fix #1 of 5:</b> Build need-based category pages AI can cite (&ldquo;waterproof packs,&rdquo; &ldquo;sling packs&rdquo;), each with answer-first copy and a short FAQ.</div>
+      </div>
+    </div>
+    <div class="sample-actions">
+      <a href="/downloads/ai-visibility-snapshot-sample.pdf" target="_blank" rel="noopener" class="btn btn-outline" id="sample-download">Download the full sample (PDF)</a>
+      <a href="https://nikifly.gumroad.com/l/ai-visibility-snapshot" target="_blank" rel="noopener" class="btn btn-blue buy-btn" data-tier="snapshot">Get your Snapshot &mdash; $297</a>
     </div>
   </div>
 </section>
@@ -1200,5 +1268,6 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
 <noscript>
 <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=10071524&fmt=gif" />
 </noscript>
+<script>try{document.getElementById('sample-download').addEventListener('click',function(){if(window.gtag)gtag('event','sample_download');});}catch(e){}</script>
 </body>
 </html>
