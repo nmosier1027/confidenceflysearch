@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AI Visibility Tool · Confidence Fly Search</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Lexend:wght@300;400;500;600;700&family=Lora:ital@1&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0C2E47;--blue:#07699A;--gold:#F4CA50;--silver:#BDBEBF;--muted:#5A6677;--soft:#EEF3F7;--line:#D5DCE3;--ink:#1A1A2E;--bg:#F7F9FB;--card:#fff;--ok:#1E6B3A;--bad:#9B2C22}
+*{box-sizing:border-box}
+body{margin:0;font-family:Lexend,-apple-system,Segoe UI,Arial,sans-serif;font-size:14px;line-height:1.55;color:var(--ink);background:var(--bg)}
+h1,h2,h3{font-family:Montserrat,Lexend,sans-serif;color:var(--navy);margin:0}
+a{color:var(--blue)}
+.top{background:var(--navy);color:#fff;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.top b{font-family:Montserrat;letter-spacing:2px;font-size:13px;color:var(--gold)}
+.top span{font-size:13px;color:#cfdbe4}
+.wrap{max-width:1040px;margin:0 auto;padding:24px 20px 60px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:18px}
+.card h2{font-size:17px;text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px}
+.hint{color:var(--muted);font-size:12.5px;margin:2px 0 12px}
+label{display:block;font-weight:600;font-size:12.5px;margin:10px 0 4px;color:var(--navy)}
+input[type=text],input[type=password],input[type=number],select{width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:8px;font:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid var(--blue);outline-offset:0;border-color:var(--blue)}
+.grid3{display:grid;grid-template-columns:1.2fr 1.2fr 1fr;gap:12px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.comp{display:grid;grid-template-columns:1.2fr 1.2fr 1fr 34px;gap:8px;margin-bottom:8px;align-items:center}
+.x{border:none;background:var(--soft);border-radius:8px;height:36px;cursor:pointer;color:var(--muted);font-size:16px}
+.checks{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:4px}
+.checks label{display:flex;align-items:center;gap:6px;font-weight:500;margin:0;color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:Montserrat;font-weight:700;font-size:12.5px;letter-spacing:1.2px;text-transform:uppercase;border-radius:8px;padding:11px 18px;border:2px solid transparent;cursor:pointer}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-line{background:#fff;color:var(--navy);border-color:var(--line)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.est{display:grid;grid-template-columns:1fr auto;gap:4px 18px;font-size:13px}
+.est .tot{font-weight:700;color:var(--navy);border-top:1px solid var(--line);padding-top:6px}
+.est .n{text-align:right;font-variant-numeric:tabular-nums}
+.bal{margin-top:10px;font-size:13px}
+.log{background:#0f2433;color:#d7e4ee;font-family:ui-monospace,Menlo,monospace;font-size:12px;border-radius:10px;padding:12px 14px;max-height:220px;overflow:auto;white-space:pre-wrap}
+.bar{height:8px;background:var(--soft);border-radius:8px;overflow:hidden;margin:10px 0}
+.bar i{display:block;height:100%;background:var(--blue);width:0;transition:width .3s}
+.msg{padding:10px 14px;border-radius:8px;margin:10px 0;font-size:13px}
+.msg.err{background:#F8D7D3;color:var(--bad)} .msg.ok{background:#D9EFE0;color:var(--ok)}
+.hidden{display:none!important}
+.lock{max-width:420px;margin:60px auto}
+.runs li{margin:4px 0}
+/* report */
+#report{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px 32px}
+.rhero{background:linear-gradient(120deg,var(--navy),var(--blue));color:#fff;border-radius:12px;padding:24px 26px;margin-bottom:20px}
+.rhero .eb{font-family:Montserrat;font-weight:700;letter-spacing:3px;font-size:11px;color:var(--gold);text-transform:uppercase}
+.rhero h1{color:#fff;font-size:26px;text-transform:uppercase;margin:6px 0 4px}
+.rhero .sub{font-family:Lora;font-style:italic;color:#E6EEF3}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.chips span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:100px;padding:3px 11px;font-size:12px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:6px}
+.kpi{border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.kpi b{display:block;font-family:Montserrat;font-size:24px;color:var(--blue);line-height:1.15}
+.kpi span{font-size:12px;color:var(--muted)}
+#report h2{font-size:18px;text-transform:uppercase;margin:28px 0 2px}
+#report h2 small{display:block;font-family:Lora;font-style:italic;font-weight:400;text-transform:none;color:var(--blue);font-size:14px;margin-top:2px}
+.callout{background:var(--soft);border-left:4px solid var(--blue);border-radius:6px;padding:11px 15px;margin:12px 0;font-size:13px}
+.callout.warn{background:#FFF7DD;border-left-color:var(--gold)}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:12.5px}
+th{background:var(--navy);color:#fff;text-align:left;font-weight:600;padding:8px 10px}
+td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+tr.you td{background:#E8F2F8;font-weight:600}
+.sm{font-size:11.5px;color:var(--muted)}
+.tag{display:inline-block;border-radius:100px;padding:1px 9px;font-size:11px;font-weight:600;white-space:nowrap}
+.t-client{background:#E8F2F8;color:var(--blue)}.t-comp{background:#FCEFC7;color:#7A5A00}.t-non{background:#D9EFE0;color:var(--ok)}.t-off{background:#F8D7D3;color:var(--bad)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+svg text{font-family:Lexend,Arial,sans-serif}
+details summary{cursor:pointer;color:var(--blue);font-size:12px}
+.foot{margin-top:28px;padding-top:12px;border-top:1px solid var(--line);font-size:11.5px;color:var(--muted)}
+@media(max-width:760px){.grid3,.grid2,.two{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}.comp{grid-template-columns:1fr 1fr}.comp .x{grid-column:2}#report{padding:18px 14px}.wrap{padding:16px}}
+@media print{
+  body{background:#fff}.top,.noprint,#setup,#runCard,#lockCard{display:none!important}
+  .wrap{padding:0;max-width:none}#report{border:none;padding:0}
+  #report h2{break-after:avoid}table,.kpis,.callout,svg,.kpi{break-inside:avoid}tr{break-inside:avoid}
+  .pb{break-before:page}
+}
+</style>
+</head>
+<body>
+<div class="top"><b>CONFIDENCE FLY SEARCH</b><span>AI Visibility Tool · SE Ranking data</span></div>
+<div class="wrap">
+
+<!-- LOCK -->
+<div class="card lock" id="lockCard">
+  <h2>Sign in</h2>
+  <p class="hint">Private tool. Runs use SE Ranking API credits.</p>
+  <label for="pw">Password</label>
+  <input type="password" id="pw" autocomplete="current-password">
+  <div class="row" style="margin-top:14px"><button class="btn btn-gold" id="unlock">Unlock</button>
+  <button class="btn btn-line" id="openFile1">Open a saved run</button></div>
+  <div id="lockMsg"></div>
+</div>
+
+<!-- SETUP -->
+<div id="setup" class="hidden">
+<div class="card">
+  <h2>1. Client</h2>
+  <p class="hint">Use the exact domain AI tools should credit (e.g. brandusa.com, not brand.com). Brand is the name as it appears in AI answers.</p>
+  <div class="grid3">
+    <div><label>Client name</label><input type="text" id="cName" placeholder="SimpliSafe"></div>
+    <div><label>Domain</label><input type="text" id="cDomain" placeholder="simplisafe.com"></div>
+    <div><label>Brand in AI answers</label><input type="text" id="cBrand" placeholder="SimpliSafe"></div>
+  </div>
+</div>
+<div class="card">
+  <h2>2. Competitors</h2>
+  <p class="hint">1–10 competitors. Share of voice is calculated across the client and these brands only.</p>
+  <div id="comps"></div>
+  <button class="btn btn-line" id="addComp">+ Add competitor</button>
+</div>
+<div class="card">
+  <h2>3. Scope</h2>
+  <div class="grid2">
+    <div>
+      <label>AI engines (share of voice + trend)</label>
+      <div class="checks" id="engines"></div>
+      <label style="margin-top:14px">Engines to pull prompts from</label>
+      <div class="checks" id="pengines"></div>
+      <label style="margin-top:14px"><input type="checkbox" id="ovComp"> Also pull the monthly trend for each competitor (800 credits per competitor per engine)</label>
+    </div>
+    <div>
+      <div class="grid2">
+        <div><label>Client prompts per engine</label><input type="number" id="cLimit" min="0" max="100" value="20"></div>
+        <div><label>Prompts per competitor per engine</label><input type="number" id="kLimit" min="0" max="100" value="5"></div>
+      </div>
+      <label>Topic keywords (optional, comma-separated)</label>
+      <input type="text" id="topics" placeholder="e.g. alarm, monitoring, security system, camera">
+      <p class="hint">Prompts that don't contain any of these are tagged off-topic and left out of buyer-intent counts. Credits are still spent on them.</p>
+      <div class="grid2">
+        <div><label>Market</label><select id="source"><option value="us">United States</option><option value="uk">United Kingdom</option><option value="ca">Canada</option><option value="au">Australia</option><option value="de">Germany</option><option value="fr">France</option><option value="es">Spain</option><option value="it">Italy</option><option value="nl">Netherlands</option><option value="in">India</option></select></div>
+        <div><label>Scope</label><select id="scope"><option value="base_domain">Whole domain</option><option value="domain">Exact subdomain</option><option value="url">Single URL / folder</option></select></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card" id="runCard">
+  <h2>4. Estimate &amp; run</h2>
+  <div class="est" id="est"></div>
+  <div class="bal" id="bal">Checking credit balance…</div>
+  <div class="row" style="margin-top:14px">
+    <button class="btn btn-gold" id="runBtn">Run report</button>
+    <button class="btn btn-line" id="mockBtn">Test with fake data</button>
+    <button class="btn btn-line" id="openFile2">Open a saved run</button>
+  </div>
+  <div id="runMsg"></div>
+  <div class="bar hidden" id="prog"><i></i></div>
+  <div class="log hidden" id="log"></div>
+  <div id="recent" class="hint" style="margin-top:12px"></div>
+</div>
+</div>
+
+<input type="file" id="fileIn" accept="application/json,.json" class="hidden">
+
+<!-- REPORT -->
+<div id="reportWrap" class="hidden">
+  <div class="row noprint" style="margin:0 0 12px">
+    <button class="btn btn-blue" id="pdfBtn">Save as PDF</button>
+    <button class="btn btn-line" id="htmlBtn">Download HTML</button>
+    <button class="btn btn-line" id="xlsBtn">Download Excel</button>
+    <button class="btn btn-line" id="jsonBtn">Save run (JSON)</button>
+    <button class="btn btn-line" id="backBtn">New run</button>
+  </div>
+  <div id="report"></div>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" defer></script>
+<script>
+(() => {
+const API = '/api/aivis';
+const COST = { overview: 800, leaderboard: 7500, prompt: 200, discover: 100 };
+const USD = 50 / 250000;
+const ENG = [['chatgpt', 'ChatGPT'], ['ai-overview', 'Google AI Overviews'], ['ai-mode', 'Google AI Mode'], ['gemini', 'Gemini'], ['perplexity', 'Perplexity']];
+const LABEL = Object.fromEntries(ENG);
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const fmt = (n) => (n == null || isNaN(n) ? '—' : Number(n).toLocaleString('en-US'));
+const pct = (v, d = 1) => (v == null || isNaN(v) ? '—' : (v * 100).toFixed(d) + '%');
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const store = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch { return false; } },
+};
+let PW = '';
+try { PW = sessionStorage.getItem('aivis_pw') || ''; } catch {}
+let RUN = null;
+
+// ---------- setup form ----------
+function engineBoxes(id, checked) {
+  $(id).innerHTML = ENG.map(([v, l]) => `<label><input type="checkbox" value="${v}" ${checked.includes(v) ? 'checked' : ''}> ${l}</label>`).join('');
+}
+function addComp(c = {}) {
+  const d = document.createElement('div');
+  d.className = 'comp';
+  d.innerHTML = `<input type="text" placeholder="Competitor name" value="${esc(c.name)}" data-k="name"><input type="text" placeholder="domain.com" value="${esc(c.domain)}" data-k="domain"><input type="text" placeholder="Brand in AI answers" value="${esc(c.brand)}" data-k="brand"><button class="x" title="Remove" aria-label="Remove competitor">×</button>`;
+  d.querySelector('.x').onclick = () => { d.remove(); update(); };
+  d.querySelectorAll('input').forEach((i) => (i.oninput = update));
+  $('comps').appendChild(d);
+}
+const cleanDomain = (s) => (s || '').trim().toLowerCase().replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/+$/, '');
+function cfg() {
+  const ent = (n, d, b) => ({ name: n.trim() || cleanDomain(d), domain: cleanDomain(d), brand: (b.trim() || n.trim()) });
+  const comps = [...$('comps').children].map((r) => {
+    const v = Object.fromEntries([...r.querySelectorAll('input')].map((i) => [i.dataset.k, i.value]));
+    return ent(v.name, v.domain, v.brand);
+  }).filter((c) => c.domain);
+  const pick = (id) => [...$(id).querySelectorAll('input:checked')].map((i) => i.value);
+  return {
+    client: ent($('cName').value, $('cDomain').value, $('cBrand').value),
+    competitors: comps,
+    engines: pick('engines'),
+    prompt_engines: pick('pengines'),
+    overview_for_competitors: $('ovComp').checked,
+    client_prompts_per_engine: Math.max(0, Math.min(100, +$('cLimit').value || 0)),
+    competitor_prompts_per_engine: Math.max(0, Math.min(100, +$('kLimit').value || 0)),
+    topic_keywords: $('topics').value.split(',').map((s) => s.trim().toLowerCase()).filter(Boolean),
+    source: $('source').value,
+    scope: $('scope').value,
+  };
+}
+function estimate(c) {
+  const ne = c.engines.length, npe = c.prompt_engines.length, nc = c.competitors.length;
+  const nov = 1 + (c.overview_for_competitors ? nc : 0);
+  const rows = [
+    [`Monthly trend: ${nov} domain${nov > 1 ? 's' : ''} × ${ne} engines × 800`, nov * ne * COST.overview],
+    ['Share-of-voice leaderboard (flat)', ne ? COST.leaderboard : 0],
+    [`Client prompts: ${c.client_prompts_per_engine} × ${npe} engines × 200`, c.client_prompts_per_engine * npe * COST.prompt],
+    [`Competitor prompts: ${c.competitor_prompts_per_engine} × ${nc} × ${npe} engines × 200`, c.competitor_prompts_per_engine * nc * npe * COST.prompt],
+  ];
+  return { rows, total: rows.reduce((a, r) => a + r[1], 0) };
+}
+let BAL = null;
+function validate(c) {
+  const isDom = (d) => /^[a-z0-9][a-z0-9.-]*\.[a-z]{2,}(\/\S*)?$/.test(d);
+  if (!c.client.domain || !isDom(c.client.domain)) return 'Add a valid client domain.';
+  if (!c.competitors.length) return 'Add at least one competitor.';
+  if (c.competitors.length > 10) return 'Use 10 competitors or fewer.';
+  if (c.competitors.some((x) => !isDom(x.domain))) return 'Check the competitor domains.';
+  if (!c.engines.length) return 'Pick at least one engine.';
+  return '';
+}
+function update() {
+  const c = cfg(), e = estimate(c);
+  $('est').innerHTML = e.rows.map(([k, v]) => `<div>${esc(k)}</div><div class="n">${fmt(v)}</div>`).join('') +
+    `<div class="tot">Maximum credits (prompts bill only for prompts returned)</div><div class="tot n">${fmt(e.total)} <span class="sm">≈ $${(e.total * USD).toFixed(2)}</span></div>`;
+  const err = validate(c);
+  const over = BAL != null && e.total > BAL;
+  $('runBtn').disabled = !!err || over;
+  $('runMsg').innerHTML = err ? `<div class="msg err">${esc(err)}</div>` : over ? `<div class="msg err">This run could use ${fmt(e.total)} credits but only ${fmt(BAL)} are left. Lower the prompt limits or engines.</div>` : '';
+  store.set('aivis_form', c);
+}
+function loadForm(c) {
+  $('cName').value = c?.client?.name || ''; $('cDomain').value = c?.client?.domain || ''; $('cBrand').value = c?.client?.brand || '';
+  $('comps').innerHTML = '';
+  (c?.competitors?.length ? c.competitors : [{}, {}, {}]).forEach(addComp);
+  engineBoxes('engines', c?.engines || ['chatgpt', 'ai-overview', 'ai-mode', 'gemini']);
+  engineBoxes('pengines', c?.prompt_engines || ['chatgpt', 'ai-mode']);
+  $('ovComp').checked = !!c?.overview_for_competitors;
+  $('cLimit').value = c?.client_prompts_per_engine ?? 20; $('kLimit').value = c?.competitor_prompts_per_engine ?? 5;
+  $('topics').value = (c?.topic_keywords || []).join(', ');
+  $('source').value = c?.source || 'us'; $('scope').value = c?.scope || 'base_domain';
+  document.querySelectorAll('#setup input, #setup select').forEach((i) => (i.onchange = i.oninput = update));
+  update();
+}
+
+// ---------- API ----------
+async function call(action, params = {}) {
+  const r = await fetch(API, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ password: PW, action, params }) });
+  let j = {};
+  try { j = await r.json(); } catch {}
+  if (r.status === 401) throw Object.assign(new Error('Wrong password'), { auth: true });
+  if (!r.ok) throw new Error(j.error || `Tool error (${r.status})`);
+  if (action === 'ping') return j;
+  if (j.status >= 400 || j.status === 0) {
+    const d = j.data || {};
+    const msg = d.error_description || d.error?.description || d.message || d.error?.message || (typeof d.error === 'string' ? d.error : '') || 'request failed';
+    throw new Error(`SE Ranking ${j.status}: ${msg}`);
+  }
+  return j.data;
+}
+async function refreshBalance() {
+  try {
+    const d = await call('balance');
+    const s = d?.subscription_info || {};
+    BAL = typeof s.units_left === 'number' ? s.units_left : null;
+    $('bal').innerHTML = `Credits left: <b>${fmt(s.units_left)}</b> of ${fmt(s.units_limit)} · status ${esc(s.status || '?')} · expires ${esc((s.expiraton_date || s.expiration_date || '').slice(0, 10) || '?')}`;
+  } catch (e) {
+    $('bal').innerHTML = `<span style="color:var(--bad)">Couldn't check balance: ${esc(e.message)}</span>`;
+  }
+  update();
+}
+
+// ---------- run ----------
+function log(m) { const l = $('log'); l.classList.remove('hidden'); l.textContent += m + '\n'; l.scrollTop = l.scrollHeight; }
+async function run(mock) {
+  const c = cfg(), err = validate(c);
+  if (err) return;
+  const e = estimate(c);
+  if (!mock && !confirm(`Run the report for ${c.client.name}? This can use up to ${fmt(e.total)} credits.`)) return;
+  $('runBtn').disabled = $('mockBtn').disabled = true;
+  $('log').textContent = ''; $('prog').classList.remove('hidden');
+  const ents = [c.client, ...c.competitors];
+  const steps = [];
+  for (const x of c.overview_for_competitors ? ents : [c.client]) for (const g of c.engines) steps.push(['overview', x, g]);
+  steps.push(['leaderboard']);
+  for (const g of c.prompt_engines) {
+    if (c.client_prompts_per_engine) steps.push(['prompts', c.client, g, c.client_prompts_per_engine, 'client']);
+    if (c.competitor_prompts_per_engine) for (const x of c.competitors) steps.push(['prompts', x, g, c.competitor_prompts_per_engine, 'comp']);
+  }
+  const data = { overview: {}, leaderboard: null, client_prompts: [], competitor_prompts: [], errors: [] };
+  let credits = 0, calls = 0, i = 0;
+  for (const s of steps) {
+    $('prog').firstElementChild.style.width = Math.round((i++ / steps.length) * 100) + '%';
+    try {
+      if (s[0] === 'overview') {
+        const r = mock ? Mock.overview(s[1].domain, s[2]) : await call('overview', { target: s[1].domain, engine: s[2], brand: s[1].brand, source: c.source, scope: c.scope });
+        data.overview[s[1].domain + '|' + s[2]] = r; credits += COST.overview;
+        log(`✓ trend  ${s[1].domain} · ${LABEL[s[2]]}`);
+      } else if (s[0] === 'leaderboard') {
+        const p = { primary: { target: c.client.domain, brand: c.client.brand }, competitors: c.competitors.map((x) => ({ target: x.domain, brand: x.brand })), engines: c.engines, source: c.source, scope: c.scope };
+        data.leaderboard = mock ? Mock.leaderboard(p) : await call('leaderboard', p); credits += COST.leaderboard;
+        log('✓ share-of-voice leaderboard');
+      } else {
+        const r = mock ? Mock.prompts(s[1].domain, s[2], s[3], ents.map((x) => x.brand)) : await call('prompts', { target: s[1].domain, engine: s[2], limit: s[3], source: c.source, scope: c.scope });
+        const ps = r?.prompts || [];
+        credits += ps.length * COST.prompt;
+        ps.forEach((p) => (s[4] === 'client' ? data.client_prompts : data.competitor_prompts).push({ engine: s[2], competitor: s[4] === 'comp' ? s[1].domain : undefined, ...p }));
+        log(`✓ prompts ${s[1].domain} · ${LABEL[s[2]]}: ${ps.length} of ${fmt(r?.total)}`);
+      }
+      calls++;
+    } catch (x) {
+      if (x.auth) { lockOut(); return; }
+      data.errors.push(`${s[0]} ${s[1]?.domain || ''} ${s[2] || ''}: ${x.message}`);
+      log(`✗ ${s[0]} ${s[1]?.domain || ''} ${s[2] ? LABEL[s[2]] : ''}: ${x.message}`);
+    }
+    if (!mock) await sleep(1100);
+  }
+  $('prog').firstElementChild.style.width = '100%';
+  RUN = { version: 1, mock: !!mock, date: new Date().toISOString().slice(0, 10), config: c, data, meta: { calls, credits } };
+  saveRecent(RUN);
+  $('runBtn').disabled = $('mockBtn').disabled = false;
+  if (!mock) refreshBalance();
+  showReport();
+}
+
+// ---------- analysis ----------
+const host = (u) => { try { return new URL(typeof u === 'string' ? u : u.url || '').hostname.toLowerCase().replace(/^www\d?\./, ''); } catch { return ''; } };
+const links = (a) => (a?.links || []).map((l) => (typeof l === 'string' ? l : l.url || ''));
+const reB = (b, cs) => new RegExp('(?<![A-Za-z0-9])' + b.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?![A-Za-z0-9])', cs ? '' : 'i');
+const owns = (h, d) => h === d || h.endsWith('.' + d);
+const namedIn = (a, x) => reB(x.brand, x.brand.length <= 4).test(a?.text || '') || links(a).some((u) => owns(host(u), x.domain.split('/')[0]));
+const linkedIn = (a, x) => links(a).some((u) => owns(host(u), x.domain.split('/')[0]));
+function analyze(R) {
+  const c = R.config, d = R.data, ents = [c.client, ...c.competitors];
+  const brandsIn = (t) => ents.filter((x) => reB(x.brand, false).test(t || ''));
+  const onTopic = (t) => !c.topic_keywords.length || c.topic_keywords.some((k) => (t || '').toLowerCase().includes(k));
+  const A = {};
+  const lb = d.leaderboard || {};
+  const byDom = Object.fromEntries(ents.map((x) => [x.domain, x]));
+  A.board = (lb.leaderboard || []).map((r) => ({ ...r, name: byDom[r.domain]?.name || r.brand || r.domain }));
+  A.res = lb.results || {};
+  A.you = A.board.find((r) => r.is_primary_target) || A.board.find((r) => r.domain === c.client.domain);
+  // trend
+  const months = new Set(); A.trend = {};
+  for (const g of c.engines) {
+    const ts = d.overview[c.client.domain + '|' + g]?.time_series?.link_presence || [];
+    A.trend[g] = Object.fromEntries(ts.map((p) => { months.add(p.date); return [p.date, p.value]; }));
+  }
+  A.months = [...months].sort();
+  A.summ = Object.fromEntries(c.engines.map((g) => [g, d.overview[c.client.domain + '|' + g]?.summary || {}]));
+  // client prompts
+  const cited = {}, add = (h, k) => { if (!h) return; cited[h] = cited[h] || { a: 0, c: 0 }; cited[h][k]++; };
+  A.cp = d.client_prompts.map((p) => {
+    const a = p.answer || {}, b = brandsIn(p.prompt);
+    const type = b.some((x) => x === c.client) ? 'client' : b.length ? 'comp' : onTopic(p.prompt) ? 'non' : 'off';
+    const hs = [...new Set(links(a).map(host).filter(Boolean))]; hs.forEach((h) => add(h, 'a'));
+    return { engine: p.engine, prompt: p.prompt, volume: p.volume, type, linked: linkedIn(a, c.client), others: c.competitors.filter((x) => namedIn(a, x)).map((x) => x.name), hosts: hs, text: a.text || '' };
+  });
+  const order = { non: 0, comp: 1, client: 2, off: 3 };
+  A.cp.sort((x, y) => order[x.type] - order[y.type] || (y.volume || 0) - (x.volume || 0));
+  // competitor wins
+  const wins = new Map(); let skipped = 0, offs = 0;
+  for (const p of d.competitor_prompts) {
+    const a = p.answer || {}, hs = [...new Set(links(a).map(host).filter(Boolean))];
+    hs.forEach((h) => add(h, 'c'));
+    if (namedIn(a, c.client)) continue;
+    if (brandsIn(p.prompt).length) { skipped++; continue; }
+    if (!onTopic(p.prompt)) { offs++; continue; }
+    const k = p.engine + '|' + (p.prompt || '').trim().toLowerCase();
+    const w = wins.get(k) || { engine: p.engine, prompt: p.prompt, volume: p.volume, comps: new Set(), hosts: hs, text: a.text || '' };
+    w.comps.add(byDom[p.competitor]?.name || p.competitor); wins.set(k, w);
+  }
+  A.wins = [...wins.values()].map((w) => ({ ...w, comps: [...w.comps] })).sort((x, y) => (y.volume || 0) - (x.volume || 0));
+  A.skipped = skipped; A.offWins = offs;
+  const owner = (h) => (owns(h, c.client.domain.split('/')[0]) ? c.client.name : c.competitors.find((x) => owns(h, x.domain.split('/')[0]))?.name || '');
+  A.cited = Object.entries(cited).map(([h, v]) => ({ host: h, total: v.a + v.c, a: v.a, c: v.c, owner: owner(h) })).sort((x, y) => y.total - x.total);
+  A.third = A.cited.filter((x) => !x.owner);
+  return A;
+}
+
+// ---------- charts (inline SVG) ----------
+function barChart(rows, youDom) {
+  const W = 620, rh = 34, H = rows.length * rh + 30, L = 150, max = Math.max(...rows.map((r) => r.share_of_voice || 0), 0.01);
+  const bars = rows.map((r, i) => {
+    const w = ((r.share_of_voice || 0) / max) * (W - L - 70), y = 8 + i * rh, you = r.domain === youDom;
+    return `<text x="${L - 8}" y="${y + 17}" text-anchor="end" font-size="13" fill="#1A1A2E" ${you ? 'font-weight="700"' : ''}>${esc(r.name)}</text>
+      <rect x="${L}" y="${y + 4}" width="${Math.max(w, 2)}" height="20" rx="3" fill="${you ? '#07699A' : '#BDBEBF'}"/>
+      <text x="${L + w + 6}" y="${y + 18}" font-size="12.5" font-weight="700" fill="#0C2E47">${pct(r.share_of_voice)}</text>`;
+  }).join('');
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Share of voice chart">${bars}</svg>`;
+}
+function lineChart(A, engines) {
+  const ms = A.months; if (!ms.length) return '<p class="sm">No monthly trend returned.</p>';
+  const W = 640, H = 250, L = 46, B = 40, T = 14, R = 14;
+  const vals = engines.flatMap((g) => ms.map((m) => A.trend[g][m]).filter((v) => v != null));
+  const max = Math.max(...vals, 1) * 1.1;
+  const x = (i) => L + (ms.length === 1 ? (W - L - R) / 2 : (i / (ms.length - 1)) * (W - L - R));
+  const y = (v) => T + (1 - v / max) * (H - T - B);
+  const cols = ['#07699A', '#F4CA50', '#0C2E47', '#8A94A3', '#5A6677'];
+  let s = '';
+  for (let k = 0; k <= 4; k++) { const v = (max / 4) * k; s += `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}" stroke="#EEF3F7"/><text x="${L - 6}" y="${y(v) + 4}" text-anchor="end" font-size="10.5" fill="#5A6677">${fmt(Math.round(v))}</text>`; }
+  ms.forEach((m, i) => (s += `<text x="${x(i)}" y="${H - 16}" text-anchor="middle" font-size="10.5" fill="#5A6677">${m.slice(5)}/${m.slice(2, 4)}</text>`));
+  engines.forEach((g, j) => {
+    const pts = ms.map((m, i) => (A.trend[g][m] != null ? [x(i), y(A.trend[g][m])] : null)).filter(Boolean);
+    if (!pts.length) return;
+    s += `<polyline fill="none" stroke="${cols[j % 5]}" stroke-width="2.5" points="${pts.map((p) => p.join(',')).join(' ')}"/>` + pts.map((p) => `<circle cx="${p[0]}" cy="${p[1]}" r="3.5" fill="${cols[j % 5]}"/>`).join('');
+  });
+  const leg = engines.map((g, j) => `<span style="display:inline-flex;align-items:center;gap:5px;margin-right:14px;font-size:12px"><i style="width:14px;height:3px;background:${cols[j % 5]};display:inline-block"></i>${LABEL[g]}</span>`).join('');
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Citation trend chart">${s}</svg><div>${leg}</div>`;
+}
+
+// ---------- report ----------
+function render(R) {
+  const c = R.config, A = analyze(R), ents = [c.client, ...c.competitors];
+  const you = A.you || {}, leader = A.board[0] || {};
+  const rateY = you.brand_presence ? you.link_presence / you.brand_presence : null;
+  const lastM = A.months[A.months.length - 1], prevM = A.months[A.months.length - 2], firstM = A.months[0];
+  const mainEng = c.engines.find((g) => Object.keys(A.trend[g] || {}).length) || c.engines[0];
+  const chg = (g) => { const t = A.trend[g] || {}; return t[lastM] != null && t[prevM] ? t[lastM] / t[prevM] - 1 : null; };
+  const nonB = A.cp.filter((p) => p.type === 'non'), offs = A.cp.filter((p) => p.type === 'off');
+  const tagName = { client: c.client.name, comp: 'Competitor brand', non: 'Non-branded', off: 'Off-topic' };
+  const tagCls = { client: 't-client', comp: 't-comp', non: 't-non', off: 't-off' };
+  // takeaways
+  const tk = [];
+  if (you.rank) tk.push(`<b>${esc(c.client.name)} ranks #${you.rank} of ${A.board.length}</b> on AI share of voice (${pct(you.share_of_voice)}); ${leader.domain === you.domain ? 'it leads this set.' : `${esc(leader.name)} leads with ${pct(leader.share_of_voice)}.`}`);
+  if (rateY != null) {
+    const best = A.board.filter((r) => r.brand_presence).map((r) => ({ n: r.name, v: r.link_presence / r.brand_presence, you: r.domain === you.domain })).sort((a, b) => b.v - a.v);
+    tk.push(`When AI names ${esc(c.client.name)}, it links to ${esc(c.client.domain)} ${pct(rateY, 0)} of the time` + (best[0] && !best[0].you ? ` (best in set: ${esc(best[0].n)} at ${pct(best[0].v, 0)}).` : ', the highest rate in this set.'));
+  }
+  c.engines.forEach((g) => { const v = chg(g); if (v != null) tk.push(`${LABEL[g]}: answers linking to ${esc(c.client.domain)} ${v >= 0 ? 'rose' : 'fell'} ${pct(Math.abs(v), 0)} from ${prevM} to ${lastM} (${fmt(A.trend[g][prevM])} → ${fmt(A.trend[g][lastM])}).`); });
+  if (A.wins.length) tk.push(`${A.wins.length} non-branded prompt${A.wins.length > 1 ? 's' : ''} cite a competitor without naming ${esc(c.client.name)}. Start with "${esc(A.wins[0].prompt)}".`);
+  else if (c.competitor_prompts_per_engine) tk.push(`No competitor wins in this sample: ${A.skipped} competitor prompts were branded (e.g. support questions) and skipped${A.offWins ? `, ${A.offWins} were off-topic` : ''}. Pull more competitor prompts or add topic keywords to find buyer-intent losses.`);
+  if (A.third.length) tk.push(`Most-cited third-party sources: ${A.third.slice(0, 3).map((x) => esc(x.host)).join(', ')}. Check whether ${esc(c.client.name)} is present and accurate on each.`);
+  if (offs.length) tk.push(`${offs.length} of ${A.cp.length} client prompts are off-topic for the keywords given; they're excluded from buyer-intent counts.`);
+
+  const engRows = c.engines.map((g) => `<tr><td>${LABEL[g]}</td>${ents.map((x) => `<td class="n">${fmt(A.res[x.domain]?.[g]?.brand_presence)}</td>`).join('')}${ents.map((x) => `<td class="n">${fmt(A.res[x.domain]?.[g]?.link_presence)}</td>`).join('')}</tr>`).join('');
+  const trendRows = A.months.map((m) => `<tr><td>${m}</td>${c.engines.map((g) => `<td class="n">${fmt(A.trend[g][m])}</td>`).join('')}</tr>`).join('');
+  const cpRows = A.cp.map((p) => `<tr><td>${LABEL[p.engine]}</td><td>${esc(p.prompt)}<details><summary>AI answer</summary><div class="sm">${esc(p.text.slice(0, 900))}</div></details></td><td><span class="tag ${tagCls[p.type]}">${esc(tagName[p.type])}</span></td><td>${p.linked ? 'Yes' : 'No'}</td><td>${esc(p.others.join(', ') || '—')}</td><td class="sm">${esc(p.hosts.slice(0, 5).join(', '))}</td></tr>`).join('');
+  const winRows = A.wins.slice(0, 25).map((w) => `<tr><td>${LABEL[w.engine]}</td><td>${esc(w.prompt)}<details><summary>AI answer</summary><div class="sm">${esc(w.text.slice(0, 900))}</div></details></td><td>${esc(w.comps.join(', '))}</td><td class="sm">${esc(w.hosts.slice(0, 5).join(', '))}</td></tr>`).join('');
+  const citeRows = A.cited.slice(0, 15).map((x) => `<tr><td>${esc(x.host)}</td><td class="n">${x.total}</td><td class="n">${x.a}</td><td class="n">${x.c}</td><td>${esc(x.owner || 'Third party')}</td></tr>`).join('');
+  const s = A.summ[mainEng] || {};
+  const kpi4 = chg(mainEng);
+
+  return `
+  <div class="rhero"><div class="eb">Confidence Fly Search · AI Visibility${R.mock ? ' · TEST DATA' : ''}</div>
+  <h1>${esc(c.client.name)}: AI visibility snapshot</h1>
+  <div class="sub">SE Ranking AI Search data · pulled ${esc(R.date)}</div>
+  <div class="chips"><span>${esc(c.client.domain)}</span><span>vs. ${esc(c.competitors.map((x) => x.name).join(', '))}</span><span>${esc(c.engines.map((g) => LABEL[g]).join(', '))}</span><span>Market: ${esc(c.source.toUpperCase())}</span>${c.topic_keywords.length ? `<span>Topics: ${esc(c.topic_keywords.join(', '))}</span>` : ''}</div></div>
+
+  <div class="kpis">
+    <div class="kpi"><b>${pct(you.share_of_voice)}</b><span>AI share of voice${you.rank ? ` · rank ${you.rank} of ${A.board.length}` : ''}</span></div>
+    <div class="kpi"><b>${fmt(you.brand_presence)}</b><span>prompts where AI names ${esc(c.client.name)}</span></div>
+    <div class="kpi"><b>${fmt(you.link_presence)}</b><span>answers linking to ${esc(c.client.domain)}</span></div>
+    <div class="kpi"><b>${kpi4 == null ? '—' : (kpi4 >= 0 ? '+' : '') + pct(kpi4, 0)}</b><span>${LABEL[mainEng] || ''} answers linking to the site, ${esc(prevM || '')} → ${esc(lastM || '')}</span></div>
+  </div>
+  <div class="callout"><b>How to read this:</b> share of voice and mention counts come from SE Ranking's full prompt database (refreshed monthly), across ${esc(c.client.name)} and the competitors listed only. They include support and how-to questions, so brands with large product user bases score high. Treat them as <b>total AI footprint</b>, and use the non-branded prompt lists for buyer intent. All figures are estimates, not the client's own analytics.</div>
+
+  <h2>Key takeaways</h2>
+  <ul>${tk.map((t) => `<li>${t}</li>`).join('')}</ul>
+
+  <h2>1. Share of voice<small>How often each brand is named in AI answers</small></h2>
+  <div style="max-width:640px">${barChart(A.board, c.client.domain)}</div>
+  <table><tr><th>Rank</th><th>Brand</th><th class="n">Share of voice</th><th class="n">Prompts naming brand</th><th class="n">Answers linking to site</th><th class="n">Link rate</th></tr>
+  ${A.board.map((r) => `<tr class="${r.domain === you.domain ? 'you' : ''}"><td>${r.rank}</td><td>${esc(r.name)} <span class="sm">${esc(r.domain)}</span></td><td class="n">${pct(r.share_of_voice)}</td><td class="n">${fmt(r.brand_presence)}</td><td class="n">${fmt(r.link_presence)}</td><td class="n">${r.brand_presence ? pct(r.link_presence / r.brand_presence, 0) : '—'}</td></tr>`).join('')}</table>
+  <table><tr><th>Engine</th>${ents.map((x) => `<th class="n">${esc(x.name)} named</th>`).join('')}${ents.map((x) => `<th class="n">${esc(x.name)} linked</th>`).join('')}</tr>${engRows}</table>
+
+  <h2 class="pb">2. Citation trend<small>AI answers linking to ${esc(c.client.domain)}, by month</small></h2>
+  ${lineChart(A, c.engines)}
+  <div class="two"><table><tr><th>Month</th>${c.engines.map((g) => `<th class="n">${LABEL[g]}</th>`).join('')}</tr>${trendRows}</table>
+  <table><tr><th>Engine</th><th class="n">Named (now / prev.)</th><th class="n">Linked (now / prev.)</th></tr>${c.engines.map((g) => { const z = A.summ[g] || {}; return `<tr><td>${LABEL[g]}</td><td class="n">${fmt(z.brand_presence?.current)} / ${fmt(z.brand_presence?.previous)}</td><td class="n">${fmt(z.link_presence?.current)} / ${fmt(z.link_presence?.previous)}</td></tr>`; }).join('')}</table></div>
+
+  <h2 class="pb">3. ${esc(c.client.name)}'s top prompts<small>Top prompts per engine where AI cites ${esc(c.client.domain)} · ${nonB.length} non-branded of ${A.cp.length}</small></h2>
+  ${A.cp.length ? `<table><tr><th>Engine</th><th>Prompt</th><th>Type</th><th>Links to site?</th><th>Competitors named</th><th>Sites cited</th></tr>${cpRows}</table>` : '<p class="sm">No client prompts pulled.</p>'}
+
+  <h2>4. Where competitors win<small>Non-branded, on-topic prompts where a competitor is cited and ${esc(c.client.name)} isn't named</small></h2>
+  ${A.wins.length ? `<table><tr><th>Engine</th><th>Prompt</th><th>Competitor cited</th><th>Sites cited</th></tr>${winRows}</table>` : `<p>None found in this sample.</p>`}
+  <p class="sm">${A.skipped} competitor prompts skipped as branded${A.offWins ? ` and ${A.offWins} as off-topic` : ''}.</p>
+
+  <h2>5. Sites AI cites<small>Domains linked in the AI answers pulled for this report</small></h2>
+  ${A.cited.length ? `<table style="max-width:640px"><tr><th>Domain</th><th class="n">Total</th><th class="n">In ${esc(c.client.name)} prompts</th><th class="n">In competitor prompts</th><th>Owner</th></tr>${citeRows}</table>` : '<p class="sm">No citations in this sample.</p>'}
+  ${R.data.errors.length ? `<div class="callout warn"><b>Some requests failed:</b><br>${R.data.errors.map(esc).join('<br>')}</div>` : ''}
+  <div class="foot">Data: SE Ranking AI Search API, ${esc(c.source.toUpperCase())} market, pulled ${esc(R.date)} · ${fmt(R.meta.calls)} API calls · ${fmt(R.meta.credits)} credits. Estimates from SE Ranking's prompt set, not the client's analytics. Prepared by Niki Mosier, Confidence Fly Search.</div>`;
+}
+function showReport() {
+  $('report').innerHTML = render(RUN);
+  $('reportWrap').classList.remove('hidden');
+  $('setup').classList.add('hidden'); $('lockCard').classList.add('hidden');
+  document.title = `${RUN.config.client.name} AI Visibility ${RUN.date}`;
+  window.scrollTo(0, 0);
+}
+
+// ---------- exports ----------
+const fname = (ext) => `${RUN.config.client.name.replace(/[^A-Za-z0-9]+/g, '_')}_AI_Visibility_${RUN.date}${RUN.mock ? '_TEST' : ''}.${ext}`;
+function download(name, blob) { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500); }
+function exportHTML() {
+  const css = document.querySelector('style').textContent;
+  const h = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(document.title)}</title><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Lexend:wght@300;400;500;600;700&family=Lora:ital@1&display=swap" rel="stylesheet"><style>${css} body{background:#fff}</style></head><body><div class="wrap"><div id="report">${$('report').innerHTML}</div></div></body></html>`;
+  download(fname('html'), new Blob([h], { type: 'text/html' }));
+}
+function exportXLSX() {
+  if (!window.XLSX) return alert('Excel export is still loading. Try again in a moment.');
+  const c = RUN.config, A = analyze(RUN), ents = [c.client, ...c.competitors];
+  const wb = XLSX.utils.book_new();
+  const sheet = (name, rows) => XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(rows), name);
+  sheet('Summary', [['AI Visibility', c.client.name], ['Domain', c.client.domain], ['Competitors', c.competitors.map((x) => `${x.name} (${x.domain})`).join(', ')], ['Engines', c.engines.map((g) => LABEL[g]).join(', ')], ['Market', c.source], ['Topics', c.topic_keywords.join(', ')], ['Pulled', RUN.date], ['Credits used', RUN.meta.credits], ['Source', 'SE Ranking AI Search API (estimates)'], ['Test data', RUN.mock ? 'YES' : 'No']]);
+  sheet('Leaderboard', [['Rank', 'Brand', 'Domain', 'Share of voice', 'Prompts naming brand', 'Answers linking', 'Link rate'], ...A.board.map((r) => [r.rank, r.name, r.domain, r.share_of_voice, r.brand_presence, r.link_presence, r.brand_presence ? r.link_presence / r.brand_presence : null])]);
+  sheet('By Engine', [['Engine', ...ents.map((x) => x.name + ' named'), ...ents.map((x) => x.name + ' linked')], ...c.engines.map((g) => [LABEL[g], ...ents.map((x) => A.res[x.domain]?.[g]?.brand_presence ?? null), ...ents.map((x) => A.res[x.domain]?.[g]?.link_presence ?? null)])]);
+  sheet('Citation Trend', [['Month', ...c.engines.map((g) => LABEL[g])], ...A.months.map((m) => [m, ...c.engines.map((g) => A.trend[g][m] ?? null)])]);
+  sheet('Client Prompts', [['Engine', 'Prompt', 'Type', 'Links to site', 'Competitors named', 'Sites cited', 'AI answer'], ...A.cp.map((p) => [LABEL[p.engine], p.prompt, ({ client: 'Client brand', comp: 'Competitor brand', non: 'Non-branded', off: 'Off-topic' })[p.type], p.linked ? 'Yes' : 'No', p.others.join(', '), p.hosts.join(', '), p.text.slice(0, 32000)])]);
+  sheet('Competitor Wins', [['Engine', 'Prompt', 'Competitor cited', 'Sites cited', 'AI answer'], ...A.wins.map((w) => [LABEL[w.engine], w.prompt, w.comps.join(', '), w.hosts.join(', '), w.text.slice(0, 32000)])]);
+  sheet('Cited Sources', [['Domain', 'Total', 'In client prompts', 'In competitor prompts', 'Owner', 'Type (fill in)', 'Client present? (fill in)', 'Action (fill in)'], ...A.cited.map((x) => [x.host, x.total, x.a, x.c, x.owner || 'Third party'])]);
+  XLSX.writeFile(wb, fname('xlsx'));
+}
+
+// ---------- saved runs ----------
+function saveRecent(R) {
+  const list = store.get('aivis_runs', []);
+  list.unshift(R);
+  while (list.length > 8 && !store.set('aivis_runs', list)) list.pop();
+  if (list.length <= 8) while (list.length && !store.set('aivis_runs', list)) list.pop();
+  showRecent();
+}
+function showRecent() {
+  const list = store.get('aivis_runs', []);
+  $('recent').innerHTML = list.length ? 'Recent runs (this browser): ' + list.map((r, i) => `<a href="#" data-i="${i}">${esc(r.config.client.name)} ${esc(r.date)}${r.mock ? ' (test)' : ''}</a>`).join(' · ') : '';
+  $('recent').querySelectorAll('a').forEach((a) => (a.onclick = (e) => { e.preventDefault(); RUN = store.get('aivis_runs', [])[+a.dataset.i]; showReport(); }));
+}
+function openFile() { $('fileIn').value = ''; $('fileIn').click(); }
+$('fileIn').onchange = async () => {
+  const f = $('fileIn').files[0]; if (!f) return;
+  try { const j = JSON.parse(await f.text()); if (!j.config || !j.data) throw 0; RUN = j; showReport(); }
+  catch { alert('That file isn\'t a saved AI Visibility run.'); }
+};
+
+// ---------- mock data ----------
+const Mock = (() => {
+  let seed = 7; const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+  const months = ['2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09', '2026-10'];
+  return {
+    overview(dom, g) { const b = 100 + Math.round(rnd() * 500); const ts = months.map((m, i) => ({ date: m, value: Math.round(b * (0.6 + i * 0.08 + rnd() * 0.2)) })); const cur = ts[6].value, prev = ts[5].value;
+      return { summary: { brand_presence: { current: cur * 3, previous: prev * 3 }, link_presence: { current: cur, previous: prev } }, time_series: { link_presence: ts } }; },
+    leaderboard(p) { const doms = [p.primary, ...p.competitors]; const res = {}; doms.forEach((d) => (res[d.target] = Object.fromEntries(p.engines.map((g) => [g, { brand_presence: Math.round(300 + rnd() * 5000), link_presence: Math.round(100 + rnd() * 1500) }]))));
+      const tot = doms.map((d) => ({ domain: d.target, b: p.engines.reduce((a, g) => a + res[d.target][g].brand_presence, 0), l: p.engines.reduce((a, g) => a + res[d.target][g].link_presence, 0) })); const S = tot.reduce((a, t) => a + t.b, 0);
+      return { results: res, leaderboard: tot.sort((a, b) => b.b - a.b).map((t, i) => ({ rank: i + 1, domain: t.domain, share_of_voice: t.b / S, brand_presence: t.b, link_presence: t.l, is_primary_target: t.domain === p.primary.target })) }; },
+    prompts(dom, g, n, brands) { const tp = ['best option for small homes', 'how much does monitoring cost', 'is it worth it', 'alternatives to the market leader', 'how to set it up', 'what to look for when buying', 'which brand is most reliable'];
+      return { total: n * 40, prompts: Array.from({ length: n }, (_, i) => { const nm = brands.filter(() => rnd() > 0.5); const t = (rnd() > 0.7 ? brands[Math.floor(rnd() * brands.length)] + ' ' : '') + tp[Math.floor(rnd() * tp.length)];
+        return { prompt: t.charAt(0).toUpperCase() + t.slice(1) + '?', volume: null, type: 'Link', answer: { text: 'Popular picks include ' + (nm.join(', ') || brands[0]) + '.', links: ['https://www.' + dom + '/', 'https://www.reviews-site.com/x', 'https://www.reddit.com/r/x'].slice(0, 1 + Math.floor(rnd() * 3)) } }; }) }; },
+  };
+})();
+
+// ---------- unlock ----------
+function lockOut(msg) {
+  PW = ''; try { sessionStorage.removeItem('aivis_pw'); } catch {}
+  $('setup').classList.add('hidden'); $('reportWrap').classList.add('hidden'); $('lockCard').classList.remove('hidden');
+  $('lockMsg').innerHTML = `<div class="msg err">${esc(msg || 'Wrong password.')}</div>`;
+}
+async function unlock() {
+  PW = $('pw').value || PW;
+  if (!PW) return;
+  $('unlock').disabled = true;
+  try {
+    await call('ping');
+    try { sessionStorage.setItem('aivis_pw', PW); } catch {}
+    $('lockCard').classList.add('hidden'); $('setup').classList.remove('hidden');
+    loadForm(store.get('aivis_form', null)); showRecent(); refreshBalance();
+  } catch (e) { lockOut(e.auth ? 'Wrong password.' : e.message); }
+  $('unlock').disabled = false;
+}
+$('unlock').onclick = unlock;
+$('pw').onkeydown = (e) => { if (e.key === 'Enter') unlock(); };
+$('addComp').onclick = () => { if ($('comps').children.length < 10) addComp(); update(); };
+$('runBtn').onclick = () => run(false);
+$('mockBtn').onclick = () => run(true);
+$('openFile1').onclick = $('openFile2').onclick = openFile;
+$('pdfBtn').onclick = () => window.print();
+$('htmlBtn').onclick = exportHTML;
+$('xlsBtn').onclick = exportXLSX;
+$('jsonBtn').onclick = () => download(fname('json'), new Blob([JSON.stringify(RUN)], { type: 'application/json' }));
+$('backBtn').onclick = () => { $('reportWrap').classList.add('hidden'); if (PW) { $('setup').classList.remove('hidden'); loadForm(RUN?.config || store.get('aivis_form', null)); showRecent(); } else $('lockCard').classList.remove('hidden'); };
+if (PW) unlock();
+})();
+</script>
+</body>
+</html>
